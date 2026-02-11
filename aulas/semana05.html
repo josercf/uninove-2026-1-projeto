@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 05 – Versionamento de Código com GitHub | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover Slide -->
+      <section class="cover-slide">
+        <h1>Git & GitHub</h1>
+        <p style="font-size: 1.5em; margin-top: 2em;">Versionamento de Código e Colaboração</p>
+        <p style="font-size: 1.2em; margin-top: 2em;">Semana 05 • UNINOVE</p>
+      </section>
+
+      <!-- SLIDE 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Controle de Versão</h2>
+        </div>
+        <div class="title-card">
+          <p><strong>Semana 05</strong></p>
+          <p>18 de março de 2026</p>
+        </div>
+        <div class="lesson-bar">
+          <span class="logo-text logo-text-small"><span class="uni">UNI</span><span class="nove">NOVE</span></span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: Git Fundamentals -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Git Fundamentals</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.1em;">
+              <strong>Git</strong> é um sistema de controle de versão <strong>distribuído</strong> que registra mudanças no código ao longo do tempo.
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Conceitos Principais</h4>
+              <ul style="font-size: 0.9em;">
+                <li><strong>Repository:</strong> Pasta com histórico de versões</li>
+                <li><strong>Commit:</strong> Snapshot de mudanças com mensagem</li>
+                <li><strong>Branch:</strong> Linha de desenvolvimento independente</li>
+                <li><strong>Merge:</strong> Integração de branches</li>
+                <li><strong>Remote:</strong> Repositório central (GitHub)</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Comandos Básicos</h4>
+              <ul style="font-size: 0.85em; font-family: monospace;">
+                <li>git clone [url]</li>
+                <li>git add .</li>
+                <li>git commit -m "msg"</li>
+                <li>git push origin [branch]</li>
+                <li>git pull origin [branch]</li>
+                <li>git checkout -b [branch]</li>
+                <li>git merge [branch]</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Leitura recomendada:</strong> Pro Git (Scott Chacon) — disponível grátis em git-scm.com</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: GitHub Flow -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>GitHub Flow — Branching Strategy</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Estratégia simples focada em <strong>deploy contínuo</strong>, ideal para projetos com CI/CD.
+          </p>
+          <div class="flow-diagram">
+            <div class="flow-item blue">
+              <h4>1. main (produção)</h4>
+              <p style="font-size: 0.85em;">Sempre pronta para deploy</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item blue">
+              <h4>2. feature/[issue]</h4>
+              <p style="font-size: 0.85em;">Nova feature a partir de main</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item blue">
+              <h4>3. Pull Request (PR)</h4>
+              <p style="font-size: 0.85em;">Code review + testes automated</p>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-item blue">
+              <h4>4. Merge & Deploy</h4>
+              <p style="font-size: 0.85em;">Merge em main, CI/CD faz deploy</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card success">
+              <h4>Vantagens</h4>
+              <ul style="font-size: 0.85em;">
+                <li>Simples de entender</li>
+                <li>Deploy contínuo</li>
+                <li>Fácil code review</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Quando Usar</h4>
+              <ul style="font-size: 0.85em;">
+                <li>Deploys frequentes</li>
+                <li>Sem staging complexo</li>
+                <li>Equipes pequenas/médias</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Git Flow vs GitHub Flow -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Git Flow — Para Releases Planejados</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Estratégia mais complexa, ideal para <strong>versionamento semântico</strong> e <strong>releases planejadas</strong>.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Branches Git Flow</h4>
+              <ul style="font-size: 0.85em;">
+                <li><strong>main:</strong> Produção, versões</li>
+                <li><strong>develop:</strong> Integração contínua</li>
+                <li><strong>feature/:</strong> Feature nova</li>
+                <li><strong>release/:</strong> Prepare versão</li>
+                <li><strong>hotfix/:</strong> Bug crítico em prod</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Fluxo</h4>
+              <ul style="font-size: 0.85em;">
+                <li>Criar feature do develop</li>
+                <li>Merge em develop via PR</li>
+                <li>Criar release/X.Y.Z</li>
+                <li>Merge em main + develop</li>
+                <li>Tag versão no main</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout warning">
+            <p><strong>Para o Projeto:</strong> Usaremos <strong>GitHub Flow simplificado</strong> (mais prático) com branches: <strong>main, develop, feature/[issue]</strong></p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Conventional Commits -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Conventional Commits</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Padrão de mensagens de commit que facilita automatização e <strong>semantic versioning</strong>.
+          </p>
+          <div style="background: #f9f9f9; padding: 2em; border-radius: 8px; border-left: 4px solid #0066cc; margin-bottom: 1.5em;">
+            <h4 style="color: #0066cc; margin-top: 0;">Formato</h4>
+            <code style="font-size: 0.9em; background: #fff; padding: 1em; display: block; border-radius: 4px;">
+              &lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;<br/>
+              &lt;blank line&gt;<br/>
+              &lt;body&gt;<br/>
+              &lt;blank line&gt;<br/>
+              &lt;footer&gt;
+            </code>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Tipos Comuns</h4>
+              <ul style="font-size: 0.85em;">
+                <li><strong>feat:</strong> Nova feature</li>
+                <li><strong>fix:</strong> Bug fix</li>
+                <li><strong>docs:</strong> Documentação</li>
+                <li><strong>style:</strong> Formatação</li>
+                <li><strong>refactor:</strong> Refatoração</li>
+                <li><strong>test:</strong> Testes</li>
+                <li><strong>chore:</strong> Build, deps</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Exemplos Reais</h4>
+              <p style="font-size: 0.8em; margin: 0.3em 0;">feat(auth): add OAuth2 login</p>
+              <p style="font-size: 0.8em; margin: 0.3em 0;">fix(invoice): calculate tax correctly</p>
+              <p style="font-size: 0.8em; margin: 0.3em 0;">docs: update README with setup</p>
+              <p style="font-size: 0.8em; margin: 0.3em 0;">refactor(api): simplify response handling</p>
+              <p style="font-size: 0.8em; margin: 0.3em 0;">test: add unit tests for payment module</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Benefício:</strong> Com conventional commits, ferramentas como semantic-release geram automaticamente CHANGELOG e versionam releases.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Arquivos Importantes -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Arquivos Essenciais do Repositório</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>.gitignore</h4>
+              <p style="font-size: 0.9em; margin: 0;">Define arquivos/pastas ignorados por Git. Essencial para não commitar:</p>
+              <ul style="font-size: 0.8em; margin: 0.5em 0 0 0;">
+                <li>node_modules/</li>
+                <li>.env (variáveis sensíveis)</li>
+                <li>.DS_Store</li>
+                <li>dist/, build/</li>
+                <li>*.log</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>README.md</h4>
+              <p style="font-size: 0.9em; margin: 0;">Primeira documentação do projeto. Deve conter:</p>
+              <ul style="font-size: 0.8em; margin: 0.5em 0 0 0;">
+                <li>Descrição do projeto</li>
+                <li>Como instalar/rodar</li>
+                <li>Estrutura de pastas</li>
+                <li>Contribuição</li>
+                <li>Licença</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>LICENSE</h4>
+              <p style="font-size: 0.9em; margin: 0;">Licença do projeto. Comuns:</p>
+              <ul style="font-size: 0.8em; margin: 0.5em 0 0 0;">
+                <li>MIT: Livre com atribuição</li>
+                <li>Apache 2.0: Com patentes</li>
+                <li>GPL 3.0: Código aberto</li>
+              </ul>
+            </div>
+            <div class="concept-card info">
+              <h4>.env.example</h4>
+              <p style="font-size: 0.9em; margin: 0;">Modelo de variáveis de ambiente. Mostra quais env vars são necessárias sem expor valores.</p>
+              <code style="font-size: 0.75em; background: #f0f0f0; padding: 0.5em; display: block; margin-top: 0.5em;">DATABASE_URL=<br/>API_KEY=</code>
+            </div>
+          </div>
+          <div class="callout blue">
+            <p><strong>IMPORTANTE:</strong> Nunca commitar .env com valores reais. Sempre use .env.example ou secrets management.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Pull Requests e Code Review -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Pull Requests — Code Review</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            PR é o mecanismo de <strong>colaboração</strong> no GitHub: propor mudanças, revisar código e discutir.
+          </p>
+          <div class="flow-diagram">
+            <div class="flow-item blue">
+              <h4>1. Push Feature Branch</h4>
+              <p style="font-size: 0.85em;">git push origin feature/issue-123</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>2. Criar PR</h4>
+              <p style="font-size: 0.85em;">No GitHub, "Compare & Pull Request"</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>3. Code Review</h4>
+              <p style="font-size: 0.85em;">Outros revisam, comentam, sugerem</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>4. Merge & Delete</h4>
+              <p style="font-size: 0.85em;">Approva, merge em main, delete branch</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card success">
+              <h4>Template de PR</h4>
+              <ul style="font-size: 0.85em;">
+                <li>Descrição clara</li>
+                <li>Tipo (feature/fix/refactor)</li>
+                <li>Issue vinculada</li>
+                <li>Screenshot se UI</li>
+                <li>Teste manual feito?</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Boas Práticas</h4>
+              <ul style="font-size: 0.85em;">
+                <li>PRs pequenos (< 400 linhas)</li>
+                <li>Uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <li>Descrever por quê, não só o quê</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Branch Protection e CI/CD -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Branch Protection Rules</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Configurações para <strong>proteger main branch</strong> de merges inseguros.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Regras Recomendadas</h4>
+              <ul style="font-size: 0.85em;">
+                <li>✓ Require PR reviews</li>
+                <li>✓ Dismiss stale reviews</li>
+                <li>✓ Require status checks</li>
+                <li>✓ Require branches up to date</li>
+                <li>✓ Require code owner review</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Como Configurar</h4>
+              <ol style="font-size: 0.85em;">
+                <li>Repo → Settings</li>
+                <li>Branches</li>
+                <li>Add rule</li>
+                <li>Pattern: main</li>
+                <li>Enable required checks</li>
+              </ol>
+            </div>
+          </div>
+          <div style="background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #0066cc;">
+            <h4 style="color: #0066cc; margin-top: 0;">GitHub Actions — CI/CD Automático</h4>
+            <p style="font-size: 0.9em; margin: 0.5em 0;">Configurar workflow para rodar testes automaticamente em cada PR:</p>
+            <p style="font-size: 0.85em; margin: 0.5em 0; font-family: monospace;">.github/workflows/test.yml</p>
+            <p style="font-size: 0.85em; margin: 0;">Executa npm test, lint, build antes de permitir merge</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Atividade: Configuração de Repositório</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue" style="margin-bottom: 1.5em;">
+            <p style="margin: 0; font-size: 0.95em;">Cada grupo tem 90 minutos para configurar repositório e fazer primeiro PR.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+            <div class="exercise-task-card">
+              <h4>✅ Passo 1: Arquivos Base</h4>
+              <ul style="font-size: 0.9em;">
+                <li>README.md profissional</li>
+                <li>.gitignore apropriado</li>
+                <li>.env.example</li>
+                <li>LICENSE (MIT recomendado)</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 2: Branches</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Criar branch develop</li>
+                <li>Configurar main como default</li>
+                <li>Criar feature branch local</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 3: Branch Protection</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Settings → Branches</li>
+                <li>Proteger main</li>
+                <li>Require PR reviews</li>
+                <li>Require status checks</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 4: Primeiro PR</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Criar feature branch</li>
+                <li>Fazer um commit sample</li>
+                <li>Push e abrir PR</li>
+                <li>Review e merge</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Entrega Final -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega Final — Semana 05</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="delivery-box">
+            <h3>📋 Entrega 1 — Documento de Visão + Kanban + Repositório</h3>
+            <ul style="font-size: 0.95em;">
+              <li><strong>Documento de Visão completo</strong> (Canvas de negócio + Problema + Público + Proposta de valor)</li>
+              <li><strong>Documento de Requisitos</strong> (RF, RNF, Use Cases, priorização MoSCoW)</li>
+              <li><strong>Kanban configurado</strong> no GitHub Projects com 20+ user stories estimadas</li>
+              <li><strong>Repositório GitHub profissional</strong> com:</li>
+              <ul style="font-size: 0.9em;">
+                <li>README.md, LICENSE, .gitignore, .env.example</li>
+                <li>Branch protection rules ativadas (main)</li>
+                <li>Branches: main, develop, feature/[issue]</li>
+                <li>Primeiro PR realizado e mergeado</li>
+                <li>Conventional commits adotados</li>
+              </ul>
+            </ul>
+            <span class="platform">Google Classroom</span>
+            <span class="platform">GitHub</span>
+            <span class="deadline">📅 Prazo: 18/03 (Terça)</span>
+          </div>
+          <div style="margin-top: 2em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Checkpoint: Avaliação Consolidada</h4>
+            <ul style="font-size: 0.95em;">
+              <li>✓ Problema bem definido e validado</li>
+              <li>✓ Requisitos técnicos claros e mensuráveis</li>
+              <li>✓ Backlog pronto para desenvolvimento</li>
+              <li>✓ Repositório pronto com boas práticas de versionamento</li>
+              <li>✓ Documentação completa e profissional</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">05 – Versionamento com GitHub</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Encerramento -->
+      <section class="end-slide">
+        <div style="text-align: center; padding: 4em 2em;">
+          <h2 style="font-size: 2.5em; margin-bottom: 1em;">Pronto para Desenvolver!</h2>
+          <p style="font-size: 1.3em; margin-bottom: 2em; color: #666;">
+            Com visão clara, requisitos bem definidos e repositório profissional, você está pronto para começar a implementar.
+          </p>
+          <div style="background: #f0f0f0; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
+            <p style="font-size: 1.05em; margin: 0;"><strong>Próximas semanas:</strong> Desenvolvimento iterativo com checkpoints semanais</p>
+          </div>
+          <p style="font-size: 0.9em; color: #999;">
+            Projeto Integrador • ADS • 5º Semestre • UNINOVE 2026
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: false,
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

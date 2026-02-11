@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 13 – Modelagem de Dados: SQL (MySQL) | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .code-box { background: #2d2d2d; color: #f8f8f2; padding: 1.5rem; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75em; overflow-x: auto; margin: 1rem 0; line-height: 1.4; }
+    .er-table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin: 1rem 0; }
+    .er-table th, .er-table td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
+    .er-table th { background: #f5f5f5; font-weight: bold; }
+    .modeling-flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 13 – Modelagem de Dados: SQL (MySQL)</div>
+      </section>
+
+      <!-- SLIDE 3: Banco de Dados Relacional -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Banco de Dados Relacional</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Conceito:</strong> Dados organizados em tabelas (relações) com linhas e colunas</li>
+            <li><strong>Tabelas:</strong> Cada tabela representa uma entidade (usuários, pedidos, produtos)</li>
+            <li><strong>Colunas:</strong> Atributos/propriedades (id, nome, email, data_criacao)</li>
+            <li><strong>Linhas:</strong> Registros individuais (um usuário por linha)</li>
+            <li><strong>Chaves:</strong> Primária (identifica unicamente), Estrangeira (relaciona tabelas)</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 2rem;">
+          <div class="concept-card blue">
+            <strong>Vantagem:</strong> Integridade de dados
+          </div>
+          <div class="concept-card success">
+            <strong>Vantagem:</strong> Consultas complexas
+          </div>
+          <div class="concept-card warning">
+            <strong>Vantagem:</strong> ACID transactions
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Processo de Modelagem -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Processo: Conceitual → Lógica → Física</h2>
+        </div>
+        <div class="modeling-flow">
+          <div style="background: #e3f2fd; border: 2px solid #1976d2; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #1976d2;">1. Conceitual</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>O que? (entidades, relacionamentos)<br/>Sem implementação específica</small></p>
+          </div>
+          <div style="background: #f3e5f5; border: 2px solid #7b1fa2; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #7b1fa2;">2. Lógica</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>Como? (tabelas, colunas)<br/>Independente do BD</small></p>
+          </div>
+          <div style="background: #fff3e0; border: 2px solid #f57c00; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #f57c00;">3. Física</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>Onde? (MySQL, PostgreSQL)<br/>Específico da plataforma</small></p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Diagrama ER (Entity-Relationship) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Diagrama ER – Componentes</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Entidades:</strong> Retângulos representando objetos do mundo real (Usuário, Pedido)</li>
+            <li><strong>Atributos:</strong> Círculos/Elipses conectadas às entidades (nome, email, data)</li>
+            <li><strong>Chave Primária:</strong> Atributo sublinhado que identifica unicamente</li>
+            <li><strong>Relacionamentos:</strong> Losangos mostrando como as entidades se relacionam</li>
+            <li><strong>Cardinalidade:</strong> Notação indicando a multiplicidade (1:1, 1:N, N:N)</li>
+          </ul>
+        </div>
+        <div class="callout blue" style="margin-top: 2rem;">
+          <strong>Exemplo:</strong> Uma Pessoa pode ter vários Endereços (1:N), um Endereço pertence a uma Pessoa
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Tipos de Relacionamento -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Tipos de Relacionamento</h2>
+        </div>
+        <table class="er-table">
+          <tr>
+            <th>Tipo</th>
+            <th>Notação</th>
+            <th>Exemplo</th>
+          </tr>
+          <tr>
+            <td><strong>Um para Um (1:1)</strong></td>
+            <td>Pessoa — Documento</td>
+            <td>Uma pessoa tem um CPF único</td>
+          </tr>
+          <tr>
+            <td><strong>Um para Muitos (1:N)</strong></td>
+            <td>Pessoa —< Endereço</td>
+            <td>Uma pessoa pode ter vários endereços</td>
+          </tr>
+          <tr>
+            <td><strong>Muitos para Muitos (N:N)</strong></td>
+            <td>Aluno >—< Disciplina</td>
+            <td>Um aluno cursa várias disciplinas, e uma disciplina tem vários alunos</td>
+          </tr>
+        </table>
+        <div class="callout info" style="margin-top: 2rem; font-size: 0.9em;">
+          <strong>Nota:</strong> Relacionamentos N:N precisam de uma tabela de junção (tabela intermediária)
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Normalização (1FN, 2FN, 3FN) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Normalização de Dados</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>1ª Forma Normal (1FN):</strong> Dados atômicos (não repetir colunas), sem grupos repetitivos</li>
+            <li><strong>2ª Forma Normal (2FN):</strong> Atender 1FN + todos os atributos dependem da chave primária completa</li>
+            <li><strong>3ª Forma Normal (3FN):</strong> Atender 2FN + sem dependências transitivas entre atributos não-chave</li>
+            <li><strong>Objetivo:</strong> Reduzir redundância, melhorar integridade, evitar anomalias</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 1.5rem;">
+          <div class="concept-card blue">
+            <strong>Problema:</strong> Redundância
+          </div>
+          <div class="concept-card success">
+            <strong>Solução:</strong> Normalização
+          </div>
+          <div class="concept-card warning">
+            <strong>Resultado:</strong> Integridade
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Chaves e Índices -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Chaves e Índices</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Chave Primária (PK):</strong> Identifica unicamente cada registro. Não pode ser NULL. Uma por tabela.</li>
+            <li><strong>Chave Estrangeira (FK):</strong> Referencia a chave primária de outra tabela. Mantém integridade relacional.</li>
+            <li><strong>Chave Única (UNIQUE):</strong> Garante unicidade, mas permite NULL. Múltiplas possíveis por tabela.</li>
+            <li><strong>Índice:</strong> Estrutura de dados para acelerar buscas. Deve ser usado em colunas frequentemente consultadas.</li>
+          </ul>
+        </div>
+        <div class="callout warning" style="margin-top: 1.5rem;">
+          <strong>Atenção:</strong> Cada índice usa espaço e lentifica inserts/updates. Use com moderação!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: DDL - Criar Tabelas -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>DDL: CREATE TABLE</h2>
+        </div>
+        <div class="code-box">
+CREATE TABLE usuarios (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  nome VARCHAR(100) NOT NULL,
+  data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  ativo BOOLEAN DEFAULT TRUE,
+  INDEX idx_email (email)
+);
+
+CREATE TABLE pedidos (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  usuario_id INT NOT NULL,
+  total DECIMAL(10,2) NOT NULL,
+  status ENUM('pendente', 'confirmado', 'entregue'),
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    ON DELETE CASCADE
+);
+        </div>
+        <p style="font-size: 0.85em;">Tipos: INT, VARCHAR, DECIMAL, TIMESTAMP, BOOLEAN, ENUM, TEXT, JSON</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exemplo SaaS - Modelagem -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: SaaS com Multi-Tenancy</h2>
+        </div>
+        <div class="code-box">
+CREATE TABLE tenants (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  plano ENUM('free', 'pro', 'enterprise')
+);
+
+CREATE TABLE usuarios (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  tenant_id INT NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  FOREIGN KEY (tenant_id) REFERENCES tenants(id),
+  UNIQUE KEY uk_tenant_email (tenant_id, email)
+);
+
+CREATE TABLE projetos (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  tenant_id INT NOT NULL,
+  nome VARCHAR(100),
+  FOREIGN KEY (tenant_id) REFERENCES tenants(id)
+);
+        </div>
+        <div class="callout info" style="margin-top: 1rem; font-size: 0.85em;">
+          <strong>Multi-tenant:</strong> Cada tabela deve ter tenant_id para isolar dados de clientes diferentes
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz – Modelagem SQL</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual forma normal elimina dependências transitivas entre atributos não-chave?</strong></p>
+          </div>
+          <div class="quiz-options">
+            <ul>
+              <li data-correct="false"><span class="option-letter">A)</span> 1ª Forma Normal</li>
+              <li data-correct="false"><span class="option-letter">B)</span> 2ª Forma Normal</li>
+              <li data-correct="true"><span class="option-letter">C)</span> 3ª Forma Normal</li>
+              <li data-correct="false"><span class="option-letter">D)</span> 4ª Forma Normal</li>
+            </ul>
+          </div>
+          <div class="quiz-feedback" data-correct-msg="Correto! A 3FN remove dependências transitivas, garantindo maior integridade." data-incorrect-msg="Incorreto. Tente novamente! Qual forma trata dependências transitivas?"></div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício Prático</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Tarefa: Modelar Banco de Dados do Projeto</h3>
+          <p>Crie o modelo ER e o script DDL para o banco MySQL do seu projeto integrador.</p>
+          <div class="exercise-steps">
+            <ol style="font-size: 0.9em;">
+              <li><strong>Diagrama ER:</strong> Identifique as principais entidades, atributos e relacionamentos</li>
+              <li><strong>Normalização:</strong> Garanta que o modelo siga pelo menos até 3FN</li>
+              <li><strong>Multi-tenant:</strong> Se aplicável, inclua tenant_id nas tabelas</li>
+              <li><strong>Script DDL:</strong> Escreva CREATE TABLE para todas as entidades com tipos, constraints, índices</li>
+              <li><strong>Documentação:</strong> Descreva brevemente cada tabela e relacionamento</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Resumo -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Resumo da Aula</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>ER Diagram</strong><br/>Modelagem conceitual
+          </div>
+          <div class="concept-card success">
+            <strong>Normalização</strong><br/>Integridade de dados
+          </div>
+          <div class="concept-card info">
+            <strong>DDL & SQL</strong><br/>Implementação no BD
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Próxima aula:</strong> NoSQL (MongoDB, Redis) e Arquitetura Poliglota
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">13 – Semana 13</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

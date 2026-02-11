@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 16 – Documentação de APIs | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 16 – Documentação de APIs (Swagger / Postman / Insomnia)</div>
+      </section>
+
+      <!-- SLIDE 3: O que é uma API? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é uma API?</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>API (Application Programming Interface)</strong>
+            <p>Conjunto de regras que permite que diferentes softwares se comuniquem entre si.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>REST (Representational State Transfer)</strong>
+            <p>Arquitetura que usa HTTP para operações em recursos identificados por URLs.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Endpoints</strong>
+            <p>URLs específicas que representam recursos ou ações dentro da API.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Métodos HTTP</strong>
+            <p>GET (ler), POST (criar), PUT (atualizar), DELETE (deletar), PATCH (atualização parcial).</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: OpenAPI Specification -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>OpenAPI Specification (OAS)</h2>
+        </div>
+        <div class="side-by-side">
+          <div class="side">
+            <h3>O que é?</h3>
+            <ul class="styled-list">
+              <li>Padrão aberto para descrever APIs REST</li>
+              <li>Baseado em Swagger 2.0 (agora OpenAPI 3.x)</li>
+              <li>Linguagem independente</li>
+              <li>Formatos: YAML ou JSON</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h3>Estrutura Principal</h3>
+            <ul class="styled-list">
+              <li><code>openapi</code>: versão da especificação</li>
+              <li><code>info</code>: título, descrição, versão</li>
+              <li><code>paths</code>: endpoints e operações</li>
+              <li><code>components</code>: schemas e respostas reutilizáveis</li>
+              <li><code>servers</code>: URLs dos ambientes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Swagger Tooling -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Ferramentas Swagger / OpenAPI</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Swagger Editor</strong>
+            <p>Editor online para escrever e validar especificação OpenAPI com preview em tempo real.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Swagger UI</strong>
+            <p>Interface interativa que gera documentação HTML automática a partir do OpenAPI.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Swagger Codegen</strong>
+            <p>Gera clientes SDK e servidores a partir da especificação.</p>
+          </div>
+        </div>
+        <div class="callout success">
+          <strong>💡 Dica:</strong> Use swagger.io/tools para acessar todas as ferramentas.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Estrutura de um documento OpenAPI -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estrutura OpenAPI: Paths e Schemas</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Paths (Endpoints):</strong>
+          <ul>
+            <li><code>/usuarios</code> – GET (listar), POST (criar)</li>
+            <li><code>/usuarios/{id}</code> – GET (detalhes), PUT (atualizar), DELETE (deletar)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Schemas (Modelos de Dados):</strong>
+          <ul>
+            <li>Definem a estrutura de requisições e respostas (JSON Schema)</li>
+            <li>Tipos: string, integer, boolean, array, object</li>
+            <li>Validações: required, minLength, maxLength, pattern, enum</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Parameters:</strong>
+          <ul>
+            <li>Query: <code>?page=1&limit=10</code></li>
+            <li>Path: <code>/usuarios/{id}</code></li>
+            <li>Header: <code>Authorization: Bearer token</code></li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Status Codes HTTP -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Status Codes HTTP Essenciais</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card success">
+            <strong>200 OK</strong>
+            <p>Requisição bem-sucedida. Usado para GET, PUT.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>201 Created</strong>
+            <p>Recurso criado com sucesso. Usado para POST.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>400 Bad Request</strong>
+            <p>Requisição inválida (parâmetros incorretos).</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>401 Unauthorized</strong>
+            <p>Autenticação necessária ou falhada.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>403 Forbidden</strong>
+            <p>Autenticado mas sem permissão de acesso.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>404 Not Found</strong>
+            <p>Recurso não existe.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>500 Server Error</strong>
+            <p>Erro interno do servidor.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Postman -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Postman: Cliente HTTP & Testes</h2>
+        </div>
+        <div class="side-by-side">
+          <div class="side">
+            <h3>Recursos Principais</h3>
+            <ul class="styled-list">
+              <li><strong>Collections:</strong> Grupos de requisições organizadas</li>
+              <li><strong>Environments:</strong> Variáveis por ambiente (dev, staging, prod)</li>
+              <li><strong>Variables:</strong> {{token}}, {{baseUrl}}, etc</li>
+              <li><strong>Tests:</strong> Scripts para validar respostas</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h3>Workflow Típico</h3>
+            <ol class="styled-list">
+              <li>Importar OpenAPI/Swagger</li>
+              <li>Configurar environment</li>
+              <li>Adicionar autenticação (Bearer token)</li>
+              <li>Executar e testar endpoints</li>
+              <li>Gerar documentação automática</li>
+              <li>Compartilhar collection com time</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Insomnia -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Insomnia: Alternativa Leve e Rápida</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Workspace</strong>
+            <p>Organiza projetos e colaboração em equipe.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Requests</strong>
+            <p>HTTP, GraphQL, gRPC. Variáveis de ambiente nativas.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Environments</strong>
+            <p>Gerenciar múltiplos ambientes (dev, prod) com seleção rápida.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Design & Testing</strong>
+            <p>Importar OpenAPI, testar e documentar APIs simultaneamente.</p>
+          </div>
+        </div>
+        <div class="callout blue">
+          <strong>📌 Diferencial:</strong> Interface mais limpa e rápida que Postman. Ótimo para prototipagem.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Boas Práticas API Design -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Boas Práticas de API Design</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Versionamento:</strong>
+          <ul>
+            <li>URL: <code>/api/v1/usuarios</code> ou Header: <code>Accept: application/vnd.api+json;version=1</code></li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Paginação:</strong>
+          <ul>
+            <li><code>?page=1&limit=20&offset=0</code> – Cursor-based ou offset-based</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Filtros & Busca:</strong>
+          <ul>
+            <li><code>?status=ativo&categoria=produto&search=termo</code></li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>HATEOAS (Hypermedia As The Engine Of Application State):</strong>
+          <ul>
+            <li>Respostas incluem links para ações relacionadas: <code>"_links": {"self": "/api/v1/usuarios/123"}</code></li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Rate Limiting & Throttling:</strong>
+          <ul>
+            <li>Headers: <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code></li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Documentação de APIs</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual é o status HTTP para um recurso criado com sucesso?</strong></p>
+            <div class="quiz-options">
+              <ul>
+                <li data-correct="false"><span class="option-letter">A</span> 200 OK</li>
+                <li data-correct="true"><span class="option-letter">B</span> 201 Created</li>
+                <li data-correct="false"><span class="option-letter">C</span> 202 Accepted</li>
+                <li data-correct="false"><span class="option-letter">D</span> 204 No Content</li>
+              </ul>
+            </div>
+            <div class="quiz-feedback" data-correct-msg="✓ Correto! 201 Created é o status padrão para recursos criados." data-incorrect-msg="✗ Incorreto. 201 Created é usado quando um recurso é criado com sucesso."></div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Exercício -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício Prático</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Documentar APIs do Projeto</h3>
+          <p>Usando as ferramentas aprendidas, vocês irão:</p>
+          <div class="exercise-steps">
+            <ol>
+              <li>Listar todos os endpoints da sua aplicação (GET, POST, PUT, DELETE)</li>
+              <li>Criar especificação OpenAPI 3.0 (YAML) dos endpoints</li>
+              <li>Documentar schemas de requisição e resposta</li>
+              <li>Incluir todos os status codes esperados</li>
+              <li>Importar a especificação no Postman ou Insomnia</li>
+              <li>Testar todos os endpoints com dados reais</li>
+              <li>Gerar collection Postman com environment configurado</li>
+              <li>Documentar instruções de como usar a API no README</li>
+            </ol>
+          </div>
+          <p><strong>Entrega:</strong> Arquivo <code>openapi.yaml</code> + collection Postman (.json) no repositório</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">16 – Documentação de APIs</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Encerramento -->
+      <section class="end-slide">
+        <h2>Obrigado!</h2>
+        <p>Prof. José Romualdo da Costa Filho</p>
+        <p>UNINOVE 2026</p>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

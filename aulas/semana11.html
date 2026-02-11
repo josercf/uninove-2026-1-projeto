@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 11 – Modelagem C4: Context & Container | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .c4-diagram { background: #f5f5f5; padding: 2rem; border-radius: 8px; margin: 1rem 0; }
+    .c4-box { background: #e1f5ff; border-left: 4px solid #0288d1; padding: 1rem; margin: 0.5rem 0; }
+    .context-example { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 11 – Modelagem C4: Context & Container</div>
+      </section>
+
+      <!-- SLIDE 3: Introdução ao Modelo C4 -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O Modelo C4</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Criador:</strong> Simon Brown (2006)
+          </div>
+          <div class="concept-card success">
+            <strong>Propósito:</strong> Documentar arquitetura de software
+          </div>
+          <div class="concept-card info">
+            <strong>Linguagem Visual:</strong> Notação padronizada e intuitiva
+          </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.95em;">O modelo C4 utiliza <strong>4 níveis de abstração</strong> para descrever uma arquitetura de software, permitindo que diferentes stakeholders (produto, desenvolvimento, negócio) entendam o sistema em diferentes profundidades.</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Os 4 Níveis do C4 -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Os 4 Níveis do Modelo C4</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>1. Context (Contexto):</strong> Sistema, usuários, sistemas externos e integrações de alto nível</li>
+            <li><strong>2. Container (Contêiner):</strong> Aplicações, bases de dados, filas, APIs internas da solução</li>
+            <li><strong>3. Component (Componente):</strong> Estrutura interna de cada contêiner, módulos principais</li>
+            <li><strong>4. Code (Código):</strong> Classes, interfaces, métodos (rarely drawn, usually in code)</li>
+          </ul>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Dica:</strong> Comece sempre pelo nível 1. Não tente documentar tudo em um único diagrama!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Context Diagram (Nível 1) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Nível 1 – Context Diagram</h2>
+        </div>
+        <div class="c4-box">
+          <strong>Objetivo:</strong> Mostrar o sistema e suas relações com usuários e sistemas externos
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Sistema (centro):</strong> Caixa representando seu software</li>
+            <li><strong>Atores/Usuários:</strong> Pessoas que usam o sistema</li>
+            <li><strong>Sistemas Externos:</strong> APIs, bancos de dados compartilhados, serviços terceiros</li>
+            <li><strong>Setas:</strong> Relacionamentos e fluxos de dados</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 1.5rem;">
+          <div class="concept-card warning">
+            <strong>Escala:</strong> Uma página máximo
+          </div>
+          <div class="concept-card info">
+            <strong>Público:</strong> Todos na organização
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Como Desenhar Context Diagram -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Elementos do Context Diagram</h2>
+        </div>
+        <div class="context-example">
+          <div>
+            <h4 style="color: #d32f2f;">Notação Padrão</h4>
+            <ul style="font-size: 0.85em;">
+              <li><strong>□</strong> = Software/Sistema</li>
+              <li><strong>○</strong> = Pessoa/Usuário</li>
+              <li><strong>□□</strong> = Sistema Externo</li>
+              <li><strong>→</strong> = Interação/Fluxo</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: #0288d1;">Boas Práticas</h4>
+            <ul style="font-size: 0.85em;">
+              <li>Máximo 5-10 elementos</li>
+              <li>Descreva brevemente as integrações</li>
+              <li>Evite detalhes técnicos</li>
+              <li>Foco em responsabilidades</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Container Diagram (Nível 2) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Nível 2 – Container Diagram</h2>
+        </div>
+        <div class="c4-box">
+          <strong>Objetivo:</strong> Descompor o sistema em contêineres de software (aplicações, BDs, filas, etc.)
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Web App</strong><br/>Frontend SPA (React, Vue)
+          </div>
+          <div class="concept-card blue">
+            <strong>API</strong><br/>Backend (Node, Java, Python)
+          </div>
+          <div class="concept-card success">
+            <strong>Database</strong><br/>MySQL, PostgreSQL
+          </div>
+          <div class="concept-card warning">
+            <strong>Cache</strong><br/>Redis, Memcached
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9em;">Cada contêiner é uma <strong>unidade executável separada</strong> que pode ser desenvolvida, testada e deployada independentemente.</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Tecnologias no Container Diagram -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Tecnologias por Tipo de Container</h2>
+        </div>
+        <div style="font-size: 0.9em;">
+          <div class="styled-list">
+            <ul>
+              <li><strong>Web Container:</strong> React, Vue, Angular, Next.js, Svelte</li>
+              <li><strong>API Container:</strong> Node.js (Express), Java (Spring Boot), Python (Django/FastAPI), Go (Gin)</li>
+              <li><strong>Database Container:</strong> MySQL, PostgreSQL, MongoDB, Oracle</li>
+              <li><strong>Message Broker:</strong> RabbitMQ, Apache Kafka, AWS SQS</li>
+              <li><strong>Cache Container:</strong> Redis, Memcached, Varnish</li>
+              <li><strong>Search:</strong> Elasticsearch, Solr</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout info" style="margin-top: 2rem;">
+          <strong>Importante:</strong> Especifique a tecnologia em cada contêiner para facilitar decisões arquiteturais
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Exemplo SaaS -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Plataforma SaaS de Gestão</h2>
+        </div>
+        <div class="c4-diagram">
+          <strong style="display: block; margin-bottom: 1rem;">Context Level:</strong>
+          <div style="background: white; padding: 1rem; border-radius: 4px; border: 2px solid #0288d1; text-align: center; font-weight: bold;">
+            Sistema de Gestão SaaS
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85em;">
+            <div style="text-align: center;">👤 Gerente de Projeto</div>
+            <div style="text-align: center;">👤 Desenvolvedor</div>
+            <div style="text-align: center;">🔗 Gmail API</div>
+            <div style="text-align: center;">🔗 Stripe</div>
+          </div>
+        </div>
+        <div class="c4-diagram" style="margin-top: 1.5rem;">
+          <strong style="display: block; margin-bottom: 1rem;">Container Level:</strong>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; font-size: 0.85em;">
+            <div style="background: #e3f2fd; border: 2px solid #1976d2; padding: 1rem; border-radius: 4px; text-align: center;">
+              <strong>React App</strong><br/>Browser
+            </div>
+            <div style="background: #f3e5f5; border: 2px solid #7b1fa2; padding: 1rem; border-radius: 4px; text-align: center;">
+              <strong>Node.js API</strong><br/>REST/GraphQL
+            </div>
+            <div style="background: #fff3e0; border: 2px solid #f57c00; padding: 1rem; border-radius: 4px; text-align: center;">
+              <strong>PostgreSQL</strong><br/>Database
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz – Niveis do C4</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual nível do C4 mostra a estrutura interna de cada contêiner (Web App, API, BD)?</strong></p>
+          </div>
+          <div class="quiz-options">
+            <ul>
+              <li data-correct="false"><span class="option-letter">A)</span> Context Diagram</li>
+              <li data-correct="false"><span class="option-letter">B)</span> Container Diagram</li>
+              <li data-correct="true"><span class="option-letter">C)</span> Component Diagram</li>
+              <li data-correct="false"><span class="option-letter">D)</span> Code Diagram</li>
+            </ul>
+          </div>
+          <div class="quiz-feedback" data-correct-msg="Correto! O Component Diagram decompõe cada contêiner em seus componentes principais." data-incorrect-msg="Incorreto. Tente novamente! Dica: pense em qual nível entra no detalhe técnico de cada aplicação."></div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício Prático</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Tarefa: Modelar seu Projeto em C4</h3>
+          <p>Em grupo, crie os diagramas Context e Container do sistema que estão desenvolvendo para o Projeto Integrador.</p>
+          <div class="exercise-steps">
+            <ol style="font-size: 0.9em;">
+              <li><strong>Context Diagram:</strong> Identifique os usuários principais, o sistema central e os sistemas externos que ele se integra</li>
+              <li><strong>Container Diagram:</strong> Decomponha o sistema em aplicações, bancos de dados, filas, cache, etc.</li>
+              <li><strong>Especifique tecnologias:</strong> Para cada contêiner, indique qual stack tecnológico será usado</li>
+              <li><strong>Documente fluxos:</strong> Para cada seta, descreva brevemente o tipo de comunicação (REST, gRPC, eventos, etc.)</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Resumo e Próximos Passos -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Resumo da Aula</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Context Diagram</strong><br/>Visão de alto nível
+          </div>
+          <div class="concept-card success">
+            <strong>Container Diagram</strong><br/>Descomposição técnica
+          </div>
+          <div class="concept-card info">
+            <strong>Próxima aula:</strong><br/>Component + Diagram as Code
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Entrega esperada:</strong> Próxima semana, trazer os diagramas C4 em qualidade para apresentação
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">11 – Semana 11</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 18 – Checkpoint 2 | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 18 – Checkpoint 2: Validação Técnica</div>
+      </section>
+
+      <!-- SLIDE 3: O que é esperado? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é Checkpoint 2?</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Objetivo Principal</strong>
+            <p>Validar que a arquitetura técnica foi bem planejada e implementada.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Foco Técnico</strong>
+            <p>Código funcionando, APIs documentadas, padrões de projeto implementados.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Demonstração Prática</strong>
+            <p>Rodar a aplicação ao vivo, testar endpoints, mostrar o código.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Preparação para Final</strong>
+            <p>Feedback para melhorias antes da apresentação final (Semana 20).</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Roteiro de Apresentação -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Roteiro: Como Apresentar</h2>
+        </div>
+        <div class="flow-diagram">
+          <div class="flow-item red">
+            <strong>1. Arquitetura C4</strong>
+            <p>Diagrama de sistema, containers, componentes</p>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-item blue">
+            <strong>2. Modelo de Dados</strong>
+            <p>ER diagram, tabelas, relacionamentos</p>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-item light">
+            <strong>3. APIs</strong>
+            <p>Endpoints documentados, OpenAPI, testar ao vivo</p>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-item red">
+            <strong>4. Padrões & IA</strong>
+            <p>Design patterns, feature de IA, testes</p>
+          </div>
+        </div>
+        <div class="callout blue">
+          <strong>💡 Dica:</strong> Use o tempo para mostrar código e demonstrar funcionamento real, não slides.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Arquitetura C4 -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>C4 Model: Estrutura de Arquitetura</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Nível 1 – System Context:</strong>
+          <ul>
+            <li>Visão de 30.000 pés: Sua app + usuários + sistemas externos</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Nível 2 – Container Diagram:</strong>
+          <ul>
+            <li>Backend, Frontend, Database, APIs externas, Message Queues</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Nível 3 – Component Diagram:</strong>
+          <ul>
+            <li>Controllers, Services, Repositories, Models dentro de cada container</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Nível 4 – Code:</strong>
+          <ul>
+            <li>Classes, métodos, funções (geralmente não se mostra em apresentação)</li>
+          </ul>
+        </div>
+        <div class="callout success">
+          <strong>✓ Ferramentas:</strong> Draw.io, Miro, PlantUML, ou Lucidchart. Use templates do C4.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Modelo de Dados -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Modelo de Dados: Checklist</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Diagrama ER (Entity-Relationship):</strong>
+          <ul>
+            <li>Todas as entidades (tabelas) mapeadas</li>
+            <li>Chaves primárias e estrangeiras claras</li>
+            <li>Relacionamentos (1:1, 1:N, N:N) bem definidos</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Normalização:</strong>
+          <ul>
+            <li>Minimizar redundância, evitar anomalias de atualização</li>
+            <li>Até 3ª Forma Normal (3NF) é aceitável para projeto</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Índices & Performance:</strong>
+          <ul>
+            <li>Índices em chaves primárias, estrangeiras e campos de busca frequente</li>
+            <li>Documented em apresentação</li>
+          </ul>
+        </div>
+        <div class="callout warning">
+          <strong>⚠️ Cuidado:</strong> Não esqueça de campos audit: created_at, updated_at, deleted_at (soft delete).
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: APIs & Documentação -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>APIs: Demonstração Prática</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Esperado:</strong>
+          <ul>
+            <li>OpenAPI spec (YAML/JSON) completo e atualizado</li>
+            <li>Endpoints principais funcionando e testáveis</li>
+            <li>Autenticação implementada (JWT, OAuth, etc)</li>
+            <li>Tratamento de erros com status codes corretos</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Demonstração:</strong>
+          <ul>
+            <li>Usar Postman/Insomnia para testar endpoints ao vivo</li>
+            <li>Mostrar request e response reais</li>
+            <li>Mencionar rate limiting, paginação, validação</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Documentação:</strong>
+          <ul>
+            <li>README com instruções de setup, instalação de dependências</li>
+            <li>Como rodar em local e em container (Docker)</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Padrões de Projeto -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Padrões de Projeto Implementados</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>MVC / Clean Architecture</strong>
+            <p>Separação clara de Model, View, Controller ou Entities, Use Cases, Controllers.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Repository Pattern</strong>
+            <p>Abstração de acesso a dados, facilita testes e mudança de BD.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Dependency Injection</strong>
+            <p>Injeção de dependências via constructor, evita acoplamento.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Factory / Strategy</strong>
+            <p>Factory para criação de objetos, Strategy para comportamentos alteráveis.</p>
+          </div>
+        </div>
+        <div class="callout blue">
+          <strong>💡 Mencionem:</strong> Qual padrão foi usado, em qual layer, e por quê.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Feature de IA -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Feature de IA: Implementação</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Esperado:</strong>
+          <ul>
+            <li>Funcionalidade de IA integrada na aplicação (chatbot, recomendação, etc)</li>
+            <li>Integração com API externa (OpenAI, Claude, Gemini)</li>
+            <li>Tratamento de erros e timeout da IA</li>
+            <li>Logging de interações (para análise e custo)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Demonstração:</strong>
+          <ul>
+            <li>Mostrar conversação do chatbot ou output de IA ao vivo</li>
+            <li>Explicar prompt engineering usado</li>
+            <li>Mencionar custo estimado por mês</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Testes:</strong>
+          <ul>
+            <li>Testes unitários de funções de IA (mocking da API)</li>
+            <li>Testes de integração se possível</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Critérios de Avaliação -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Rubrica: Como Serão Avaliados</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Arquitetura (25%):</strong>
+          <ul>
+            <li>C4 bem estruturado, decisões justificadas, patterns apropriados</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Implementação Técnica (30%):</strong>
+          <ul>
+            <li>Código limpo, escalável, APIs funcionando, testes, documentação</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Feature de IA (20%):</strong>
+          <ul>
+            <li>Implementação criativa e útil, integração bem-feita</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Apresentação (15%):</strong>
+          <ul>
+            <li>Clareza, timing (15 min), demonstração prática, respostas às perguntas</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Trabalho em Equipe (10%):</strong>
+          <ul>
+            <li>Distribuição de tarefas clara, todos contribuíram, repositório organizado</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Formato e Agenda -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Formato da Apresentação</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Vídeo de 10-12 minutos:</strong> Gravação da apresentação do Checkpoint 2 (código, demo, arquitetura)
+          </div>
+          <div class="timeline-item">
+            <strong>Upload no Google Classroom:</strong> Até data limite (02 de Junho)
+          </div>
+          <div class="timeline-item">
+            <strong>Feedback do Professor:</strong> Análise detalhada e rubrica em até 5 dias úteis
+          </div>
+        </div>
+        <div class="styled-list">
+          <strong>Ordem de Apresentação:</strong>
+          <ul>
+            <li>Será definida em sala (sorteio ou ordem de inscrição)</li>
+            <li>Todos devem estar presentes durante as outras apresentações</li>
+          </ul>
+        </div>
+        <div class="callout success">
+          <strong>✓ Feedback Cruzado:</strong> Grupos farão perguntas construtivas uns aos outros (10% de nota participação).
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Delivery -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega 4: Checkpoint 2 em Vídeo</h2>
+        </div>
+        <div class="delivery-box">
+          <h3>O que deve estar pronto:</h3>
+          <ul class="styled-list">
+            <li><strong>Code no GitHub:</strong> Backend + Frontend versionado, completo e funcional</li>
+            <li><strong>Documentação:</strong> README, API docs, diagramas (C4, ER)</li>
+            <li><strong>Testes:</strong> Unit tests, integration tests</li>
+            <li><strong>Docker:</strong> Dockerfile + docker-compose.yml para rodar em containers</li>
+            <li><strong>OpenAPI:</strong> Arquivo openapi.yaml documentado</li>
+            <li><strong>Feature IA:</strong> Código + documentação de funcionamento</li>
+            <li><strong>Vídeo de 10-12 minutos:</strong> Gravação do Checkpoint 2, upload no Google Classroom</li>
+          </ul>
+          <div class="platform">
+            <strong>Plataforma de Entrega:</strong> GitHub + Google Classroom (vídeo)
+          </div>
+          <div class="deadline">
+            <strong>Prazo Vídeo:</strong> 02 de Junho, 23:59
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">18 – Checkpoint 2</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Encerramento -->
+      <section class="end-slide">
+        <h2>Obrigado!</h2>
+        <p>Prof. José Romualdo da Costa Filho</p>
+        <p>UNINOVE 2026</p>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

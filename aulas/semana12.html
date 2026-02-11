@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 12 – Modelagem C4: Component + Diagram as Code | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .code-box { background: #2d2d2d; color: #f8f8f2; padding: 1.5rem; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.8em; overflow-x: auto; margin: 1rem 0; }
+    .tool-card { border: 2px solid #0288d1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    .tool-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 12 – Modelagem C4: Component + Diagram as Code</div>
+      </section>
+
+      <!-- SLIDE 3: Component Diagram (Nível 3) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Nível 3 – Component Diagram</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Objetivo:</strong> Decompor cada contêiner em seus componentes principais</li>
+            <li><strong>Escopo:</strong> Mostra a estrutura interna de uma aplicação ou API</li>
+            <li><strong>Granularidade:</strong> Camadas, módulos, packages principais</li>
+            <li><strong>Responsabilidades:</strong> Cada componente tem um propósito bem definido</li>
+            <li><strong>Comunicação:</strong> Interfaces entre componentes, dependências</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 2rem;">
+          <div class="concept-card blue">
+            <strong>Público:</strong> Arquitetos e Desenvolvedores
+          </div>
+          <div class="concept-card warning">
+            <strong>Frequência:</strong> Menos comum que Context/Container
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Exemplo de Component Diagram -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: API Backend</h2>
+        </div>
+        <div style="background: #f5f5f5; padding: 2rem; border-radius: 8px; font-size: 0.85em;">
+          <div style="text-align: center; font-weight: bold; margin-bottom: 1.5rem;">API Container (Node.js)</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div style="background: #e3f2fd; border: 2px solid #1976d2; padding: 1rem; border-radius: 4px;">
+              <strong>Controllers</strong><br/>
+              <small>Endpoints HTTP</small>
+            </div>
+            <div style="background: #f3e5f5; border: 2px solid #7b1fa2; padding: 1rem; border-radius: 4px;">
+              <strong>Services</strong><br/>
+              <small>Lógica de negócio</small>
+            </div>
+            <div style="background: #fff3e0; border: 2px solid #f57c00; padding: 1rem; border-radius: 4px;">
+              <strong>Repositories</strong><br/>
+              <small>Acesso a dados</small>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div style="background: #e8f5e9; border: 2px solid #388e3c; padding: 1rem; border-radius: 4px;">
+              <strong>Middlewares</strong><br/>
+              <small>Auth, Logging</small>
+            </div>
+            <div style="background: #fce4ec; border: 2px solid #c2185b; padding: 1rem; border-radius: 4px;">
+              <strong>Utils</strong><br/>
+              <small>Helpers, Validators</small>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Code Level (Nível 4) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Nível 4 – Code Diagram</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Raramente desenhado:</strong> Geralmente representado diretamente no código</li>
+            <li><strong>Classes, Interfaces e Métodos:</strong> Detalhamento máximo</li>
+            <li><strong>UML Class Diagram:</strong> Usa a notação UML para representar estruturas de classes</li>
+            <li><strong>Quando usar:</strong> Documentação de bibliotecas, frameworks ou código crítico</li>
+          </ul>
+        </div>
+        <div class="callout blue" style="margin-top: 2rem;">
+          <strong>Recomendação:</strong> Para a maioria dos projetos, parar no nível de Components é suficiente
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Diagram as Code -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é Diagram as Code?</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Definição:</strong> Diagramas descritos em código/texto
+          </div>
+          <div class="concept-card success">
+            <strong>Vantagem 1:</strong> Versionamento com Git
+          </div>
+          <div class="concept-card info">
+            <strong>Vantagem 2:</strong> Code review de arquitetura
+          </div>
+          <div class="concept-card warning">
+            <strong>Vantagem 3:</strong> Automação e CI/CD
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Benefício chave:</strong> A arquitetura vive junto com o código, sincronizada e atualizada
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Ferramentas Diagram as Code -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Ferramentas Principais</h2>
+        </div>
+        <div class="tool-comparison">
+          <div>
+            <div class="tool-card">
+              <strong>Mermaid</strong><br/>
+              <small>Simples, integrado no GitHub, gratuito</small>
+            </div>
+            <div class="tool-card">
+              <strong>PlantUML</strong><br/>
+              <small>Poderoso, múltiplas notações (UML, C4, Er)</small>
+            </div>
+          </div>
+          <div>
+            <div class="tool-card">
+              <strong>Structurizr DSL</strong><br/>
+              <small>C4 nativo, sem código</small>
+            </div>
+            <div class="tool-card">
+              <strong>D2</strong><br/>
+              <small>Moderno, sintaxe limpa, visuais</small>
+            </div>
+          </div>
+        </div>
+        <div class="callout info" style="margin-top: 1.5rem; font-size: 0.9em;">
+          <strong>Para este projeto:</strong> Recomendamos <strong>Mermaid</strong> (fácil, integrado) ou <strong>PlantUML</strong> (robusto)
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Structurizr DSL Sintaxe -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Structurizr DSL – Sintaxe Básica</h2>
+        </div>
+        <div class="code-box">
+workspace "Sistema SaaS" "Descrição" {
+  model {
+    user = person "Usuário" "Um usuário do sistema"
+    system = softwareSystem "Sistema" "Descrição"
+    user -> system "Usa"
+
+    system {
+      api = container "API" "REST API" "Node.js"
+      db = container "Database" "Dados" "PostgreSQL"
+      api -> db "Lê/Escreve"
+    }
+  }
+}
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Elementos:</strong> workspace, model, person, softwareSystem, container, component</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Mermaid Example -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Mermaid – Exemplo C4</h2>
+        </div>
+        <div class="code-box">
+graph LR
+    U["👤 Usuário"]
+    U -->|Acessa| WEB["🌐 Web App<br/>React"]
+    WEB -->|API REST| API["⚙️ API<br/>Node.js"]
+    API -->|Query| DB["💾 Database<br/>PostgreSQL"]
+    API -->|Cache| REDIS["⚡ Redis<br/>Cache"]
+
+    style WEB fill:#e3f2fd
+    style API fill:#f3e5f5
+    style DB fill:#fff3e0
+    style REDIS fill:#e8f5e9
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Vantagem:</strong> Suporta GitHub preview nativamente</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Integração com GitHub -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Diagramas no GitHub</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Mermaid:</strong> Nativo no README.md e Pull Requests</li>
+            <li><strong>PlantUML:</strong> Via servidor externo ou GitHub Actions</li>
+            <li><strong>Diretório recomendado:</strong> <code>/docs/architecture/</code></li>
+            <li><strong>Arquivo:</strong> <code>c4-context.mmd</code>, <code>c4-container.mmd</code>, etc.</li>
+            <li><strong>CI/CD:</strong> Gerar PNGs automaticamente em cada commit</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 2rem;">
+          <div class="concept-card success">
+            <strong>Estrutura Sugerida:</strong><br/>
+            docs/<br/>
+            ├── architecture/<br/>
+            │   ├── c4-context.mmd<br/>
+            │   ├── c4-container.mmd<br/>
+            │   └── README.md
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz – Diagram as Code</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual ferramenta é nativa do Structurizr e foi criada especificamente para modelagem C4?</strong></p>
+          </div>
+          <div class="quiz-options">
+            <ul>
+              <li data-correct="false"><span class="option-letter">A)</span> PlantUML</li>
+              <li data-correct="true"><span class="option-letter">B)</span> Structurizr DSL</li>
+              <li data-correct="false"><span class="option-letter">C)</span> Mermaid</li>
+              <li data-correct="false"><span class="option-letter">D)</span> D2</li>
+            </ul>
+          </div>
+          <div class="quiz-feedback" data-correct-msg="Correto! Structurizr DSL é a linguagem padrão para C4 com suporte completo." data-incorrect-msg="Incorreto. Tente novamente! Qual ferramenta foi criada especificamente para C4?"></div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício Prático</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Tarefa: Converter C4 para Diagram as Code</h3>
+          <p>Pegue os diagramas Context e Container criados na semana anterior e converta para Mermaid ou PlantUML.</p>
+          <div class="exercise-steps">
+            <ol style="font-size: 0.9em;">
+              <li><strong>Context em Mermaid:</strong> Use um graph LR mostrando usuários, sistema e integrações</li>
+              <li><strong>Container em Mermaid:</strong> Descomponha em Web App, API, BD, Cache, etc.</li>
+              <li><strong>Crie arquivo no repositório:</strong> <code>docs/architecture/c4-context.mmd</code></li>
+              <li><strong>Adicione ao README:</strong> Inclua o diagrama no seu README do projeto</li>
+              <li><strong>Git commit:</strong> Versione o arquivo (a arquitetura vive com o código!)</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Resumo -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Resumo da Aula</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Component Diagram</strong><br/>Nível 3 – Detalhe técnico
+          </div>
+          <div class="concept-card success">
+            <strong>Diagram as Code</strong><br/>Código + Arquitetura
+          </div>
+          <div class="concept-card info">
+            <strong>GitHub Integration</strong><br/>Versionamento de diagramas
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Próxima aula:</strong> Modelagem de Dados (SQL, ER, Normalização)
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">12 – Semana 12</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

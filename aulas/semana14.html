@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 14 – Modelagem de Dados: NoSQL (MongoDB & Redis) | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .code-box { background: #2d2d2d; color: #f8f8f2; padding: 1.5rem; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75em; overflow-x: auto; margin: 1rem 0; line-height: 1.4; }
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.85em; margin: 1rem 0; }
+    .comparison-table th, .comparison-table td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
+    .comparison-table th { background: #f5f5f5; font-weight: bold; }
+    .architecture-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 14 – Modelagem de Dados: NoSQL (MongoDB & Redis)</div>
+      </section>
+
+      <!-- SLIDE 3: SQL vs NoSQL -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>SQL vs NoSQL</h2>
+        </div>
+        <table class="comparison-table">
+          <tr>
+            <th>Característica</th>
+            <th>SQL (Relacional)</th>
+            <th>NoSQL</th>
+          </tr>
+          <tr>
+            <td><strong>Schema</strong></td>
+            <td>Estruturado e rígido</td>
+            <td>Flexível e dinâmico</td>
+          </tr>
+          <tr>
+            <td><strong>Escalabilidade</strong></td>
+            <td>Vertical (mais CPU/RAM)</td>
+            <td>Horizontal (mais servidores)</td>
+          </tr>
+          <tr>
+            <td><strong>Transações</strong></td>
+            <td>ACID (seguro)</td>
+            <td>Eventual consistency</td>
+          </tr>
+          <tr>
+            <td><strong>Quando usar</strong></td>
+            <td>Dados estruturados, relacionados</td>
+            <td>Dados variáveis, grande volume, alta velocidade</td>
+          </tr>
+        </table>
+        <div class="callout success" style="margin-top: 1.5rem; font-size: 0.9em;">
+          <strong>Melhor abordagem:</strong> Combinar ambas! Poliglota = SQL + NoSQL + Cache
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: MongoDB Conceitos -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>MongoDB – Conceitos Básicos</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Database:</strong> Banco (análogo ao banco SQL)</li>
+            <li><strong>Collection:</strong> Tabela (sem schema obrigatório)</li>
+            <li><strong>Document:</strong> Registro em formato JSON/BSON (não relacional)</li>
+            <li><strong>Field:</strong> Campo dentro do documento (propriedade JSON)</li>
+            <li><strong>Índice:</strong> Para otimizar buscas e consultas</li>
+            <li><strong>Aggregation Pipeline:</strong> Processamento de dados complexo</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 1.5rem;">
+          <div class="concept-card blue">
+            <strong>Vantagem:</strong> Flexibilidade
+          </div>
+          <div class="concept-card success">
+            <strong>Vantagem:</strong> Performance leitura
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: MongoDB - Embedded vs Referenced -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>MongoDB: Embedded vs Referenced</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+          <div>
+            <h4 style="color: #0288d1;">Embedded (Desnormalizado)</h4>
+            <div class="code-box" style="font-size: 0.7em;">
+{
+  _id: 1,
+  nome: "João",
+  endereco: {
+    rua: "Rua A",
+    cidade: "São Paulo"
+  }
+}
+            </div>
+            <p style="font-size: 0.85em;"><strong>Quando:</strong> Dados relacionados, poucos acessos separados</p>
+          </div>
+          <div>
+            <h4 style="color: #d32f2f;">Referenced (Normalizado)</h4>
+            <div class="code-box" style="font-size: 0.7em;">
+// usuarios
+{_id: 1, nome: "João"}
+
+// enderecos
+{usuario_id: 1, rua: "Rua A"}
+            </div>
+            <p style="font-size: 0.85em;"><strong>Quando:</strong> Dados reutilizáveis, muitos acessos independentes</p>
+          </div>
+        </div>
+        <div class="callout info" style="margin-top: 1.5rem; font-size: 0.85em;">
+          <strong>Dica:</strong> MongoDB favorece desnormalização. Use embedded quando possível para melhor performance.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Schema Design Patterns -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Schema Design Patterns</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Subset Pattern:</strong> Armazenar apenas dados frequentemente acessados no documento principal</li>
+            <li><strong>Extended Reference:</strong> Copiar campos frequentes para evitar JOINs</li>
+            <li><strong>Bucket Pattern:</strong> Agrupar dados por ranges (timestamps, locações geográficas)</li>
+            <li><strong>Attribute Pattern:</strong> Usar arrays de key-value para atributos dinâmicos</li>
+          </ul>
+        </div>
+        <div class="concept-cards" style="margin-top: 1.5rem;">
+          <div class="concept-card warning">
+            <strong>Exemplo Subset:</strong> Armazenar últimas 5 compras com o usuário
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Redis Estruturas -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Redis: Estruturas de Dados</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>String:</strong> Valor simples (texto, números) - cache básico</li>
+            <li><strong>Hash:</strong> Objeto com múltiplos campos - usuário, sessão</li>
+            <li><strong>List:</strong> Coleção ordenada - fila, timeline, logs recentes</li>
+            <li><strong>Set:</strong> Coleção não ordenada, valores únicos - tags, followers</li>
+            <li><strong>Sorted Set:</strong> Set ordenado por score - ranking, leaderboard</li>
+            <li><strong>Stream:</strong> Log de eventos com consumidores - pub/sub persistente</li>
+          </ul>
+        </div>
+        <div class="callout success" style="margin-top: 1.5rem;">
+          <strong>Vantagem Redis:</strong> Operações em memória, velocidade extremamente alta (microsegundos)
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Casos de Uso Redis -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Redis: Casos de Uso</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+          <div class="concept-card blue">
+            <strong>Cache</strong><br/>Armazenar resultados de queries frequentes com TTL
+          </div>
+          <div class="concept-card success">
+            <strong>Session Storage</strong><br/>Armazenar dados de sessão do usuário
+          </div>
+          <div class="concept-card warning">
+            <strong>Rate Limiting</strong><br/>Contar requisições por IP/usuário em janelas de tempo
+          </div>
+          <div class="concept-card info">
+            <strong>Pub/Sub</strong><br/>Mensagens em tempo real entre aplicações
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9em;"><strong>Outros:</strong> Queues (RabbitMQ alternativa), Real-time analytics, Leaderboards</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Arquitetura Poliglota -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Arquitetura Poliglota</h2>
+        </div>
+        <div class="architecture-grid">
+          <div style="background: #e3f2fd; border: 2px solid #1976d2; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #1976d2;">MySQL</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>Usuários, Pedidos<br/>Dados críticos, transações</small></p>
+          </div>
+          <div style="background: #f3e5f5; border: 2px solid #7b1fa2; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #7b1fa2;">MongoDB</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>Logs, Analytics<br/>Dados variáveis, escaláveis</small></p>
+          </div>
+          <div style="background: #fff3e0; border: 2px solid #f57c00; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="margin: 0; color: #f57c00;">Redis</h4>
+            <p style="margin-top: 0.5rem; font-size: 0.85em;"><small>Cache, Session<br/>Performance, velocidade</small></p>
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Fluxo:</strong> App → Redis (cache) → MongoDB (analítica) → MySQL (dados críticos)
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exemplo MongoDB -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Collection MongoDB</h2>
+        </div>
+        <div class="code-box">
+// pedidos collection
+{
+  _id: ObjectId("..."),
+  numero: "PED-001",
+  usuario_id: 1,
+  data: ISODate("2026-02-11"),
+  itens: [
+    {produto_id: 100, nome: "Notebook", qtd: 1, preco: 3000},
+    {produto_id: 101, nome: "Mouse", qtd: 2, preco: 50}
+  ],
+  total: 3100,
+  endereco_entrega: {
+    rua: "Av Brasil, 1000",
+    cidade: "São Paulo"
+  },
+  status: "entregue"
+}
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Vantagem:</strong> Embora tenha dados aninhados, está estruturado e otimizado para leitura rápida</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz – NoSQL</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Redis é melhor usado para qual caso de uso?</strong></p>
+          </div>
+          <div class="quiz-options">
+            <ul>
+              <li data-correct="false"><span class="option-letter">A)</span> Armazenamento permanente de dados críticos</li>
+              <li data-correct="true"><span class="option-letter">B)</span> Cache de sessões e rate limiting</li>
+              <li data-correct="false"><span class="option-letter">C)</span> Análise de big data</li>
+              <li data-correct="false"><span class="option-letter">D)</span> Relações complexas entre dados</li>
+            </ul>
+          </div>
+          <div class="quiz-feedback" data-correct-msg="Correto! Redis é ideal para cache e operações em memória de alta performance." data-incorrect-msg="Incorreto. Pense em quando Redis é mais rápido: operações em memória!"></div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Delivery - Entrega 3 -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega 3 – Modelos de Dados</h2>
+        </div>
+        <div class="delivery-box">
+          <h3>Prazo: 20 de maio de 2026</h3>
+          <ul style="font-size: 0.9em; margin-top: 1.5rem;">
+            <li><strong>Diagramas C4 completos:</strong> Context, Container e Component</li>
+            <li><strong>Diagrama ER (SQL):</strong> MySQL com todas as tabelas, chaves, índices</li>
+            <li><strong>Schema MongoDB:</strong> Collections, embedded documents, validações</li>
+            <li><strong>Estratégia Redis:</strong> Quais dados serão cacheados, TTL, pub/sub</li>
+            <li><strong>Documentação:</strong> Explicar decisões arquiteturais e poliglota</li>
+          </ul>
+          <div class="platform" style="margin-top: 1.5rem;">
+            <span class="badge red" style="display: inline-block; padding: 0.5rem 1rem; margin-right: 0.5rem; border-radius: 4px; background: #f44336; color: white; font-size: 0.85em;">GitHub</span>
+            <span class="badge blue" style="display: inline-block; padding: 0.5rem 1rem; margin-right: 0.5rem; border-radius: 4px; background: #2196f3; color: white; font-size: 0.85em;">documentação</span>
+            <span class="badge success" style="display: inline-block; padding: 0.5rem 1rem; border-radius: 4px; background: #4caf50; color: white; font-size: 0.85em;">código SQL</span>
+          </div>
+          <div class="deadline" style="margin-top: 1.5rem; padding: 1rem; background: #fff3e0; border-left: 4px solid #f57c00; border-radius: 4px;">
+            <strong style="color: #f57c00;">⏰ Data Limite: 20/05/2026 às 23:59</strong>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício Prático</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Tarefa: Modelar Arquitetura Poliglota</h3>
+          <p>Para o seu projeto, defina qual BD será usado para cada tipo de dado.</p>
+          <div class="exercise-steps">
+            <ol style="font-size: 0.9em;">
+              <li><strong>MongoDB Collections:</strong> Defina estrutura de documentos para dados variáveis</li>
+              <li><strong>Redis Strategy:</strong> Quais chaves de cache, qual TTL (time-to-live)</li>
+              <li><strong>Schema Validation:</strong> Use JSON Schema no MongoDB para validação</li>
+              <li><strong>Índices:</strong> Defina índices em MongoDB e Redis para performance</li>
+              <li><strong>Sincronização:</strong> Como os dados se sincronizam entre MySQL, MongoDB e Redis?</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">14 – Semana 14</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

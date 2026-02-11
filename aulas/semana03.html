@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 03 – Requisitos Funcionais e Não Funcionais | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover Slide -->
+      <section class="cover-slide">
+        <h1>Requisitos de Software</h1>
+        <p style="font-size: 1.5em; margin-top: 2em;">Funcionais e Não Funcionais</p>
+        <p style="font-size: 1.2em; margin-top: 2em;">Semana 03 • UNINOVE</p>
+      </section>
+
+      <!-- SLIDE 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Especificação Técnica</h2>
+        </div>
+        <div class="title-card">
+          <p><strong>Semana 03</strong></p>
+          <p>4 de março de 2026</p>
+        </div>
+        <div class="lesson-bar">
+          <span class="logo-text logo-text-small"><span class="uni">UNI</span><span class="nove">NOVE</span></span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: O que são Requisitos? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que são Requisitos de Software?</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.15em; line-height: 1.6;">
+              <strong>Requisitos</strong> são <strong>descrições formais</strong> do que o sistema deve fazer (RF) e como deve fazer (RNF). Eles conectam a visão do produto com a implementação técnica.
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Por que documentar?</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Evita retrabalho</li>
+                <li>Alinha equipe</li>
+                <li>Facilita testes</li>
+                <li>Reduz mudanças</li>
+                <li>Rastreabilidade</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Ciclo de Requisitos</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Levantamento</li>
+                <li>Análise</li>
+                <li>Documentação</li>
+                <li>Validação</li>
+                <li>Gerenciamento</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.95em;"><strong>Princípio:</strong> "Melhor gastar 1 semana definindo requisitos do que 4 retrabalho."</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Requisitos Funcionais -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Requisitos Funcionais (RF)</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.1em;">
+              <strong>O QUE o sistema faz?</strong> Descrevem as funcionalidades, comportamentos e saídas esperadas.
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card success">
+              <h4>Exemplos de RF</h4>
+              <ul style="font-size: 0.9em;">
+                <li>RF-001: O sistema deve permitir login via email e senha</li>
+                <li>RF-002: O sistema deve gerar fatura em PDF</li>
+                <li>RF-003: O sistema deve integrar com Stripe</li>
+                <li>RF-004: O sistema deve enviar email de confirmação</li>
+                <li>RF-005: O sistema deve exibir dashboard com gráficos</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Características</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Específicos e testáveis</li>
+                <li>Orientados ao usuário</li>
+                <li>Independentes</li>
+                <li>Numerados</li>
+                <li>Com critérios de aceitação</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #2ecc71;">
+            <h4 style="margin-top: 0; color: #2ecc71;">Formato Recomendado</h4>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>ID:</strong> RF-001</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Descrição:</strong> O sistema deve permitir que usuários façam login com email e senha.</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Prioridade:</strong> Alta | <strong>Status:</strong> Validado</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Requisitos Não Funcionais -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Requisitos Não Funcionais (RNF)</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout warning">
+            <p style="font-size: 1.1em;">
+              <strong>COMO o sistema faz?</strong> Descrevem qualidade, performance, segurança, escalabilidade.
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card warning">
+              <h4>Exemplos de RNF</h4>
+              <ul style="font-size: 0.9em;">
+                <li>RNF-001: Login deve responder em < 2s</li>
+                <li>RNF-002: Suportar 10.000 usuários simultâneos</li>
+                <li>RNF-003: Disponibilidade 99,9%</li>
+                <li>RNF-004: Dados criptografados em repouso</li>
+                <li>RNF-005: LGPD compliant</li>
+              </ul>
+            </div>
+            <div class="concept-card blue">
+              <h4>Atributos de Qualidade</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Performance</li>
+                <li>Segurança</li>
+                <li>Confiabilidade</li>
+                <li>Escalabilidade</li>
+                <li>Usabilidade</li>
+                <li>Manutenibilidade</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #ff9800;">
+            <h4 style="margin-top: 0; color: #ff9800;">Formato Recomendado</h4>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>ID:</strong> RNF-001</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Descrição:</strong> O tempo de resposta para login não deve exceder 2 segundos em condições normais.</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Critério de Aceitação:</strong> Teste de carga com 1000 usuários simultâneos</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: FURPS+ -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Modelo FURPS+ para RNF</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Framework para categorizar todos os atributos de qualidade de um sistema.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-bottom: 1.5em; font-size: 0.9em;">
+            <div style="background: #e3f2fd; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #1565c0;">F — Functionality</h4>
+              <p style="margin: 0;">Funcionalidades, características, segurança. Realmente são RF!</p>
+            </div>
+            <div style="background: #f3e5f5; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #6a1b9a;">U — Usability</h4>
+              <p style="margin: 0;">Interface amigável, acessibilidade, documentação.</p>
+            </div>
+            <div style="background: #e8f5e9; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #2e7d32;">R — Reliability</h4>
+              <p style="margin: 0;">Disponibilidade, recuperação de falhas, MTBF.</p>
+            </div>
+            <div style="background: #fff3e0; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #e65100;">P — Performance</h4>
+              <p style="margin: 0;">Tempo de resposta, throughput, uso de recursos.</p>
+            </div>
+            <div style="background: #fce4ec; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #c2185b;">S — Supportability</h4>
+              <p style="margin: 0;">Manutenção, evolução, suporte, documentação.</p>
+            </div>
+            <div style="background: #e0f2f1; padding: 1em; border-radius: 6px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #00695c;">+ — Design, Implementação, Interface</h4>
+              <p style="margin: 0;">Tecnologias, padrões, constraints técnicos.</p>
+            </div>
+          </div>
+          <div class="callout success">
+            <p><strong>Dica:</strong> Use FURPS+ para garantir que você não esqueceu nenhuma dimensão importante de qualidade no seu projeto.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Priorização (MoSCoW) -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Priorização: Método MoSCoW</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Técnica para definir quais requisitos são críticos e quais podem aguardar futuras versões.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card red">
+              <h4 style="font-size: 1.1em;">🔴 MUST</h4>
+              <p style="font-size: 0.9em;"><strong>Obrigatório.</strong> Sem isso, o produto não funciona.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Ex:</strong> Login, criar fatura, pagar</p>
+            </div>
+            <div class="concept-card blue">
+              <h4 style="font-size: 1.1em;">🔵 SHOULD</h4>
+              <p style="font-size: 0.9em;"><strong>Deve ter.</strong> Importante, mas pode ser adiado.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Ex:</strong> Dois fatores de autenticação, dashboard</p>
+            </div>
+            <div class="concept-card warning">
+              <h4 style="font-size: 1.1em;">🟡 COULD</h4>
+              <p style="font-size: 0.9em;"><strong>Pode ter.</strong> Desejável, mas menos crítico.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Ex:</strong> Integração com Slack, exportar relatórios</p>
+            </div>
+            <div class="concept-card success">
+              <h4 style="font-size: 1.1em;">🟢 WONT</h4>
+              <p style="font-size: 0.9em;"><strong>Não será feito agora.</strong> Para futuro/roadmap.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Ex:</strong> App mobile, integração com 50 APIs</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Distribuição Típica para MVP</h4>
+            <p style="margin: 0.5em 0; font-size: 0.95em;">MUST: 60% | SHOULD: 20% | COULD: 15% | WONT: 5%</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Use Cases -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Documentando com Use Cases</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1em; color: #666;">
+            Use cases descrevem cenários de interação entre usuário e sistema.
+          </p>
+          <div style="background: #f9f9f9; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em; border-left: 4px solid #0066cc;">
+            <h4 style="color: #0066cc; margin-top: 0;">Exemplo: UC-001 — Criar Fatura</h4>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>Ator:</strong> Freelancer (usuário autenticado)</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>Pré-condição:</strong> Usuário logado, templates disponíveis</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>Fluxo Principal:</strong></p>
+            <ol style="margin: 0.5em 0; font-size: 0.85em; padding-left: 1.5em;">
+              <li>Usuário clica em "Nova Fatura"</li>
+              <li>Sistema exibe formulário com cliente recente</li>
+              <li>Usuário preenche itens (serviço, valor, qtd)</li>
+              <li>Sistema calcula total com impostos</li>
+              <li>Usuário clica "Gerar PDF"</li>
+              <li>Sistema gera e faz download</li>
+            </ol>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>Pós-condição:</strong> Fatura criada e PDF baixado</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>Fluxos Alternativos:</strong> Cliente novo, salvar como template</p>
+          </div>
+          <div class="callout blue">
+            <p><strong>Diagrama de use cases:</strong> Use ferramentas como Lucidchart ou PlantUML para visualizar relacionamento entre use cases.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Rastreabilidade -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Rastreabilidade de Requisitos</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Conectar requisitos aos use cases, testes, documentação e código.
+          </p>
+          <div class="flow-diagram">
+            <div class="flow-item blue">
+              <h4>Visão do Produto</h4>
+              <p style="font-size: 0.85em;">Problema → Solução → Features</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>Requisitos</h4>
+              <p style="font-size: 0.85em;">RF-001, RF-002, RNF-001...</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>Use Cases</h4>
+              <p style="font-size: 0.85em;">UC-001, UC-002, fluxos</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>Testes</h4>
+              <p style="font-size: 0.85em;">TC-001, cenários</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>Código</h4>
+              <p style="font-size: 0.85em;">Features, bugs, PRs</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em;">
+            <div class="concept-card success">
+              <h4>Matriz de Rastreabilidade</h4>
+              <p style="font-size: 0.9em; margin: 0;">Tabela que mapeia cada RF/RNF para Use Cases, Testes e Código. Garante cobertura completa.</p>
+            </div>
+          </div>
+          <div style="margin-top: 1em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Ferramenta:</strong> Use Google Sheets, Excel ou Jira para manter matriz de rastreabilidade atualizada.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Atividade: Documentar Requisitos</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue" style="margin-bottom: 1.5em;">
+            <p style="margin: 0; font-size: 0.95em;">Cada grupo tem 2 horas para documentar os requisitos do seu projeto.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+            <div class="exercise-task-card">
+              <h4>✅ Passo 1: Requisitos Funcionais</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Listar 10+ RF</li>
+                <li>Numerados (RF-001...)</li>
+                <li>Descrição clara</li>
+                <li>Prioridade MoSCoW</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 2: RNF (FURPS+)</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Mínimo 1 por categoria</li>
+                <li>Com métricas mensuráveis</li>
+                <li>Performance, segurança, etc</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 3: Use Cases</h4>
+              <ul style="font-size: 0.9em;">
+                <li>3 principais use cases</li>
+                <li>Atores, pré/pós-condições</li>
+                <li>Fluxo principal + alternativos</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 4: Documento</h4>
+              <ul style="font-size: 0.9em;">
+                <li>PDF ou Markdown profissional</li>
+                <li>Tabela com RF+RNF+Prioridade</li>
+                <li>No GitHub/Classroom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Entrega da Semana -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega — Semana 03</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="delivery-box">
+            <h3>📋 Entrega 3 — Documento de Requisitos</h3>
+            <ul style="font-size: 1.05em;">
+              <li><strong>Mínimo 10 Requisitos Funcionais (RF)</strong> — numerados, com descrição clara e prioridade MoSCoW</li>
+              <li><strong>Mínimo 5 Requisitos Não Funcionais (RNF)</strong> — cobrindo FURPS+ com critérios mensuráveis</li>
+              <li><strong>3 Use Cases principais</strong> — com atores, fluxos principal e alternativos</li>
+              <li><strong>Diagrama de Use Cases</strong> — visual mostrando relacionamentos</li>
+              <li><strong>Documento profissional</strong> em PDF ou Markdown no repositório GitHub</li>
+            </ul>
+            <span class="platform">Google Classroom</span>
+            <span class="platform">GitHub</span>
+            <span class="deadline">📅 Prazo: 11/03 (Terça)</span>
+          </div>
+          <div style="margin-top: 2em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Critérios de Avaliação</h4>
+            <ul style="font-size: 0.95em;">
+              <li>✓ Requisitos bem definidos e mensuráveis</li>
+              <li>✓ Cobertura completa (RF + RNF)</li>
+              <li>✓ Use cases descritivos e realistas</li>
+              <li>✓ Alinhamento com visão do projeto</li>
+              <li>✓ Documentação clara e profissional</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">03 – Requisitos de Software</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Encerramento -->
+      <section class="end-slide">
+        <div style="text-align: center; padding: 4em 2em;">
+          <h2 style="font-size: 2.5em; margin-bottom: 1em;">Requisitos Bem Definidos</h2>
+          <p style="font-size: 1.3em; margin-bottom: 2em; color: #666;">
+            São a base para design, arquitetura e testes bem-sucedidos.
+          </p>
+          <div style="background: #f0f0f0; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
+            <p style="font-size: 1.05em; margin: 0;"><strong>Próxima semana:</strong> User Stories e Kanban com GitHub Projects</p>
+          </div>
+          <p style="font-size: 0.9em; color: #999;">
+            Projeto Integrador • ADS • 5º Semestre • UNINOVE 2026
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: false,
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

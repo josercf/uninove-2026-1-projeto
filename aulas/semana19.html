@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 19 – Integração Final | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 19 – Integração Final + Preparação do Vídeo Final</div>
+      </section>
+
+      <!-- SLIDE 3: Checklist de Integração -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Checklist de Integração Final</h2>
+        </div>
+        <div class="styled-list">
+          <strong>✓ Repositório GitHub:</strong>
+          <ul>
+            <li>Todos os arquivos committed e pushed</li>
+            <li>Branches principais: main, develop</li>
+            <li>Tags de versão (v1.0)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>✓ Backend & Frontend:</strong>
+          <ul>
+            <li>Build sem erros, deploy testado</li>
+            <li>Variáveis de ambiente configuradas (.env.example)</li>
+            <li>Dependências listadas (package.json, requirements.txt, etc)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>✓ Banco de Dados:</strong>
+          <ul>
+            <li>Schema migrations prontas</li>
+            <li>Dados de teste (seed) preparados</li>
+            <li>Backup strategy documentado</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>✓ Testes:</strong>
+          <ul>
+            <li>Testes unitários cobrindo funcionalidades críticas</li>
+            <li>Testes de integração da API</li>
+            <li>CI/CD pipeline configurado (GitHub Actions)</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Organização do Repositório -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estrutura Ideal do Repositório</h2>
+        </div>
+        <pre><code class="language-
+projeto-integrador/
+├── backend/              # API REST
+│   ├── src/
+│   ├── tests/
+│   ├── docker/
+│   └── README.md
+├── frontend/             # Aplicação web/mobile
+│   ├── src/
+│   ├── public/
+│   └── README.md
+├── docs/                 # Documentação
+│   ├── architecture/
+│   ├── api/
+│   └── user-guide/
+├── database/             # Scripts SQL/migrations
+│   └── migrations/
+├── .github/workflows/    # CI/CD
+├── docker-compose.yml
+├── README.md
+├── CONTRIBUTING.md
+└── LICENSE</code></pre>
+        <div class="callout success">
+          <strong>✓ Bom sinal:</strong> Repositório bem organizado é primeira impressão de qualidade.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Template de README -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>README Completo: Seções Essenciais</h2>
+        </div>
+        <div class="styled-list">
+          <strong>1. Título & Descrição:</strong>
+          <ul>
+            <li>Nome do projeto, o que faz, para quem</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>2. Features (Funcionalidades):</strong>
+          <ul>
+            <li>Lista de capacidades principais com badges</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>3. Tech Stack:</strong>
+          <ul>
+            <li>Tecnologias usadas (backend, frontend, infra)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>4. Prerequisites & Installation:</strong>
+          <ul>
+            <li>Requisitos (Node.js, Python 3.9+, Docker)</li>
+            <li>Passo a passo de setup local</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>5. Running the Project:</strong>
+          <ul>
+            <li><code>npm run dev</code>, <code>docker-compose up</code>, etc</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>6. API Documentation:</strong>
+          <ul>
+            <li>Link para OpenAPI/Swagger, exemplos de requests</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>7. Project Structure:</strong>
+          <ul>
+            <li>Explicar cada pasta e seu propósito</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>8. Testing:</strong>
+          <ul>
+            <li>Como rodar testes, cobertura esperada</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>9. Contributors & License:</strong>
+          <ul>
+            <li>Nomes do time, licença (MIT, Apache, etc)</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Preparação do Vídeo Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estrutura do Vídeo Final de Defesa</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>0-2 min:</strong> Abertura - Nomes, contexto e problema identificado
+          </div>
+          <div class="timeline-item">
+            <strong>2-5 min:</strong> Solução proposta - Como vocês resolvem o problema
+          </div>
+          <div class="timeline-item">
+            <strong>5-12 min:</strong> Demo da aplicação - Funcionalidades principais em ação
+          </div>
+          <div class="timeline-item">
+            <strong>12-18 min:</strong> Arquitetura & Técnica - C4, APIs, padrões, feature de IA
+          </div>
+          <div class="timeline-item">
+            <strong>18-20 min:</strong> Aprendizados, desafios superados e próximos passos
+          </div>
+        </div>
+        <div class="callout blue">
+          <strong>💡 Dica:</strong> Practice para encaixar em 20 minutos exatos. Cronometre!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Storytelling & Pitch -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Storytelling: Como Vender sua Ideia</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Hero's Journey</strong>
+            <p>Herói (usuário) → Desafio (problema) → Mentores (vocês) → Solução (app)</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Problema Real</strong>
+            <p>Contar história de um usuário real que sofre com o problema. Fazer audiência se identificar.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Tensão e Alívio</strong>
+            <p>Criar tensão no problema, depois alívio mostrando que sua solução resolve.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Números que Importam</strong>
+            <p>Quantos usuários? Quanto economiza? Qual eficiência ganha? Ser específico.</p>
+          </div>
+        </div>
+        <div class="callout success">
+          <strong>✓ Exemplo:</strong> "João passa 2h/dia digitando relatórios manualmente. Nossa IA gera em 2 minutos. Economiza 10h/semana."
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Dicas para Gravação de Vídeo Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Dicas Práticas: Gravação de Vídeo de Qualidade</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Ambiente de Gravação:</strong>
+          <ul>
+            <li>Local silencioso, sem ruído de fundo, boa iluminação natural ou artificial</li>
+            <li>Câmera frontal em posição neutra (não muito alta, não muito baixa)</li>
+            <li>Teste de áudio e vídeo antes de gravar (qualidade 1080p mínimo)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Comunicação & Pacing:</strong>
+          <ul>
+            <li>Fale claro e em ritmo moderado. Não muito rápido, não muito lento.</li>
+            <li>Use script ou anotações, mas não leia tudo roboticamente</li>
+            <li>Cronometre: vídeo final de 20 minutos. Não ultrapasse!</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Demo de Aplicação:</strong>
+          <ul>
+            <li>Preparar script de demo claro (quais funcionalidades mostrar, em qual ordem)</li>
+            <li>Testar aplicação antes de gravar (nada pior que demo que não funciona)</li>
+            <li>Ter dados de teste carregados e prontos para mostrar</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Presença & Linguagem Corporal:</strong>
+          <ul>
+            <li>Levante da cadeira, movimente-se pela sala</li>
+            <li>Mude entonação de voz para manter atenção</li>
+            <li>Não cruze braços, não olhe só para computador</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Estrutura de Slides para Vídeo -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Slides de Suporte: Estrutura Recomendada</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 1 – Capa:</strong>
+          <ul>
+            <li>Nome projeto, time, data</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 2 – O Problema:</strong>
+          <ul>
+            <li>Imagem/ícone + descrição breve do pain point</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 3 – Solução:</strong>
+          <ul>
+            <li>Screenshot da app, como ela resolve</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 4 – Arquitetura C4:</strong>
+          <ul>
+            <li>Diagrama do sistema, containers, componentes principais</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 5 – Padrões & Feature IA:</strong>
+          <ul>
+            <li>Design patterns implementados, integração com IA/ML</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 6 – Aprendizados & Desafios:</strong>
+          <ul>
+            <li>O que funcionou bem, o que foi difícil, como superaram</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Slide 7 – Conclusão & Próximos Passos:</strong>
+          <ul>
+            <li>Futuro do projeto, possibilidades, agradecimento</li>
+          </ul>
+        </div>
+        <div class="callout blue">
+          <strong>💡 Regra 7-20:</strong> Max 7 slides, vídeo final de 20 min, fonte grande (mínimo 18pt).
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Processo de Gravação -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Processo: Gravação do Vídeo Final</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Semana 19 Dedicada à Preparação e Gravação</h3>
+          <p>Vocês irão:</p>
+          <div class="exercise-steps">
+            <ol>
+              <li>Estruturar roteiro completo (problema → solução → demo → arquitetura → aprendizados)</li>
+              <li>Criar slides finais (máx 7 slides, visual limpo e profissional)</li>
+              <li>Preparar script de demo detalhado (qual funcionalidade mostrar, em que ordem, duração)</li>
+              <li>Testar aplicação completamente (nenhuma funcionalidade quebrada)</li>
+              <li>Fazer pelo menos 3 ensaios completos, cronometrados (20 min máximo)</li>
+              <li>Gravar primeira versão e revisar qualidade de áudio/vídeo</li>
+              <li>Se necessário, re-gravar trechos ou vídeo inteiro para perfeição</li>
+              <li>Revisar repositório e README uma última vez</li>
+              <li>Preparar arquivo de vídeo comprimido para upload</li>
+            </ol>
+          </div>
+          <p><strong>Entrega:</strong> Vídeo final (20 min máximo) + Slides + Código pronto no GitHub + Upload no Google Classroom até 01 de Julho</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Checklist Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Checklist: Antes do Upload do Vídeo Final</h2>
+        </div>
+        <div class="styled-list">
+          <strong>No Repositório GitHub:</strong>
+          <ul>
+            <li>☐ README completo com setup instructions (mín. 1000 palavras)</li>
+            <li>☐ Código limpo, bem estruturado, versionado</li>
+            <li>☐ Documentação técnica (diagramas C4, ER, API docs)</li>
+            <li>☐ Testes unitários e de integração</li>
+            <li>☐ CI/CD pipeline funcionando (GitHub Actions)</li>
+            <li>☐ docker-compose.yml atualizado</li>
+            <li>☐ openapi.yaml com API completa documentada</li>
+            <li>☐ .env.example com variáveis de ambiente</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Vídeo Final & Upload:</strong>
+          <ul>
+            <li>☐ Vídeo entre 18-20 minutos (não ultrapasse!)</li>
+            <li>☐ Resolução 1080p ou superior, áudio claro</li>
+            <li>☐ Arquivo comprimido em MP4 ou MOV</li>
+            <li>☐ Slides suporte em PDF + Vídeo no Google Classroom</li>
+            <li>☐ Link do GitHub também no Classroom</li>
+            <li>☐ Prazo: 01 de Julho, 23:59</li>
+          </ul>
+        </div>
+        <div class="callout success">
+          <strong>✓ Dia anterior:</strong> Revisar tudo. Dormir bem. Estar tranquilo no dia.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Revisão Rápida -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Próximas Semanas: O Que Vem</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Semana 19 (24/06):</strong> Integração final, ensaio, testes finais
+          </div>
+          <div class="timeline-item">
+            <strong>Semana 20 (01/07):</strong> Apresentação Final & Defesa do Projeto
+          </div>
+          <div class="timeline-item">
+            <strong>Depois:</strong> Retrospectiva, feedback, próximas oportunidades
+          </div>
+        </div>
+        <div class="badge red">
+          <strong>⏰ URGENTE:</strong> Última chance de ajustar code antes da apresentação!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">19 – Integração Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Encerramento -->
+      <section class="end-slide">
+        <h2>Obrigado!</h2>
+        <p>Prof. José Romualdo da Costa Filho</p>
+        <p>UNINOVE 2026</p>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

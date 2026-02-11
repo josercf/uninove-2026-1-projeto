@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 09 – Avaliação e Testes | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');rel='stylesheet';href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide 1: Cover -->
+      <section class="cover-slide">
+        <h1>Semana 09</h1>
+        <p>Design Review & Testes</p>
+        <p style="font-size: 0.9em; margin-top: 2em; color: #999;">Validação e Feedback</p>
+      </section>
+
+      <!-- Slide 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Design Review & Usabilidade</h1>
+          <h2>Validar Antes de Entregar</h2>
+          <h3>Semana 09 — 15 de Abril</h3>
+        </div>
+        <div class="lesson-bar">Análise e Desenvolvimento de Sistemas • 5º Semestre • 2026.1</div>
+      </section>
+
+      <!-- Slide 3: O que é Design Review? -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Design Review: Processo Estruturado</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Um <strong>design review</strong> é uma reunião estruturada onde o designer apresenta seu trabalho para colegas, stakeholders ou usuários para coletar feedback qualificado.</p>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Quem Participa?</h4>
+            <p>Designers, developers, product managers, stakeholders. Às vezes usuários para validação. 3-8 pessoas é ideal. Mais fica caótico.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Quando Fazer?</h4>
+            <p>Wireframe (feedback inicial), mockup (validação estrutura), protótipo (teste comportamento). Faça múltiplas vezes, não apenas no fim!</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Quanto Tempo?</h4>
+            <p>Apresentação: 10 min. Feedback: 15-20 min. Discussão: 10 min. Total: 30-40 min por design. Respeite tempo!</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Formato</h4>
+            <p><strong>Estruturado:</strong> O que funciona? O que não funciona? Dúvidas? Sugestões? (WWWWWS método). Evite "não gostei".</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- Slide 4: As 10 Heurísticas de Nielsen -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Heurísticas de Usabilidade (Nielsen)</h2>
+        </div>
+        <p style="margin-bottom: 1em; font-size: 0.95em;">10 princípios fundamentais para avaliar usabilidade. Use como checklist no design review!</p>
+        <div style="font-size: 0.8em; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8em;">
+          <div style="padding: 0.8em; background: #E8F4F8; border-left: 3px solid #3498DB;">
+            <p style="margin: 0;"><strong>1. Visibilidade do Sistema</strong><br>Usuário sabe onde está? Breadcrumbs, página atual realçada.</p>
+          </div>
+          <div style="padding: 0.8em; background: #E8F4F8; border-left: 3px solid #3498DB;">
+            <p style="margin: 0;"><strong>2. Compatibilidade com Mundo Real</strong><br>Linguagem do usuário, não jargão técnico. Familiar.</p>
+          </div>
+          <div style="padding: 0.8em; background: #F4E8F8; border-left: 3px solid #9B59B6;">
+            <p style="margin: 0;"><strong>3. Controle & Liberdade</strong><br>Undo/redo, saída de emergência. Não preso.</p>
+          </div>
+          <div style="padding: 0.8em; background: #F4E8F8; border-left: 3px solid #9B59B6;">
+            <p style="margin: 0;"><strong>4. Padrões & Convenções</strong><br>Siga convenções web. Search top, cart topo direita.</p>
+          </div>
+          <div style="padding: 0.8em; background: #E8F8F4; border-left: 3px solid #1ABC9C;">
+            <p style="margin: 0;"><strong>5. Prevenção de Erros</strong><br>Confirmar antes deletar. Validação em tempo real.</p>
+          </div>
+          <div style="padding: 0.8em; background: #E8F8F4; border-left: 3px solid #1ABC9C;">
+            <p style="margin: 0;"><strong>6. Ajuda para Erros</strong><br>Mensagens claras. "Email inválido" não é ajuda!</p>
+          </div>
+          <div style="padding: 0.8em; background: #F8F4E8; border-left: 3px solid #F39C12;">
+            <p style="margin: 0;"><strong>7. Eficiência de Uso</strong><br>Atalhos, shortcuts, drag-drop. Poder faça coisas rápido.</p>
+          </div>
+          <div style="padding: 0.8em; background: #F8F4E8; border-left: 3px solid #F39C12;">
+            <p style="margin: 0;"><strong>8. Estética & Design Minimalista</strong><br>Remova o desnecessário. Foco no essencial.</p>
+          </div>
+          <div style="padding: 0.8em; background: #F8E8E8; border-left: 3px solid #E74C3C;">
+            <p style="margin: 0;"><strong>9. Documentação & Help</strong><br>Help center, FAQs, tooltips. Fácil encontrar ajuda.</p>
+          </div>
+          <div style="padding: 0.8em; background: #F8E8E8; border-left: 3px solid #E74C3C;">
+            <p style="margin: 0;"><strong>10. Reconhecimento vs Recall</strong><br>Visível > oculto. Menu > memorizar comando.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Teste de Usabilidade -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Teste de Usabilidade: O que é e Como Fazer</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Um <strong>teste de usabilidade</strong> é quando você observa usuários reais tentando usar seu produto e coleta feedback sobre a experiência.</p>
+        <div class="side-by-side">
+          <div class="side">
+            <h4>Estrutura do Teste</h4>
+            <ul class="styled-list">
+              <li><strong>Introdução:</strong> Explique o objetivo</li>
+              <li><strong>Cenários:</strong> "Crie uma conta"</li>
+              <li><strong>Tarefas:</strong> "Envie mensagem"</li>
+              <li><strong>Observação:</strong> Anote comportamento</li>
+              <li><strong>Perguntas:</strong> Entrevista após</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>O que Medir</h4>
+            <ul class="styled-list">
+              <li><strong>Taxa de conclusão:</strong> % que completou tarefa</li>
+              <li><strong>Tempo na tarefa:</strong> Quanto demorou?</li>
+              <li><strong>Erros:</strong> Quantos erros cometeu?</li>
+              <li><strong>SUS Score:</strong> Satisfação (1-10)</li>
+              <li><strong>Feedback qualitativo:</strong> O que pensou?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout blue">
+          <p><strong>Dica:</strong> 5-8 usuários revelam 85% dos problemas de usabilidade. Não precisa de 100 para testar!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Como Conduzir um Teste -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Passo-a-Passo: Conduzir Teste de Usabilidade</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>1️⃣ Recrutar Participantes</h4>
+            <p>5-8 usuários que representam seu público. Não teste com amigos técnicos! Busque gente que não conhece projeto.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>2️⃣ Preparar Roteiro</h4>
+            <p><strong>Cenário:</strong> "Você quer criar uma conta para vender produtos." <strong>Tarefas:</strong> "Complete o registro. Adicione um produto. Publique."</p>
+          </div>
+          <div class="timeline-item">
+            <h4>3️⃣ Setup Técnico</h4>
+            <p>Gravar tela (opcional, peça permissão). Ter protótipo pronto. Ambiente quieto. Tempo: 30-45 min por pessoa.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>4️⃣ Executar Teste</h4>
+            <p>Explicar objetivo. Dar primeiro cenário. OBSERVAR E OUVIR. Não interrompa! Anote confusão, paradas, comentários.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>5️⃣ Entrevista Pós-Teste</h4>
+            <p>"O que achou? Qual foi o desafio? O que gostou? Mudaria o quê?" Dê SUS score. Obrigado!</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Analisar Resultados -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Depois do Teste: Análise e Insights</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Dados brutos não são úteis. Analise padrões e traduza em ações!</p>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Agrupe Problemas</h4>
+            <p>Se 5/8 usuários tiveram dificuldade X, é problema. Se só 1 teve, pode ser caso isolado. 60%+ = crítico.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Priorize Fixes</h4>
+            <p>Crítico (impede conclusão) > Maior (confunde) > Menor (anoyance). Ataque críticos primeiro.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Crie Relatório</h4>
+            <p>Resuma: participantes, tarefas, taxa de conclusão, tempo médio, SUS score, top 3 problemas, recomendações.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Itere Design</h4>
+            <p>Aplique fixes. Se fez mudança importante, teste novamente com 2-3 usuários para validar.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Exemplo de Relatório -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Relatório de Teste de Usabilidade</h2>
+        </div>
+        <div style="font-size: 0.8em; line-height: 1.8; background: #f9f9f9; padding: 1.5em; border-radius: 8px;">
+          <p style="margin: 0.5em 0;"><strong>Projeto:</strong> App de E-commerce | <strong>Data:</strong> 15/04/2026</p>
+          <p style="margin: 0.5em 0;"><strong>Participantes:</strong> 6 usuários (idade 25-45, diferentes backgrounds)</p>
+          <p style="margin: 0.5em 0;"><strong>Tarefa Principal:</strong> "Encontre e compre um notebook"</p>
+          <hr style="margin: 1em 0; border: none; border-top: 1px solid #ddd;">
+          <p style="margin: 0.5em 0;"><strong>Resultados Quantitativos:</strong></p>
+          <ul style="margin: 0.5em 0; padding-left: 1.2em;">
+            <li>Taxa de Conclusão: 5/6 (83%) - 1 desistiu</li>
+            <li>Tempo Médio: 3:45 min (target: 2:00)</li>
+            <li>Erros: Média 2 por usuário</li>
+            <li>SUS Score: 72/100 (aceitável, não excelente)</li>
+          </ul>
+          <p style="margin: 0.5em 0;"><strong>Top 3 Problemas (críticos):</strong></p>
+          <ul style="margin: 0.5em 0; padding-left: 1.2em;">
+            <li>🔴 <strong>Busca confusa:</strong> 5/6 não entenderam filtros. "Onde está o botão de pesquisa?"</li>
+            <li>🟠 <strong>Carrinho não claro:</strong> 3/6 não viram ícone do carrinho topo direita.</li>
+            <li>🟠 <strong>Checkout longo:</strong> 2/6 desistiram, muito formulário.</li>
+          </ul>
+          <p style="margin: 0.5em 0;"><strong>Recomendações:</strong> (1) Búsqueda destaca, com sugestões auto-complete. (2) Carrinho com badge de contagem. (3) Checkout em 3 passos máximo.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Feedback Entre Grupos -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Feedback Cruzado: Grupos Testam Grupos</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Nesta semana, grupos trocarão protótipos e farão testes de usabilidade cruzados. Estrutura:</p>
+        <div style="background: #f5f5f5; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em; font-size: 0.9em;">
+          <h4 style="margin-top: 0;">Formato do Encontro (1 hora total)</h4>
+          <p><strong>Grupo A apresenta:</strong> 15 min (contexto + walkthrough protótipo)</p>
+          <p><strong>Grupo B testa:</strong> 20 min (executa tarefas, observa problemas)</p>
+          <p><strong>Grupo B feedback:</strong> 15 min (o que funciona, não funciona, questões)</p>
+          <p><strong>Discussão:</strong> 10 min (perguntas, esclarecimentos)</p>
+          <p style="margin-top: 1em;"><strong>Depois:</strong> Grupos invertem. Grupo B apresenta, Grupo A testa.</p>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Como Dar Feedback Útil</h4>
+            <ul style="font-size: 0.85em;">
+              <li>Específico: "O botão salvar está muito pequeno"</li>
+              <li>Construtivo: Sugira (não critique só)</li>
+              <li>Respeitoso: Lembre de separar design da pessoa</li>
+              <li>Focado: Priorize o mais importante</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Entrega 2 -->
+      <section class="delivery-slide content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega 2: Protótipos e Documentação</h2>
+        </div>
+        <div class="delivery-box">
+          <h4 style="margin-top: 0;">📦 O que Entregar?</h4>
+          <ul style="font-size: 0.9em;">
+            <li><strong>Wireframes:</strong> PDF com 5+ telas de baixa fidelidade + diagrama de fluxo</li>
+            <li><strong>Figma File:</strong> Link de acesso ao arquivo com mockups em alta fidelidade (design system, componentes, protótipo interativo)</li>
+            <li><strong>Protótipo Shareable:</strong> Link de preview do protótipo no Figma (testar clicando)</li>
+            <li><strong>Personas & Journey Map:</strong> PDF com 2-3 personas detalhadas + customer journey map completo da persona principal</li>
+            <li><strong>Relatório de Testes:</strong> Análise do teste de usabilidade com 5/8+ participantes. Problemas identificados e recomendações.</li>
+          </ul>
+        </div>
+        <div style="margin-top: 1.5em;">
+          <p style="margin: 0.5em 0;"><strong>📅 Prazo:</strong> <span class="badge red">15 de Abril de 2026</span></p>
+          <p style="margin: 0.5em 0;"><strong>📤 Entrega:</strong> Pasta no Google Drive (nomeada seu_grupo_entrega2) com todos os arquivos + links</p>
+          <p style="margin: 0.5em 0;"><strong>✅ Critérios:</strong> Completude (todos os itens), qualidade do design, clareza do protótipo, profundidade da pesquisa</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Exercício e Workshop -->
+      <section class="exercise-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício: Workshop de Testes Cruzados</h2>
+        </div>
+        <div class="exercise-container">
+          <div class="exercise-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <h4>Preparar Roteiro (30 min antes)</h4>
+              <p>Defina 3-4 cenários/tarefas. Prepare protótipo. Teste em sua máquina (funciona?). Organize ambiente.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <h4>Apresentar Contexto (5 min)</h4>
+              <p>Qual é o problema? Quem é o usuário? O que vamos testar? Dê instruções claras.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <h4>Observar (20 min)</h4>
+              <p>Groupe B executa tarefa. Você OBSERVA. Não interrompa! Anote confusão, hesitação, comentários. Use checklist.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">4</span>
+              <h4>Coletar Feedback (10 min)</h4>
+              <p>WWWWWS: O que funciona? Não funciona? Dúvidas? Sugestões? Impacto? Estruture feedback.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">5</span>
+              <h4>Documentar (após)</h4>
+              <p>Compile observações em relatório. Top 3 problemas + recomendações. Inclua no entrega final.</p>
+            </div>
+          </div>
+          <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Dica:</strong> Gravem a sessão (peçam permissão). Facilita análise depois. Screenshot de pontos críticos.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Avaliação e Testes</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>1. Qual é o objetivo principal de um Design Review?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Aprovar o design final</li>
+              <li data-correct="true">Coletar feedback estruturado de peers e stakeholders</li>
+              <li data-correct="false">Demonstrar habilidade do designer</li>
+              <li data-correct="false">Documentar todas as versões</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Design review é para feedback qualificado ANTES do launch. Mude rápido enquanto é barato!</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>2. Quantos usuários são suficientes para revelar a maioria dos problemas de usabilidade?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">1-2 usuários</li>
+              <li data-correct="true">5-8 usuários</li>
+              <li data-correct="false">50+ usuários</li>
+              <li data-correct="false">100+ usuários para ser estatisticamente válido</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Pesquisa mostra que 85% dos problemas aparecem nos primeiros 5-8 usuários. Mais é validação, não descoberta.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>3. Qual é a Heurística #4 de Nielsen?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Visibilidade do sistema</li>
+              <li data-correct="false">Controle e liberdade do usuário</li>
+              <li data-correct="true">Padrões e convenções (o sistema fala a linguagem do usuário)</li>
+              <li data-correct="false">Prevenção de erros</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Heurística #4 é compatibilidade com mundo real e padrões. Follow conventions (search top, cart icon top-right).</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>4. O que significa "Taxa de Conclusão" em um teste de usabilidade?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Quantos usuários vieram ao teste</li>
+              <li data-correct="true">Percentual de usuários que completaram a tarefa com sucesso</li>
+              <li data-correct="false">Quanto tempo levou o teste</li>
+              <li data-correct="false">Satisfação geral (SUS score)</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Taxa de conclusão é métrica crítica. Se só 50% conseguiram, problema sério.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>5. Qual formato de feedback é MELHOR estruturado?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">"Não gostei do design"</li>
+              <li data-correct="true">"O botão de salvar é pequeno demais e difícil de clicar. Sugiro aumentar tamanho para 48px."</li>
+              <li data-correct="false">"Tudo precisa mudar"</li>
+              <li data-correct="false">"Perfeito, nenhuma mudança necessária"</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Feedback bom é específico, construtivo e acionável. "Pequeno demais" é vago. "48px" é concreto.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">09 – Design Review & Testes</div>
+          <div class="footer-page">12</div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Encerramento -->
+      <section class="end-slide">
+        <h1>Semana 09 Concluída</h1>
+        <p>Você aprendeu a avaliar design e testar usabilidade com usuários reais!</p>
+        <p style="margin-top: 2em; font-size: 0.9em; color: #999;">Próxima semana: Checkpoint 1 — Apresentação Parcial do Projeto</p>
+        <p style="margin-top: 3em; font-size: 0.8em; color: #666;">© 2026 UNINOVE • Projeto Integrador • ADS 5º Semestre</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

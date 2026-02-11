@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 02 – Modelos de Negócio SaaS | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover Slide -->
+      <section class="cover-slide">
+        <h1>Modelos de Negócio SaaS</h1>
+        <p style="font-size: 1.5em; margin-top: 2em;">Semana 02 — Definição de Problemas</p>
+        <p style="font-size: 1.2em; margin-top: 2em;">UNINOVE • ADS • 5º Semestre</p>
+      </section>
+
+      <!-- SLIDE 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estratégia de Negócio</h2>
+        </div>
+        <div class="title-card">
+          <p><strong>Semana 02</strong></p>
+          <p>25 de fevereiro de 2026</p>
+        </div>
+        <div class="lesson-bar">
+          <span class="logo-text logo-text-small"><span class="uni">UNI</span><span class="nove">NOVE</span></span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: O que é SaaS? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é SaaS?</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.2em; line-height: 1.6;">
+              <strong>Software as a Service</strong> é um modelo de entrega de software em que a aplicação é <strong>hospedada na nuvem</strong> e acessada via web/mobile, com <strong>cobrança recorrente</strong> (mensalidade ou anuidade).
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Características SaaS</h4>
+              <ul style="font-size: 0.9em; margin: 0;">
+                <li>Multi-tenant ou single-tenant</li>
+                <li>Dados na nuvem</li>
+                <li>Atualizações automáticas</li>
+                <li>Acessível de qualquer lugar</li>
+                <li>Escalável horizontalmente</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Vantagens para Cliente</h4>
+              <ul style="font-size: 0.9em; margin: 0;">
+                <li>Sem instalação local</li>
+                <li>Sem manutenção de servidor</li>
+                <li>Pagam pelo que usam</li>
+                <li>Acesso global</li>
+                <li>Sempre na versão mais recente</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Exemplos Globais Consagrados</h4>
+            <p style="margin: 0; font-size: 0.95em;">Slack, Salesforce, HubSpot, Dropbox, Asana, Notion, Google Workspace, Microsoft 365</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Modelos de Negócio -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Principais Modelos B2X</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>B2B — Business to Business</h4>
+              <p style="font-size: 0.9em; margin: 0;">Software para empresas. Exemplos: Slack, Asana, GitHub, Jira.</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0.5em 0 0 0;"><strong>Ticket médio:</strong> Médio a Alto</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0;"><strong>Ciclo:</strong> Mais longo</p>
+            </div>
+            <div class="concept-card warning">
+              <h4>B2C — Business to Consumer</h4>
+              <p style="font-size: 0.9em; margin: 0;">Software para consumidores finais. Exemplos: Spotify, Netflix, Canva.</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0.5em 0 0 0;"><strong>Ticket médio:</strong> Pequeno</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0;"><strong>Ciclo:</strong> Rápido</p>
+            </div>
+            <div class="concept-card success">
+              <h4>B2B2C — Plataforma</h4>
+              <p style="font-size: 0.9em; margin: 0;">Conecta businesses e consumers. Exemplos: Shopify, Airbnb, Uber.</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0.5em 0 0 0;"><strong>Modelo:</strong> Taxa/Comissão</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0;"><strong>Escala:</strong> Exponencial</p>
+            </div>
+            <div class="concept-card info">
+              <h4>Marketplace</h4>
+              <p style="font-size: 0.9em; margin: 0;">Plataforma de múltiplos vendedores. Exemplos: Amazon, OLX.</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0.5em 0 0 0;"><strong>Receita:</strong> Comissão por transação</p>
+              <p style="font-size: 0.85em; color: #666; margin: 0;"><strong>Desafio:</strong> Cold start problem</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: SaaS Brasileiros -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplos de SaaS Brasileiros</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>🚀 RD Station</h4>
+              <p style="font-size: 0.9em;">Marketing Automation e CRM para PMEs brasileiras. Startup unicórnio.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Freemium + Premium</p>
+            </div>
+            <div class="concept-card blue">
+              <h4>💰 Nuvemshop</h4>
+              <p style="font-size: 0.9em;">Plataforma de e-commerce na nuvem. Foco em pequeno e médio varejo.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Faixa de preços por recursos</p>
+            </div>
+            <div class="concept-card success">
+              <h4>📊 Keede</h4>
+              <p style="font-size: 0.9em;">Gestão integrada de negócios (ERP). Direcionado a PMEs.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Assinatura mensal</p>
+            </div>
+            <div class="concept-card success">
+              <h4>📱 99</h4>
+              <p style="font-size: 0.9em;">Marketplace de mobilidade urbana. Alternativa ao Uber no Brasil.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Comissão por corrida</p>
+            </div>
+            <div class="concept-card warning">
+              <h4>📦 Logstica</h4>
+              <p style="font-size: 0.9em;">SaaS para gestão de logística e entrega. Crescimento acelerado.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Por transação</p>
+            </div>
+            <div class="concept-card warning">
+              <h4>💳 Conta Azul</h4>
+              <p style="font-size: 0.9em;">Gestão financeira para MEI, freelancer e PME. Fundada em 2008.</p>
+              <p style="font-size: 0.85em; color: #666;"><strong>Modelo:</strong> Assinatura escalonada</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Métricas SaaS -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Métricas Cruciais de SaaS</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4 style="font-size: 1.05em;">MRR — Monthly Recurring Revenue</h4>
+              <p style="font-size: 0.9em; margin: 0.5em 0 0 0;">Receita previsível mensal. Indicador de saúde do negócio.</p>
+              <code style="font-size: 0.8em; background: #e8f4f8; padding: 0.5em; display: block; margin-top: 0.5em; border-radius: 4px;">MRR = Clientes × Ticket Médio</code>
+            </div>
+            <div class="concept-card blue">
+              <h4 style="font-size: 1.05em;">ARR — Annual Recurring Revenue</h4>
+              <p style="font-size: 0.9em; margin: 0.5em 0 0 0;">MRR × 12. Usado para avaliar valor anual.</p>
+              <code style="font-size: 0.8em; background: #e8f4f8; padding: 0.5em; display: block; margin-top: 0.5em; border-radius: 4px;">ARR = MRR × 12</code>
+            </div>
+            <div class="concept-card success">
+              <h4 style="font-size: 1.05em;">Churn Rate</h4>
+              <p style="font-size: 0.9em; margin: 0.5em 0 0 0;">% de clientes que saem por mês. Quanto menor, melhor.</p>
+              <code style="font-size: 0.8em; background: #e8f9f5; padding: 0.5em; display: block; margin-top: 0.5em; border-radius: 4px;">Churn = Clientes Saídos / Total</code>
+            </div>
+            <div class="concept-card success">
+              <h4 style="font-size: 1.05em;">CAC — Customer Acquisition Cost</h4>
+              <p style="font-size: 0.9em; margin: 0.5em 0 0 0;">Quanto custa adquirir um novo cliente.</p>
+              <code style="font-size: 0.8em; background: #e8f9f5; padding: 0.5em; display: block; margin-top: 0.5em; border-radius: 4px;">CAC = Despesa Marketing / Clientes Novos</code>
+            </div>
+            <div class="concept-card warning" style="grid-column: 1 / 3; margin-left: auto; margin-right: auto; width: 100%; max-width: 100%;">
+              <h4 style="font-size: 1.05em;">LTV — Lifetime Value</h4>
+              <p style="font-size: 0.9em; margin: 0.5em 0 0 0;">Quanto um cliente gasta com você na vida. LTV/CAC > 3 é saudável.</p>
+              <code style="font-size: 0.8em; background: #fff8e8; padding: 0.5em; display: block; margin-top: 0.5em; border-radius: 4px;">LTV = (Ticket Médio × 12) / Churn Rate</code>
+            </div>
+          </div>
+          <div class="callout warning">
+            <p><strong>Dica:</strong> Em 2026, investidores focam em LTV/CAC ratio e unit economics. SaaS viável tem LTV/CAC > 3.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Lean Canvas -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Lean Canvas — Mapeamento Rápido</h2>
+        </div>
+        <div style="padding: 1.5em;">
+          <p style="font-size: 0.95em; margin-bottom: 1em; text-align: center; color: #666;">
+            Ferramenta para validar ideias em <strong>1-2 páginas</strong>, sem plano de negócio gigante.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8em; font-size: 0.85em;">
+            <div style="background: #e3f2fd; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #1565c0;">Problema</h4>
+              <p style="margin: 0; font-size: 0.8em;">Top 3 problemas do segmento</p>
+            </div>
+            <div style="background: #fff3e0; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #e65100;">Segmento</h4>
+              <p style="margin: 0; font-size: 0.8em;">Quem sofre com esses problemas?</p>
+            </div>
+            <div style="background: #f3e5f5; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #6a1b9a;">Proposta de Valor</h4>
+              <p style="margin: 0; font-size: 0.8em;">Como você resolve melhor?</p>
+            </div>
+            <div style="background: #e8f5e9; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #2e7d32;">Solução</h4>
+              <p style="margin: 0; font-size: 0.8em;">Features MVP mais importantes</p>
+            </div>
+            <div style="background: #fce4ec; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #c2185b;">Canais</h4>
+              <p style="margin: 0; font-size: 0.8em;">Como você alcança os clientes?</p>
+            </div>
+            <div style="background: #e0f2f1; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #00695c;">Revenue</h4>
+              <p style="margin: 0; font-size: 0.8em;">Modelo de monetização</p>
+            </div>
+            <div style="background: #f1f8e9; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #558b2f;">Custo</h4>
+              <p style="margin: 0; font-size: 0.8em;">Estrutura de custos principais</p>
+            </div>
+            <div style="background: #e0f7fa; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #00838f;">Métrica-Chave</h4>
+              <p style="margin: 0; font-size: 0.8em;">KPI que você vai monitorar?</p>
+            </div>
+            <div style="background: #fff9c4; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #f57f17;">Vantagem Competitiva</h4>
+              <p style="margin: 0; font-size: 0.8em;">O que você tem único?</p>
+            </div>
+            <div style="background: #ffe0b2; padding: 1em; border-radius: 6px; text-align: center;">
+              <h4 style="margin: 0 0 0.5em 0; color: #e65100;">Equipe</h4>
+              <p style="margin: 0; font-size: 0.8em;">Quem executa isso?</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Dica:</strong> Use ferramentas como Miro, Figma ou até papel para preencher. O objetivo é <strong>validar hipóteses rapidamente</strong>, não ter um documento perfeito.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Definição de Problemas -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Técnica: 5 Porquês</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 1em; margin-bottom: 1.5em; color: #666;">
+            Metodologia para ir à <strong>raiz do problema</strong>, não apenas aos sintomas.
+          </p>
+          <div style="background: #f9f9f9; padding: 2em; border-radius: 8px; border-left: 4px solid #0066cc;">
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>1. Problema observado:</strong> "Meus clientes estão deixando de usar o software"</p>
+            <p style="margin: 1em 0 0.5em 0; font-size: 0.95em;"><strong>Por quê?</strong> Porque é lento e travado durante horário de pico</p>
+            <p style="margin: 1em 0 0.5em 0; font-size: 0.95em;"><strong>Por quê?</strong> Porque a infraestrutura não escala com a demanda</p>
+            <p style="margin: 1em 0 0.5em 0; font-size: 0.95em;"><strong>Por quê?</strong> Porque cada cliente usa um servidor separado</p>
+            <p style="margin: 1em 0 0.5em 0; font-size: 0.95em;"><strong>Por quê?</strong> Porque a aplicação foi feita como monólito, não multi-tenant</p>
+            <p style="margin: 1em 0 0.5em 0; font-size: 0.95em;"><strong>Por quê?</strong> Porque houve falta de planejamento arquitetural inicial</p>
+          </div>
+          <div style="margin-top: 1.5em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card blue">
+              <h4>✓ Benefícios</h4>
+              <ul style="font-size: 0.9em; margin: 0;">
+                <li>Encontra a causa raiz</li>
+                <li>Evita soluções superficiais</li>
+                <li>Identifica problemas sistêmicos</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>⚠️ Cuidado</h4>
+              <ul style="font-size: 0.9em; margin: 0;">
+                <li>Não pare sempre em 5 porquês</li>
+                <li>Pode ser mais ou menos</li>
+                <li>Valide com stakeholders</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Framework Problema-Público-Valor -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Framework: Problema → Público → Valor</h2>
+        </div>
+        <div style="padding: 1.5em;">
+          <div class="flow-diagram">
+            <div class="flow-item blue">
+              <h4>1️⃣ Problema Específico</h4>
+              <p style="font-size: 0.9em;">O que dói no seu mercado-alvo? Qual é a fricção?</p>
+              <p style="font-size: 0.85em; color: #666; margin-top: 0.5em;"><strong>Ex:</strong> Freelancers gastam 5h/mês em fatura</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>2️⃣ Público-Alvo Claro</h4>
+              <p style="font-size: 0.9em;">Quem tem esse problema? Descreva a persona.</p>
+              <p style="font-size: 0.85em; color: #666; margin-top: 0.5em;"><strong>Ex:</strong> Freelancer dev, 25-45 anos, Brasil</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item blue">
+              <h4>3️⃣ Proposta de Valor</h4>
+              <p style="font-size: 0.9em;">Como você resolve? Qual é o diferencial?</p>
+              <p style="font-size: 0.85em; color: #666; margin-top: 0.5em;"><strong>Ex:</strong> Sistema que fatura em 2 cliques</p>
+            </div>
+          </div>
+          <div style="margin-top: 2em; background: #f5f5f5; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Validação Rápida</h4>
+            <p style="margin: 0.5em 0 0 0; font-size: 0.95em;">
+              ✓ Problema resolvido? Converse com 10 potenciais clientes.<br/>
+              ✓ Disposto a pagar? Teste modelo de preço com MVP.<br/>
+              ✓ Grande mercado? Estime TAM (Total Addressable Market).
+            </p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Atividade: Definição do Problema</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue" style="margin-bottom: 1.5em;">
+            <p style="margin: 0; font-size: 0.95em;">Cada grupo tem 90 minutos para completar esta atividade em equipe.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="exercise-task-card">
+              <h4>✅ Passo 1: Problema</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Identifique um problema real</li>
+                <li>Aplique "5 Porquês"</li>
+                <li>Descreva em 3 linhas</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 2: Público-Alvo</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Crie 2 personas</li>
+                <li>Nome, função, idade</li>
+                <li>Dor específica deles</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 3: Proposta de Valor</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Defina seu "elevator pitch"</li>
+                <li>Como você resolve?</li>
+                <li>Em uma frase convincente</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 4: Lean Canvas</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Preencha o canvas</li>
+                <li>Defina modelo de negócio</li>
+                <li>Escolha métricas-chave</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Entrega da Semana -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega — Semana 02</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="delivery-box">
+            <h3>📋 Entrega 2 — Canvas de Negócio</h3>
+            <ul style="font-size: 1.05em;">
+              <li><strong>Lean Canvas preenchido</strong> (digital ou foto legível) com todos os 9 campos</li>
+              <li><strong>Descrição do problema</strong> (máximo 300 palavras) com análise "5 Porquês"</li>
+              <li><strong>2 personas detalhadas</strong> com nome, função, dor principal e comportamento</li>
+              <li><strong>Proposta de valor</strong> clara em uma frase + diferencial competitivo</li>
+              <li><strong>README atualizado</strong> no GitHub com essas informações</li>
+            </ul>
+            <span class="platform">Google Classroom</span>
+            <span class="platform">GitHub</span>
+            <span class="deadline">📅 Prazo: 04/03 (Terça)</span>
+          </div>
+          <div style="margin-top: 2em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Critérios de Avaliação</h4>
+            <ul style="font-size: 0.95em;">
+              <li>✓ Problema bem definido e validado</li>
+              <li>✓ Público-alvo claro e específico</li>
+              <li>✓ Proposta de valor diferenciada</li>
+              <li>✓ Análise crítica (não genérica)</li>
+              <li>✓ Documentação clara e profissional</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">02 – Modelos de Negócio SaaS</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Encerramento -->
+      <section class="end-slide">
+        <div style="text-align: center; padding: 4em 2em;">
+          <h2 style="font-size: 2.5em; margin-bottom: 1em;">Defina Bem o Problema</h2>
+          <p style="font-size: 1.3em; margin-bottom: 2em; color: #666;">
+            Um bom problema bem definido é 50% do caminho para uma solução de sucesso.
+          </p>
+          <div style="background: #f0f0f0; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
+            <p style="font-size: 1.05em; margin: 0;"><strong>Próxima semana:</strong> Requisitos Funcionais e Não Funcionais</p>
+          </div>
+          <p style="font-size: 0.9em; color: #999;">
+            Projeto Integrador • ADS • 5º Semestre • UNINOVE 2026
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: false,
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

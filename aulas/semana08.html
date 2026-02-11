@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 08 – Figma & Alta Fidelidade | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide 1: Cover -->
+      <section class="cover-slide">
+        <h1>Semana 08</h1>
+        <p>Figma & Alta Fidelidade</p>
+        <p style="font-size: 0.9em; margin-top: 2em; color: #999;">Prototipação com Design System</p>
+      </section>
+
+      <!-- Slide 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Figma & Design System</h1>
+          <h2>Alta Fidelidade e Prototipagem</h2>
+          <h3>Semana 08 — 08 de Abril</h3>
+        </div>
+        <div class="lesson-bar">Análise e Desenvolvimento de Sistemas • 5º Semestre • 2026.1</div>
+      </section>
+
+      <!-- Slide 3: Introdução ao Figma -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é Figma?</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;"><strong>Figma</strong> é uma ferramenta online de design colaborativo que permite criar, prototipizar e compartilhar interfaces.</p>
+        <div class="side-by-side">
+          <div class="side">
+            <h4>Vantagens</h4>
+            <ul class="styled-list">
+              <li>Colaboração real-time</li>
+              <li>Na nuvem (sem instalação)</li>
+              <li>Componentes reutilizáveis</li>
+              <li>Prototipagem integrada</li>
+              <li>Inspectable por devs</li>
+              <li>Gratuito para começar</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Interface Principal</h4>
+            <ul class="styled-list">
+              <li><strong>Canvas:</strong> Área de trabalho</li>
+              <li><strong>Toolbar:</strong> Ferramentas (shape, text, etc)</li>
+              <li><strong>Layers:</strong> Estrutura de camadas</li>
+              <li><strong>Design:</strong> Propriedades (cores, tamanho)</li>
+              <li><strong>Prototype:</strong> Conexões e animações</li>
+              <li><strong>Assets:</strong> Componentes e cores</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout blue">
+          <p><strong>Dica:</strong> Passe 30 min explorando a interface. YouTube tem ótimos tutoriais de 10 min para iniciantes!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Design System -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Design System: Estruturando Consistência</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Um <strong>design system</strong> é um conjunto documentado de padrões, componentes e guidelines reutilizáveis que garante consistência visual e de comportamento.</p>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Paleta de Cores</h4>
+            <p><strong>Primary:</strong> #3498DB (ação). <strong>Secondary:</strong> #2C3E50. <strong>Success:</strong> #27AE60. <strong>Error:</strong> #E74C3C. Crie variáveis no Figma!</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Tipografia</h4>
+            <p><strong>Display:</strong> Montserrat 700 (títulos). <strong>Body:</strong> Inter 400 (texto). <strong>Code:</strong> JetBrains Mono (código). Defina estilos de texto no Figma.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Espaçamento</h4>
+            <p>Use escala: 4px, 8px, 16px, 24px, 32px, 48px. Consistência visual. Configure auto-layout com gaps padrão.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Componentes</h4>
+            <p>Button, Input, Card, Modal, Navbar. Cada um com variantes (size, state). Reutilize em todo projeto.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Auto Layout e Constraints -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Auto Layout: Tornando Designs Responsivos</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>O que é Auto Layout?</h4>
+            <p>Posiciona e redimensiona elementos filhos automaticamente. Como Flexbox no CSS. Muda tamanho? Componentes se ajustam!</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Como Usar</h4>
+            <p><strong>1.</strong> Selecione grupo. <strong>2.</strong> Clique "Add auto layout". <strong>3.</strong> Configure direção (horizontal/vertical), gap e padding.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Constraints</h4>
+            <p>Define como elemento se comporta ao resize do pai. <strong>Fixed:</strong> tamanho constante. <strong>Fill:</strong> expande. <strong>Hug:</strong> abraça conteúdo.</p>
+          </div>
+        </div>
+        <div style="background: #f5f5f5; padding: 1em; border-left: 4px solid #3498DB; margin-top: 1em;">
+          <p style="margin: 0;"><strong>Exemplo:</strong> Button com auto-layout: Text center (fixed width) + Icon left (hug content) + Padding 8px. Mude o texto? Button redimensiona automaticamente!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Componentização -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Componentização: Criar e Reutilizar</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Um <strong>componente</strong> é um elemento reutilizável que pode ter múltiplas <strong>variantes</strong> (tamanhos, estados, tipos).</p>
+        <div style="background: #f5f5f5; padding: 1em; border-radius: 8px; margin-bottom: 1em; font-size: 0.9em;">
+          <h4 style="margin-top: 0;">Exemplo: Button Component</h4>
+          <p style="margin: 0.5em 0;"><strong>Base:</strong> Button/Primary (main component)</p>
+          <p style="margin: 0.5em 0;"><strong>Variantes:</strong></p>
+          <ul style="margin: 0.5em 0 0 0; padding-left: 1.2em;">
+            <li>Size: Small (32px) | Medium (40px) | Large (48px)</li>
+            <li>State: Default | Hover | Active | Disabled</li>
+            <li>Color: Primary | Secondary | Danger</li>
+            <li>Icon: Left icon | Right icon | No icon</li>
+          </ul>
+          <p style="margin: 0.5em 0;"><strong>Uso:</strong> Copie e mude variantes conforme precisa. Atualize main? Tudo atualiza automaticamente!</p>
+        </div>
+        <div class="callout success">
+          <p><strong>Benefício:</strong> Componentização garante consistência. Mude cor em um lugar = muda em todo projeto!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Prototipagem -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Prototyping: Conectar Frames e Animar</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">No Figma, <strong>prototyping</strong> permite conectar telas (frames) com fluxos interativos e animações.</p>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Passo 1: Criar Frames</h4>
+            <p>Cada tela é um frame. Ex: "Login Screen", "Dashboard", "User Profile". Organize em variações de device (Desktop 1280, Mobile 375).</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Passo 2: Adicionar Conexões</h4>
+            <p>Selecione elemento (botão), vá para "Prototype" → "+" → escolha o frame destino e a interação (On click, On hover, etc).</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Passo 3: Animar Transição</h4>
+            <p>Configure animação: Instant (sem delay), Slide (movimento), Push, Dissolve. Duração e easing customizáveis.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Passo 4: Testar</h4>
+            <p>Clique play (▶) no canto superior. Interage com protótipo no modo preview. Compartilhe link para stakeholders testarem!</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Responsive Design -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Responsive Design em Figma</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Designs modernos precisam funcionar em múltiplos tamanhos de tela. No Figma, use <strong>breakpoints</strong> e <strong>constraints</strong>.</p>
+        <div style="font-size: 0.9em; display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-bottom: 1.5em;">
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #3498DB;">
+            <h4 style="margin-top: 0;">Breakpoints Comuns</h4>
+            <ul style="margin: 0.5em 0; padding-left: 1.2em;">
+              <li>Mobile: 375px (iPhone SE)</li>
+              <li>Tablet: 768px (iPad)</li>
+              <li>Desktop: 1280px (standard)</li>
+              <li>Wide: 1920px (4K monitor)</li>
+            </ul>
+          </div>
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #27AE60;">
+            <h4 style="margin-top: 0;">Como Fazer</h4>
+            <ul style="margin: 0.5em 0; padding-left: 1.2em;">
+              <li>1. Crie frames para cada breakpoint</li>
+              <li>2. Design diferente layout se necessário</li>
+              <li>3. Use constraints para adaptação</li>
+              <li>4. Teste resize manualmente</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout blue">
+          <p><strong>Estratégia:</strong> Comece com mobile (small first), depois expanda para desktop. Mais fácil adicionar espaço que remover!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Atomic Design -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Atomic Design: Estruturando Componentes</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;"><strong>Atomic Design</strong> é uma metodologia que organiza componentes em hierarquia: átomos → moléculas → organismos → templates → páginas.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>⚛️ Átomos</h4>
+            <p>Elementos básicos indivisíveis. Button, input, label, icon, color. Menor unidade reutilizável. Exemplo: "Button/Primary".</p>
+          </div>
+          <div class="timeline-item">
+            <h4>🧬 Moléculas</h4>
+            <p>Grupos de átomos. Form input (label + input + error message), button with icon. Começa a ter função específica.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>🦴 Organismos</h4>
+            <p>Seções completas. Header (logo + nav + search), card (imagem + título + descrição + botão), modal. Componentes compostos.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>📄 Templates & Páginas</h4>
+            <p>Templates mostram layout com estrutura. Páginas preenchem com conteúdo real. Validam o sistema todo junto.</p>
+          </div>
+        </div>
+        <div class="callout success">
+          <p><strong>No Figma:</strong> Organize assets em pastas: Atoms/ Molecules/ Organisms/. Cada uma com seus componentes e variantes.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Guia de Implementação -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Do Design para o Código: Handoff</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Depois do design pronto, é hora de passar para desenvolvimento. Figma oferece recursos para facilitar!</p>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Inspect Mode</h4>
+            <p>Developers clicam em elemento → veem specs (tamanho, padding, cor, fonte, distância). Valores em pixels ou CSS pronto.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Design Tokens</h4>
+            <p>Exporte variáveis (cores, fontes, espaçamento) em JSON. Desenvolvedores usam como constantes no código (CSS variables).</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Documentação</h4>
+            <p>Descreva cada componente: quando usar, variantes, comportamento. Use frames como documentação viva no Figma.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Comunicação</h4>
+            <p>Comentários no Figma entre designer e dev. Não mude design sem avisar. Versione seu arquivo!</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Exercício Prático -->
+      <section class="exercise-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício: Protótipo em Alta Fidelidade</h2>
+        </div>
+        <div class="exercise-container">
+          <div class="exercise-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <h4>Criar Design System</h4>
+              <p>Defina paleta de 5 cores, tipografia (Display, Body, Code), espaçamento (4/8/16/24/32px). Crie variáveis no Figma.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <h4>Componentes Base (Atoms)</h4>
+              <p>Button, Input, Label, Card, Badge. Cada um com 2-3 variantes (tamanho, estado). Use auto-layout!</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <h4>Montar Telas (High Fidelity)</h4>
+              <p>Converta wireframes em mockups bonitos. Use componentes criados. Layout responsivo (mobile + desktop).</p>
+            </div>
+            <div class="step">
+              <span class="step-number">4</span>
+              <h4>Conectar em Prototype</h4>
+              <p>Adicione fluxos de navegação. Login → Dashboard. Click em menu → abre modal. Testável e shareable!</p>
+            </div>
+            <div class="step">
+              <span class="step-number">5</span>
+              <h4>Compartilhar e Coletar Feedback</h4>
+              <p>Envie link de preview. Peça feedback do time e professor. Iterar rápido.</p>
+            </div>
+          </div>
+          <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Entrega:</strong> Link do Figma (acesso de visualização) + link de protótipo compartilhado. Até sexta-feira.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Figma & Design System</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>1. Qual é a vantagem principal de usar Auto Layout no Figma?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="true">Elementos redimensionam automaticamente quando conteúdo muda</li>
+              <li data-correct="false">Muda as cores automaticamente</li>
+              <li data-correct="false">Cria animações automáticas</li>
+              <li data-correct="false">Exporta código HTML automaticamente</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Auto Layout é como Flexbox: gerencia espaçamento e tamanho filhos automaticamente. Muito útil para componentes responsivos.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>2. O que é um componente em Figma?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Uma cor ou fonte</li>
+              <li data-correct="true">Um elemento reutilizável que pode ter múltiplas variantes</li>
+              <li data-correct="false">Um arquivo do Figma</li>
+              <li data-correct="false">Uma prototipagem de alta fidelidade</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Componente é reutilizável com variantes (tamanho, cor, estado). Mude main component = tudo atualiza!</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>3. Qual NÃO é um nível da metodologia Atomic Design?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Átomos</li>
+              <li data-correct="false">Moléculas</li>
+              <li data-correct="true">Quarks</li>
+              <li data-correct="false">Organismos</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Atomic Design tem: Átomos → Moléculas → Organismos → Templates → Páginas. Não tem "quarks"!</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>4. Para fazer o design responsivo, qual técnica você usa no Figma?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Apenas criar uma versão desktop</li>
+              <li data-correct="true">Criar frames para cada breakpoint (mobile, tablet, desktop) e usar constraints</li>
+              <li data-correct="false">Figma faz responsivo automaticamente</li>
+              <li data-correct="false">Usar media queries no Figma</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Crie frames diferentes para cada breakpoint. Use constraints para comportamento de resize. Figma não é automático!</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>5. O que é "Design Handoff"?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Fechar o arquivo do Figma</li>
+              <li data-correct="true">Passar o design do Figma para developers implementarem em código</li>
+              <li data-correct="false">Mudar o design depois que está pronto</li>
+              <li data-correct="false">Compartilhar protótipo com usuários</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Handoff é a transição do design para desenvolvimento. Use Inspect mode, design tokens e documentação para facilitar!</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">08 – Figma & Alta Fidelidade</div>
+          <div class="footer-page">12</div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Encerramento -->
+      <section class="end-slide">
+        <h1>Semana 08 Concluída</h1>
+        <p>Você aprendeu Figma, design system, componentes e prototipagem interativa!</p>
+        <p style="margin-top: 2em; font-size: 0.9em; color: #999;">Próxima semana: Design Review e Testes de Usabilidade</p>
+        <p style="margin-top: 3em; font-size: 0.8em; color: #666;">© 2026 UNINOVE • Projeto Integrador • ADS 5º Semestre</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

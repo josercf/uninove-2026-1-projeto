@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Integrador | UNINOVE - ADS 5º Semestre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: #ffffff;
+      color: #222222;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 40px;
+    }
+
+    /* ── Top Accent Bar ── */
+    .accent-top {
+      height: 6px;
+      background: linear-gradient(90deg, #CC0033 40%, #1B3A6B 100%);
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header-left h1 {
+      font-size: 2.6em;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #1a1a1a;
+    }
+
+    .header-left h2 {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #CC0033;
+      margin-top: 4px;
+    }
+
+    .header-left h3 {
+      font-size: 1.05em;
+      font-weight: 400;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 2.4em;
+      letter-spacing: 0.05em;
+      color: #CC0033;
+    }
+
+    .logo-sub {
+      font-size: 0.85em;
+      color: #888;
+      font-weight: 400;
+    }
+
+    /* ── Info Box ── */
+    .info-box {
+      background: #f8f8f8;
+      border-left: 5px solid #CC0033;
+      border-radius: 0 10px 10px 0;
+      padding: 22px 30px;
+      margin-bottom: 35px;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      font-size: 1em;
+    }
+
+    .info-box .info-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-box .info-label {
+      color: #888;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .info-box .info-value {
+      color: #222;
+      font-weight: 600;
+      margin-top: 2px;
+      font-size: 1.05em;
+    }
+
+    /* ── Block Labels ── */
+    .block-label {
+      font-size: 1.05em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #CC0033;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #e0e0e0;
+      margin: 40px 0 18px 0;
+    }
+
+    .block-label span {
+      color: #888;
+      font-weight: 400;
+      font-size: 0.8em;
+      text-transform: none;
+      letter-spacing: normal;
+      margin-left: 12px;
+    }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+    }
+
+    thead th {
+      background: #CC0033;
+      color: #fff;
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 0.9em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    thead th:first-child { border-radius: 8px 0 0 0; }
+    thead th:last-child { border-radius: 0 8px 0 0; }
+
+    tbody td {
+      padding: 16px 18px;
+      font-size: 1.05em;
+      border-bottom: 1px solid #e8e8e8;
+      vertical-align: middle;
+    }
+
+    tbody tr {
+      transition: background 0.15s ease;
+    }
+
+    tbody tr:hover {
+      background: #f5f0f0;
+    }
+
+    /* ── Row Types ── */
+    tr.feriado {
+      background: #fafafa;
+      font-style: italic;
+    }
+
+    tr.feriado td { color: #999; }
+
+    tr.checkpoint {
+      background: #faf5ff;
+      border-left: 4px solid #8B5CF6;
+    }
+
+    tr.checkpoint td {
+      font-weight: 600;
+      color: #6d28d9;
+    }
+
+    tr.video-final {
+      background: #f0fdf4;
+      border-left: 4px solid #27ae60;
+    }
+
+    tr.video-final td {
+      color: #166534;
+      font-weight: 600;
+    }
+
+    /* ── Badges ── */
+    .num-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 0.9em;
+      font-weight: 700;
+      color: #fff;
+      background: #CC0033;
+    }
+
+    .num-badge.cp { background: #8B5CF6; }
+    .num-badge.off { background: #ccc; color: #999; }
+    .num-badge.green { background: #27ae60; }
+    .num-badge.blue { background: #1B3A6B; }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      font-size: 0.7em;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .tag-teoria { background: #eff1ff; color: #4f46e5; }
+    .tag-pratica { background: #ecfdf5; color: #059669; }
+    .tag-entrega { background: #fef2f2; color: #dc2626; }
+    .tag-cp { background: #f5f3ff; color: #7c3aed; }
+    .tag-feriado { background: #f5f5f5; color: #999; }
+    .tag-video { background: #ecfdf5; color: #166534; }
+    .tag-review { background: #fffbeb; color: #b45309; }
+
+    /* ── Date Column ── */
+    .col-date {
+      width: 110px;
+      color: #666;
+      font-size: 1em;
+      font-weight: 500;
+    }
+
+    .col-num {
+      width: 70px;
+      text-align: center;
+    }
+
+    /* ── Links ── */
+    tbody a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    tbody a:hover {
+      color: #CC0033;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 2px solid #e8e8e8;
+      color: #888;
+      font-size: 0.85em;
+      text-align: center;
+    }
+
+    /* ── Ementa Box ── */
+    .ementa-box {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 24px 30px;
+      margin-bottom: 28px;
+      border-left: 5px solid #1B3A6B;
+    }
+
+    .ementa-box h4 {
+      color: #1a1a1a;
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .ementa-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+      list-style: none;
+    }
+
+    .ementa-list li {
+      font-size: 0.95em;
+      color: #444;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .ementa-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #CC0033;
+      font-weight: 700;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      font-size: 0.9em;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #666;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="accent-top"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Projeto Integrador</h1>
+        <h2>Análise e Desenvolvimento de Sistemas — 5º Semestre</h2>
+        <h3>Prof. José Romualdo da Costa Filho</h3>
+      </div>
+      <div class="header-right">
+        <div class="logo-text">UNINOVE</div>
+        <div class="logo-sub">Universidade Nove de Julho</div>
+      </div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <div class="info-item">
+        <span class="info-label">Período</span>
+        <span class="info-value">1º Semestre 2026</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Duração</span>
+        <span class="info-value">20 Semanas</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Formato</span>
+        <span class="info-value">Projeto em Grupo (8-12 alunos)</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Checkpoints</span>
+        <span class="info-value">3 Parciais + 1 Final</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Entregas</span>
+        <span class="info-value">Google Classroom + GitHub</span>
+      </div>
+    </div>
+
+    <!-- Ementa -->
+    <div class="ementa-box">
+      <h4>Tópicos da Disciplina</h4>
+      <ul class="ementa-list">
+        <li>Definição de Problemas</li>
+        <li>User Stories &amp; Kanban</li>
+        <li>Requisitos Funcionais e Não Funcionais</li>
+        <li>Modelos de Negócio SaaS</li>
+        <li>Jornada do Usuário (UX)</li>
+        <li>Prototipação (Wireframe &amp; Figma)</li>
+        <li>Modelagem C4 &amp; Diagram as Code</li>
+        <li>Modelagem de Dados (MySQL, MongoDB, Redis)</li>
+        <li>Versionamento com GitHub</li>
+        <li>Padrões de Projeto (GoF)</li>
+        <li>Documentação de APIs (Swagger)</li>
+        <li>Tendências em IA para Aplicações</li>
+      </ul>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#CC0033;"></div> Aula</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8B5CF6;"></div> Checkpoint</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#27ae60;"></div> Entrega de Vídeo</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ccc;"></div> Feriado</div>
+    </div>
+
+    <!-- ═══════════ BLOCO 1 ═══════════ -->
+    <div class="block-label">Bloco 1 — Concepção <span>Semanas 1 a 5 · Definição do problema e planejamento</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>#</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-date">11/02</td>
+          <td class="col-num"><span class="num-badge">01</span></td>
+          <td><a href="semana01.html">Apresentação da Disciplina + Formação dos Grupos</a> <span class="tag tag-pratica">Dinâmica</span></td>
+        </tr>
+        <tr class="feriado">
+          <td class="col-date">18/02</td>
+          <td class="col-num"><span class="num-badge off">—</span></td>
+          <td>Carnaval / Quarta de Cinzas <span class="tag tag-feriado">Feriado</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">25/02</td>
+          <td class="col-num"><span class="num-badge">02</span></td>
+          <td><a href="semana02.html">Modelos de Negócio SaaS + Definição de Problemas</a> <span class="tag tag-teoria">Teoria</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">04/03</td>
+          <td class="col-num"><span class="num-badge">03</span></td>
+          <td><a href="semana03.html">Requisitos Funcionais e Não Funcionais</a> <span class="tag tag-teoria">Teoria</span> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">11/03</td>
+          <td class="col-num"><span class="num-badge">04</span></td>
+          <td><a href="semana04.html">User Stories + Kanban (GitHub Projects)</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">18/03</td>
+          <td class="col-num"><span class="num-badge">05</span></td>
+          <td><a href="semana05.html">Versionamento de Código com GitHub</a> <span class="tag tag-pratica">Hands-on</span> <span class="tag tag-entrega">Entrega 1</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ═══════════ BLOCO 2 ═══════════ -->
+    <div class="block-label">Bloco 2 — Design &amp; UX <span>Semanas 6 a 10 · Experiência do usuário e prototipação</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>#</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-date">25/03</td>
+          <td class="col-num"><span class="num-badge">06</span></td>
+          <td><a href="semana06.html">Jornada do Usuário (UX Research &amp; Personas)</a> <span class="tag tag-teoria">Teoria</span> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">01/04</td>
+          <td class="col-num"><span class="num-badge">07</span></td>
+          <td><a href="semana07.html">Prototipação — Wireframes (Baixa Fidelidade)</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">08/04</td>
+          <td class="col-num"><span class="num-badge">08</span></td>
+          <td><a href="semana08.html">Prototipação — Alta Fidelidade (Figma)</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">15/04</td>
+          <td class="col-num"><span class="num-badge">09</span></td>
+          <td><a href="semana09.html">Design Review + Teste de Usabilidade</a> <span class="tag tag-review">Review</span> <span class="tag tag-entrega">Entrega 2</span></td>
+        </tr>
+        <tr class="feriado">
+          <td class="col-date">21/04</td>
+          <td class="col-num"><span class="num-badge off">—</span></td>
+          <td>Tiradentes <span class="tag tag-feriado">Feriado</span></td>
+        </tr>
+        <tr class="checkpoint">
+          <td class="col-date">22/04</td>
+          <td class="col-num"><span class="num-badge cp">CP</span></td>
+          <td><a href="semana10.html">Checkpoint 1 — Gravação de Vídeo Parcial</a> <span class="tag tag-cp">Checkpoint</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ═══════════ BLOCO 3 ═══════════ -->
+    <div class="block-label">Bloco 3 — Arquitetura <span>Semanas 11 a 14 · Modelagem de sistemas e dados</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>#</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-date">29/04</td>
+          <td class="col-num"><span class="num-badge">11</span></td>
+          <td><a href="semana11.html">Modelagem C4 — Context &amp; Container</a> <span class="tag tag-teoria">Teoria</span> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">06/05</td>
+          <td class="col-num"><span class="num-badge">12</span></td>
+          <td><a href="semana12.html">Modelagem C4 — Component + Diagram as Code</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">13/05</td>
+          <td class="col-num"><span class="num-badge">13</span></td>
+          <td><a href="semana13.html">Modelagem de Dados — SQL (MySQL)</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">20/05</td>
+          <td class="col-num"><span class="num-badge">14</span></td>
+          <td><a href="semana14.html">Modelagem de Dados — NoSQL (MongoDB &amp; Redis)</a> <span class="tag tag-pratica">Hands-on</span> <span class="tag tag-entrega">Entrega 3</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ═══════════ BLOCO 4 ═══════════ -->
+    <div class="block-label">Bloco 4 — Desenvolvimento <span>Semanas 15 a 18 · APIs, padrões e IA</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>#</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-date">27/05</td>
+          <td class="col-num"><span class="num-badge">15</span></td>
+          <td><a href="semana15.html">Padrões de Projeto (GoF)</a> <span class="tag tag-teoria">Teoria</span> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">03/06</td>
+          <td class="col-num"><span class="num-badge">16</span></td>
+          <td><a href="semana16.html">Documentação de APIs (Swagger / Postman / Insomnia)</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr>
+          <td class="col-date">10/06</td>
+          <td class="col-num"><span class="num-badge">17</span></td>
+          <td><a href="semana17.html">Tendências em IA — Aplicando IA em Aplicações</a> <span class="tag tag-teoria">Teoria</span> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr class="checkpoint">
+          <td class="col-date">17/06</td>
+          <td class="col-num"><span class="num-badge cp">CP</span></td>
+          <td><a href="semana18.html">Checkpoint 2 — Validação Técnica</a> <span class="tag tag-cp">Checkpoint</span> <span class="tag tag-entrega">Entrega 4</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ═══════════ BLOCO 5 ═══════════ -->
+    <div class="block-label">Bloco 5 — Integração &amp; Entrega Final <span>Semanas 19 a 20 · Finalização e gravação do vídeo final</span></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>#</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-date">24/06</td>
+          <td class="col-num"><span class="num-badge blue">19</span></td>
+          <td><a href="semana19.html">Integração Final + Preparação do Vídeo</a> <span class="tag tag-pratica">Hands-on</span></td>
+        </tr>
+        <tr class="video-final">
+          <td class="col-date">01/07</td>
+          <td class="col-num"><span class="num-badge green">20</span></td>
+          <td><a href="semana20.html">Entrega Final — Gravação do Vídeo de Defesa</a> <span class="tag tag-video">Vídeo</span> <span class="tag tag-entrega">Entrega Final</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>UNINOVE — Universidade Nove de Julho · Análise e Desenvolvimento de Sistemas · 2026.1</p>
+      <p style="margin-top: 6px;">Prof.º José Romualdo da Costa Filho · jose.romualdo@uni9.pro.br</p>
+    </div>
+  </div>
+</body>
+</html>

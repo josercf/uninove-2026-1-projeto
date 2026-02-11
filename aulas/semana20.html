@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 20 – Apresentação Final | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 20 – Apresentação Final: Defesa do Projeto</div>
+      </section>
+
+      <!-- SLIDE 3: Boas-vindas -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Boas-vindas à Apresentação Final!</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Momento Importante</strong>
+            <p>Vocês trabalharam durante 20 semanas. Hoje é a chance de mostrar tudo.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Celebração</strong>
+            <p>Independente do resultado, vocês criaram uma aplicação real do zero.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Aprendizado Continuado</strong>
+            <p>Feedback da banca é ouro puro. Escutem com mente aberta.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Networking</strong>
+            <p>Professores, colegas, potenciais empregadores. Façam contatos!</p>
+          </div>
+        </div>
+        <div class="callout success">
+          <strong>✓ Lembrem:</strong> Vocês são especialistas no projeto de vocês. Confiem nisso.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Formato da Apresentação -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Formato: Timing Exato</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>20 minutos:</strong> Apresentação do projeto (slides + demo)
+          </div>
+          <div class="timeline-item">
+            <strong>10 minutos:</strong> Perguntas da banca (professores + convidados)
+          </div>
+          <div class="timeline-item">
+            <strong>Tempo total:</strong> 30 minutos por grupo
+          </div>
+        </div>
+        <div class="styled-list">
+          <strong>Ordem de Apresentação:</strong>
+          <ul>
+            <li>Será definida hoje, ao acaso ou ordem de inscrição</li>
+            <li>Todos devem estar presentes para as outras apresentações</li>
+            <li>Presença é OBRIGATÓRIA (falta = zero na disciplina)</li>
+          </ul>
+        </div>
+        <div class="callout warning">
+          <strong>⚠️ Rigor com timing:</strong> Se exceder tempo, serão pedidos para parar.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Critérios de Avaliação Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Rubrica Final: Como Serão Avaliados</h2>
+        </div>
+        <div class="styled-list">
+          <strong>1. Qualidade do Projeto (40%):</strong>
+          <ul>
+            <li>Completude de funcionalidades, código limpo, escalável</li>
+            <li>API bem documentada, testes implementados</li>
+            <li>Feature de IA integrada e funcionando</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>2. Apresentação & Comunicação (25%):</strong>
+          <ul>
+            <li>Clareza, organização das ideias, storytelling</li>
+            <li>Respostas às perguntas com profundidade técnica</li>
+            <li>Timing respeitado, visual profissional</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>3. Demonstração Prática (20%):</strong>
+          <ul>
+            <li>App rodando sem erros, features principais funcionando</li>
+            <li>Segurança (sem expor senhas/keys), performance aceitável</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>4. Trabalho em Equipe & Documentação (15%):</strong>
+          <ul>
+            <li>Distribuição clara de tarefas, todos contribuem</li>
+            <li>README, diagramas, commits bem organizados</li>
+          </ul>
+        </div>
+        <div class="callout blue">
+          <strong>💡 Peso final:</strong> Projeto 60%, Apresentação 40%. Ambos precisam ser bons!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: O que a Banca Vai Avaliar -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Perspectiva da Banca: O que Observam</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Clareza</strong>
+            <p>Conseguem explicar o projeto de forma que um leigo entenda o problema e a solução?</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Profundidade Técnica</strong>
+            <p>Entendem as decisões técnicas? Sabem responder por quê usaram X em vez de Y?</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Trabalho em Equipe</strong>
+            <p>Todos falam? Conhecem o projeto inteiro ou apenas sua parte?</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Inovação & Criatividade</strong>
+            <p>Trouxeram algo novo? Feature de IA interessante? Design inovador?</p>
+          </div>
+        </div>
+        <div class="callout blue">
+          <strong>📌 Honestidade:</strong> Ser honesto sobre limitações é sinal de maturidade.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Checklist de Entrega Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Checklist: Tudo que Deve Estar Pronto</h2>
+        </div>
+        <div class="styled-list">
+          <strong>GitHub Repository:</strong>
+          <ul>
+            <li>☐ Código completo (backend + frontend)</li>
+            <li>☐ Testes unitários e integração</li>
+            <li>☐ Docker + docker-compose.yml</li>
+            <li>☐ README detalhado com setup</li>
+            <li>☐ API documentada (OpenAPI yaml)</li>
+            <li>☐ Diagramas (C4, ER, arquitetura)</li>
+            <li>☐ CI/CD pipeline (GitHub Actions)</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Google Classroom:</strong>
+          <ul>
+            <li>☐ Link do repositório</li>
+            <li>☐ Slides da apresentação (PDF)</li>
+            <li>☐ Vídeo de demonstração (em caso de falha de internet)</li>
+            <li>☐ Documento com resumo executivo</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Presentation Day:</strong>
+          <ul>
+            <li>☐ Aplicação rodando localmente</li>
+            <li>☐ Dados de teste carregados</li>
+            <li>☐ Backup de internet (hotspot)</li>
+            <li>☐ Todos os membros presentes</li>
+          </ul>
+        </div>
+        <div class="callout warning">
+          <strong>⚠️ Deadline:</strong> 01 de Julho de 2026, apresentação a partir das 13:00.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Ordem de Apresentação -->
+      <section class="section-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="accent-bar"></div>
+        <h2>Grupos Apresentam na Seguinte Ordem</h2>
+        <div class="section-number">
+          <p>1. Grupo 1 - 13:00</p>
+          <p>2. Grupo 2 - 13:35</p>
+          <p>3. Grupo 3 - 14:10</p>
+          <p>4. Intervalo - 14:45</p>
+          <p>5. Grupo 4 - 15:00</p>
+          <p>6. Grupo 5 - 15:35</p>
+          <p>7. Grupo 6 - 16:10</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Delivery Final Completo -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Delivery Final: Entrega 5</h2>
+        </div>
+        <div class="delivery-box">
+          <h3>O Que Deve Estar no GitHub:</h3>
+          <ul class="styled-list">
+            <li><strong>/src ou /backend:</strong> Código backend completo</li>
+            <li><strong>/frontend ou /web:</strong> Código frontend completo</li>
+            <li><strong>/docs:</strong> Diagramas, API docs, slides, vídeo de demo</li>
+            <li><strong>/database:</strong> Scripts SQL, migrations</li>
+            <li><strong>/tests:</strong> Testes unitários e integração</li>
+            <li><strong>Dockerfile + docker-compose.yml:</strong> Para rodar em containers</li>
+            <li><strong>.github/workflows:</strong> CI/CD pipeline</li>
+            <li><strong>openapi.yaml:</strong> Especificação completa da API</li>
+            <li><strong>README.md:</strong> Documentação de projeto (mín. 1000 palavras)</li>
+            <li><strong>.env.example:</strong> Variáveis de ambiente</li>
+          </ul>
+          <div class="platform">
+            <strong>Plataforma:</strong> GitHub + Google Classroom
+          </div>
+          <div class="deadline">
+            <strong>Prazo Final:</strong> 01 de Julho, 23:59 (após apresentação)
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Retrospectiva & Aprendizados -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Reflexão: O que Aprendemos</h2>
+        </div>
+        <div class="styled-list">
+          <strong>Tecnicamente:</strong>
+          <ul>
+            <li>Arquitetura escalável, padrões de projeto, clean code</li>
+            <li>API REST, autenticação, banco de dados, containerização</li>
+            <li>IA/ML integrado em aplicações reais</li>
+            <li>Testes, CI/CD, deploy, versionamento</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Profissionalmente:</strong>
+          <ul>
+            <li>Trabalhar em equipe, comunicação, resolução de conflitos</li>
+            <li>Apresentar para stakeholders, pitch, storytelling</li>
+            <li>Documentação, README que vende, GitHub que impressiona</li>
+            <li>Responsabilidade, deadlines, entrega de qualidade</li>
+          </ul>
+        </div>
+        <div class="styled-list">
+          <strong>Pessoalmente:</strong>
+          <ul>
+            <li>Confiança em capacidades técnicas</li>
+            <li>Persistência para resolver problemas complexos</li>
+            <li>Curiosidade e aprendizado contínuo</li>
+          </ul>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Próximos Passos & Mercado -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Mercado de Trabalho: Próximas Oportunidades</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Portfólio GitHub</strong>
+            <p>Seu repositório de projeto é portfolio. Mantenha limpo, documente bem.</p>
+          </div>
+          <div class="concept-card success">
+            <strong>Especialização</strong>
+            <p>Escolha 1-2 áreas: Frontend, Backend, DevOps, Data Science, IA. Aprofunde.</p>
+          </div>
+          <div class="concept-card warning">
+            <strong>Certificações</strong>
+            <p>AWS Solutions Architect, Google Cloud, Kubernetes, Terraform. Agregam valor.</p>
+          </div>
+          <div class="concept-card info">
+            <strong>Open Source</strong>
+            <p>Contribuir em projetos open source no GitHub. Visibilidade + aprendizado.</p>
+          </div>
+        </div>
+        <div class="callout success">
+          <strong>✓ Dica ouro:</strong> Seu projeto deste semestre pode virar startup. Não o abandone!
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Agradecimentos & Encerramento -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Agradecimentos</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Aos Alunos:</strong> Pela dedicação, esforço e comprometimento ao longo de 20 semanas.
+          </div>
+          <div class="timeline-item">
+            <strong>Aos Colegas de Turma:</strong> Pelo feedback cruzado, colaboração, networking.
+          </div>
+          <div class="timeline-item">
+            <strong>À UNINOVE:</strong> Pela infraestrutura, lab, suporte para que pudessem aprender.
+          </div>
+          <div class="timeline-item">
+            <strong>À Banca:</strong> Professores e convidados que avaliam com seriedade.
+          </div>
+        </div>
+        <div class="callout success">
+          <strong>✓ Vocês conseguiram!</strong> Muito obrigado por tudo. Boa sorte na carreira.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Quiz Final -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Reflexão Final</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual é a maior lição que aprenderam neste semestre?</strong></p>
+            <div class="quiz-options">
+              <ul>
+                <li data-correct="false"><span class="option-letter">A</span> Apenas tecnologia importa</li>
+                <li data-correct="true"><span class="option-letter">B</span> Arquitetura, comunicação e trabalho em equipe são tão importantes quanto código</li>
+                <li data-correct="false"><span class="option-letter">C</span> Prazo é negociável</li>
+                <li data-correct="false"><span class="option-letter">D</span> Documentação é luxo</li>
+              </ul>
+            </div>
+            <div class="quiz-feedback" data-correct-msg="✓ Correto! Projetos reais bem-sucedidos precisam de tudo isso." data-incorrect-msg="✗ Pense novamente. O sucesso em projeto integrador requer muito mais que apenas código."></div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">20 – Apresentação Final</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: Encerramento Final -->
+      <section class="end-slide">
+        <h2>Obrigado!</h2>
+        <p>Prof. José Romualdo da Costa Filho</p>
+        <p>Projeto Integrador - 5º Semestre ADS</p>
+        <p>UNINOVE 2026</p>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

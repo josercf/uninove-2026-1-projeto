@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 07 – Wireframes | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide 1: Cover -->
+      <section class="cover-slide">
+        <h1>Semana 07</h1>
+        <p>Wireframes</p>
+        <p style="font-size: 0.9em; margin-top: 2em; color: #999;">Prototipação em Baixa Fidelidade</p>
+      </section>
+
+      <!-- Slide 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Wireframes</h1>
+          <h2>Estruturando a Interface</h2>
+          <h3>Semana 07 — 01 de Abril</h3>
+        </div>
+        <div class="lesson-bar">Análise e Desenvolvimento de Sistemas • 5º Semestre • 2026.1</div>
+      </section>
+
+      <!-- Slide 3: O que são Wireframes? -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é um Wireframe?</h2>
+        </div>
+        <p style="margin-bottom: 1.5em; font-size: 1em;">Um <strong>wireframe</strong> é um esboço de baixa fidelidade que mostra o <em>layout</em> e a <em>estrutura</em> de uma interface, sem cores, imagens ou detalhes visuais.</p>
+        <div class="side-by-side">
+          <div class="side">
+            <h4>O que inclui</h4>
+            <ul class="styled-list">
+              <li>Posição de elementos</li>
+              <li>Hierarquia de informação</li>
+              <li>Fluxo de navegação</li>
+              <li>Espaçamento básico</li>
+              <li>Áreas de conteúdo</li>
+              <li>Botões e formulários</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>O que NÃO inclui</h4>
+            <ul class="styled-list">
+              <li>Cores e estilos</li>
+              <li>Imagens e ícones</li>
+              <li>Tipografia detalhada</li>
+              <li>Animações</li>
+              <li>Efeitos visuais</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout success">
+          <p><strong>Benefício:</strong> Wireframes forçam você a pensar em estrutura antes de gastar tempo com design visual. Falhas estruturais aparecem mais rapidamente!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Por que Prototipar? -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Por que Prototipar Antes de Codificar?</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>💡 Comunicação</h4>
+            <p>Alinha designers, developers e stakeholders. Todos entendem a mesma coisa antes de codificar.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>⚡ Velocidade</h4>
+            <p>Detecta problemas estruturais cedo. Pivot é barato em wireframe, caro em código.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>🎯 Validação</h4>
+            <p>Testa com usuários antes de investir em desenvolvimento. Feedback rápido = melhor produto.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>💰 ROI</h4>
+            <p>Economiza meses de retrabalho. Um dias em design = semanas em desenvolvimento.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Níveis de Fidelidade -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Níveis de Fidelidade: Do Sketch ao Protótipo</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>1️⃣ Sketch (Esboço)</h4>
+            <p>Papel e caneta. Ideias brutas, exploração rápida. Throwaway (não é entregável). Perfeito para brainstorm em grupo.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>2️⃣ Wireframe (Baixa Fidelidade)</h4>
+            <p>Estrutura clara, sem cores. Ferramenta: Balsamiq, Excalidraw, papel digitalizado. Foca em layout e fluxo.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>3️⃣ Mockup (Média Fidelidade)</h4>
+            <p>Adiciona cores, tipografia, estilo visual. Sem interação. Ferramenta: Figma, Adobe XD. Mostra como "vai parecer".</p>
+          </div>
+          <div class="timeline-item">
+            <h4>4️⃣ Protótipo (Alta Fidelidade)</h4>
+            <p>Totalmente interativo. Cliques, fluxo, animações. Ferramenta: Figma, Framer, Adobe XD. Simula comportamento real.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Princípios de Layout -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Princípios de Layout: Hierarquia Visual</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Hierarquia de Tamanho</h4>
+            <p>Elementos mais importantes são maiores. Título > Subtítulo > Corpo. Guia o olho do usuário.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Contraste</h4>
+            <p>Cores, pesos e espaçamento criam diferença. Alto contraste = alta importância.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Espaçamento (White Space)</h4>
+            <p>Espaço em branco respira a interface. Evita poluição visual. Agrupa elementos relacionados.</p>
+          </div>
+          <div class="concept-card warning">
+            <h4>Grid</h4>
+            <p>Sistema ordenado para alinhar elementos. Cria consistência e profissionalismo. Comumente 12-24 colunas.</p>
+          </div>
+        </div>
+        <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Dica:</strong> Use grid de 12 colunas como padrão. Divisível por 2, 3, 4, 6 — muito flexível!</p>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Design Patterns -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Design Patterns Comuns</h2>
+        </div>
+        <div style="font-size: 0.9em; display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-bottom: 1.5em;">
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #3498DB;">
+            <h4>📱 Navegação</h4>
+            <ul style="margin: 0.5em 0 0 0; padding-left: 1.2em;">
+              <li>Top navbar com logo + menu</li>
+              <li>Sidebar (desktop) / Hamburger (mobile)</li>
+              <li>Bottom navigation (apps)</li>
+              <li>Breadcrumbs para contexto</li>
+            </ul>
+          </div>
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #27AE60;">
+            <h4>📝 Formulários</h4>
+            <ul style="margin: 0.5em 0 0 0; padding-left: 1.2em;">
+              <li>Label acima do input</li>
+              <li>Validação em tempo real</li>
+              <li>Botão destaque (CTA)</li>
+              <li>Aviso de campos obrigatórios</li>
+            </ul>
+          </div>
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #E74C3C;">
+            <h4>📊 Dashboards</h4>
+            <ul style="margin: 0.5em 0 0 0; padding-left: 1.2em;">
+              <li>Cards com métricas</li>
+              <li>Gráficos e visualizações</li>
+              <li>Filtros no topo</li>
+              <li>Data range picker</li>
+            </ul>
+          </div>
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #F39C12;">
+            <h4>📋 Listagens</h4>
+            <ul style="margin: 0.5em 0 0 0; padding-left: 1.2em;">
+              <li>Header com busca/filtro</li>
+              <li>Tabela ou cards</li>
+              <li>Paginação ou scroll infinito</li>
+              <li>Ações por item (edit, delete)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <p><strong>Referência:</strong> Estude <code>ui-patterns.com</code> e <code>refactoringui.com</code> para padrões provados!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Ferramentas para Wireframing -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Ferramentas para Criar Wireframes</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card">
+            <h4>✏️ Papel e Caneta</h4>
+            <p><strong>Quando:</strong> Brainstorm inicial, ideação rápida. <strong>Vantagem:</strong> Sem limitações, tangível. <strong>Desvantagem:</strong> Difícil compartilhar/iterar digitalmente.</p>
+          </div>
+          <div class="concept-card blue">
+            <h4>Excalidraw</h4>
+            <p><strong>Quando:</strong> Sketching digital. <strong>Vantagem:</strong> Gratuito, rápido, colaborativo real-time. <strong>Desvantagem:</strong> Menos componentes prontos.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Balsamiq</h4>
+            <p><strong>Quando:</strong> Wireframes estruturados. <strong>Vantagem:</strong> Componentes prontos, look "sketch". <strong>Desvantagem:</strong> Pago, menos flexível.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Figma</h4>
+            <p><strong>Quando:</strong> Wireframe até alta fidelidade. <strong>Vantagem:</strong> Componentes, auto-layout, prototipagem. <strong>Desvantagem:</strong> Curva de aprendizado.</p>
+          </div>
+        </div>
+        <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Recomendação para este projeto:</strong> Use Excalidraw ou papel para primeira iteração (rápido), depois Figma para alta fidelidade.</p>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Fluxo de Telas -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Fluxo de Telas: Conectando Wireframes</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Um fluxo de telas (user flow) mostra <strong>como</strong> o usuário navega entre as telas.</p>
+        <div style="background: #f5f5f5; padding: 1.5em; border-radius: 8px; margin-bottom: 1.5em;">
+          <h4 style="margin-top: 0;">Exemplo: Fluxo de Login + Dashboard</h4>
+          <div style="display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; font-size: 0.9em;">
+            <div style="border: 2px solid #3498DB; padding: 0.8em; border-radius: 4px;">Login Screen</div>
+            <span style="color: #3498DB; font-weight: bold;">→</span>
+            <div style="border: 2px solid #3498DB; padding: 0.8em; border-radius: 4px;">Email Válido?</div>
+            <span style="color: #3498DB; font-weight: bold;">→</span>
+            <div style="border: 2px solid #27AE60; padding: 0.8em; border-radius: 4px;">Dashboard</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; font-size: 0.9em; margin-top: 1em;">
+            <div style="border: 2px solid #E74C3C; padding: 0.8em; border-radius: 4px;">Erro Screen</div>
+            <span style="color: #E74C3C; font-weight: bold;">← (voltar)</span>
+            <div style="border: 2px solid #3498DB; padding: 0.8em; border-radius: 4px;">Login Screen</div>
+          </div>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card">
+            <h4>Componentes do Fluxo</h4>
+            <ul style="font-size: 0.85em;">
+              <li><strong>Telas:</strong> Cada estado da interface</li>
+              <li><strong>Decisões:</strong> Pontos de bifurcação (sim/não)</li>
+              <li><strong>Ações:</strong> O que dispara transição</li>
+              <li><strong>Setas:</strong> Direção da navegação</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Exemplo de Wireframe Detalhado -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Wireframe de um Dashboard</h2>
+        </div>
+        <div style="background: #f9f9f9; padding: 1.5em; border: 1px solid #ddd; border-radius: 8px; font-size: 0.85em; line-height: 1.8;">
+          <div style="border-bottom: 2px solid #333; padding-bottom: 0.5em; margin-bottom: 1em;">
+            <p style="margin: 0;"><strong>[NAVBAR] Logo | Home | Products | Settings | Logout</strong></p>
+          </div>
+          <div style="display: grid; grid-template-columns: 200px 1fr; gap: 1em; margin-bottom: 1em;">
+            <div style="border: 1px dashed #999; padding: 1em; background: #eee;">
+              <p style="margin: 0; text-align: center;"><strong>[SIDEBAR]</strong><br>Dashboard<br>Products<br>Orders<br>Reports</p>
+            </div>
+            <div>
+              <p style="margin-top: 0; font-weight: bold;">Filtros: [Date Range ▼] [Category ▼] [Status ▼]</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em;">
+                <div style="border: 1px solid #ddd; padding: 0.5em; background: #f0f0f0;">
+                  <p style="margin: 0; font-weight: bold;">Métrica A</p>
+                  <p style="margin: 0;">999</p>
+                </div>
+                <div style="border: 1px solid #ddd; padding: 0.5em; background: #f0f0f0;">
+                  <p style="margin: 0; font-weight: bold;">Métrica B</p>
+                  <p style="margin: 0;">$9,999</p>
+                </div>
+                <div style="border: 1px solid #ddd; padding: 0.5em; background: #f0f0f0;">
+                  <p style="margin: 0; font-weight: bold;">Métrica C</p>
+                  <p style="margin: 0;">99%</p>
+                </div>
+              </div>
+              <div style="border: 1px solid #ddd; padding: 0.5em; margin-top: 0.5em; background: #f0f0f0;">
+                <p style="margin: 0;"><strong>Gráfico</strong></p>
+                <p style="margin: 0; height: 80px; display: flex; align-items: center; justify-content: center; color: #999;">[Chart Area]</p>
+              </div>
+              <div style="border: 1px solid #ddd; padding: 0.5em; margin-top: 0.5em; background: #f0f0f0;">
+                <p style="margin: 0;"><strong>Tabela de Dados</strong></p>
+                <p style="margin: 0; font-size: 0.8em;">Header | Header | Header | Header</p>
+                <p style="margin: 0; font-size: 0.8em;">Row | Row | Row | [Edit] [Delete]</p>
+                <p style="margin: 0; font-size: 0.8em;">Row | Row | Row | [Edit] [Delete]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 1em; font-size: 0.85em;"><strong>Notas:</strong> Wireframe mostra posição e proporções. Texto é placeholder. Sem cores detalhadas.</p>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Exercício Prático -->
+      <section class="exercise-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício: Criar 5+ Wireframes</h2>
+        </div>
+        <div class="exercise-container">
+          <div class="exercise-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <h4>Mapeie as Telas Principais</h4>
+              <p>Identifique 5-7 telas críticas do seu projeto (ex: login, dashboard, lista, detalhe, formulário, erro).</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <h4>Crie Fluxo de Usuário</h4>
+              <p>Desenhe como o usuário navegará entre telas. Quais ações levam a qual tela?</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <h4>Wireframe em Papel/Ferramenta</h4>
+              <p>Use papel e caneta ou Excalidraw. Foque em layout, não em estética. Componentes simples são OK.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">4</span>
+              <h4>Validar com Equipe</h4>
+              <p>Compartilhe com seu grupo. Peça feedback: faz sentido? Está faltando algo? É navegável?</p>
+            </div>
+            <div class="step">
+              <span class="step-number">5</span>
+              <h4>Digitalizar/Exportar</h4>
+              <p>Se papel, tirar foto. Se ferramenta, exportar como PDF e PNG. Preparar para próxima semana (alta fidelidade).</p>
+            </div>
+          </div>
+          <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Entrega:</strong> PDF com wireframes de todas as telas + diagrama de fluxo. Subir no Drive até terça-feira.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Wireframes</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>1. Qual é o objetivo principal de um wireframe?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Definir as cores e tipografia do site</li>
+              <li data-correct="true">Estruturar o layout e fluxo de navegação</li>
+              <li data-correct="false">Criar animações e efeitos visuais</li>
+              <li data-correct="false">Codificar o site em HTML/CSS</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Wireframes focam em estrutura e fluxo, deixando cores e estilo para depois.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>2. Qual ferramenta é recomendada para começar a wireframing rapidamente?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="true">Papel e caneta ou Excalidraw</li>
+              <li data-correct="false">Figma (muito complexo para wireframe)</li>
+              <li data-correct="false">Adobe Photoshop</li>
+              <li data-correct="false">Visual Studio Code</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Papel e Excalidraw são rápidos e baratos. Figma é melhor para depois, na alta fidelidade.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>3. Qual é a diferença entre wireframe e mockup?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Wireframe tem cores; mockup não tem</li>
+              <li data-correct="true">Wireframe é estrutura; mockup adiciona estilo visual</li>
+              <li data-correct="false">São a mesma coisa</li>
+              <li data-correct="false">Mockup é para apps; wireframe é para websites</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Wireframe = estrutura sem estilo. Mockup = estrutura + cores/tipografia (mas sem interação).</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>4. Quantas telas principais você deve prototipar inicialmente?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">1-2 telas</li>
+              <li data-correct="true">5-7 telas (fluxo crítico)</li>
+              <li data-correct="false">50+ telas (todo o site)</li>
+              <li data-correct="false">Nenhuma, ir direto para código</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> 5-7 telas cobrindo o fluxo principal já revelam a maioria dos problemas estruturais.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>5. O que NÃO deve estar em um wireframe?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Posição de botões</li>
+              <li data-correct="false">Estrutura de formulário</li>
+              <li data-correct="true">Cores, imagens e fonte específica</li>
+              <li data-correct="false">Labels e texto placeholder</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Cores e imagens são detalhe visual. Deixe para mockup/protótipo. Wireframe é estrutura pura.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">07 – Wireframes</div>
+          <div class="footer-page">12</div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Encerramento -->
+      <section class="end-slide">
+        <h1>Semana 07 Concluída</h1>
+        <p>Você aprendeu a criar wireframes e estruturar a navegação do seu projeto.</p>
+        <p style="margin-top: 2em; font-size: 0.9em; color: #999;">Próxima semana: Prototipação em Alta Fidelidade no Figma</p>
+        <p style="margin-top: 3em; font-size: 0.8em; color: #666;">© 2026 UNINOVE • Projeto Integrador • ADS 5º Semestre</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 04 – User Stories e Kanban | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover Slide -->
+      <section class="cover-slide">
+        <h1>User Stories & Kanban</h1>
+        <p style="font-size: 1.5em; margin-top: 2em;">Desenvolvimento Ágil e Gestão de Tarefas</p>
+        <p style="font-size: 1.2em; margin-top: 2em;">Semana 04 • UNINOVE</p>
+      </section>
+
+      <!-- SLIDE 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Gestão Ágil do Projeto</h2>
+        </div>
+        <div class="title-card">
+          <p><strong>Semana 04</strong></p>
+          <p>11 de março de 2026</p>
+        </div>
+        <div class="lesson-bar">
+          <span class="logo-text logo-text-small"><span class="uni">UNI</span><span class="nove">NOVE</span></span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: O que são User Stories? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>User Stories — Formato Ágil</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.15em; line-height: 1.6;">
+              <strong>User Story</strong> é uma descrição curta de uma funcionalidade <strong>do ponto de vista do usuário</strong>, pronta para desenvolvimento.
+            </p>
+          </div>
+          <div style="margin-top: 2em; background: #f9f9f9; padding: 2em; border-radius: 8px; border-left: 4px solid #0066cc;">
+            <h4 style="color: #0066cc; margin-top: 0;">Formato Padrão</h4>
+            <p style="font-size: 1.1em; margin: 0; font-weight: bold;">Como [persona], eu quero [ação], para [benefício]</p>
+            <p style="margin-top: 1.5em; font-size: 0.95em; color: #666;">
+              <strong>Exemplos reais:</strong><br/>
+              • Como freelancer, eu quero criar uma fatura em 30 segundos, para economizar tempo administrativo<br/>
+              • Como admin, eu quero ver dashboard de métricas, para monitorar saúde do negócio<br/>
+              • Como cliente, eu quero receber email de confirmação, para ter segurança na transação
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card success">
+              <h4>Características</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Curta e clara</li>
+                <li>Centrada no usuário</li>
+                <li>Implementável em 1-2 dias</li>
+                <li>Independente</li>
+                <li>Testável</li>
+              </ul>
+            </div>
+            <div class="concept-card blue">
+              <h4>Benefícios</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Fácil de priorizar</li>
+                <li>Facilita comunicação</li>
+                <li>Define "pronto"</li>
+                <li>Evita sobre-especificação</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Critérios de Aceitação -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Critérios de Aceitação (AC)</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Definem exatamente quando uma user story é considerada <strong>"Pronta"</strong> (Done).
+          </p>
+          <div style="background: #f9f9f9; padding: 2em; border-radius: 8px; border-left: 4px solid #0066cc; margin-bottom: 1.5em;">
+            <h4 style="color: #0066cc; margin-top: 0;">Formato Given-When-Then (BDD)</h4>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Given</strong> (Dado que) — O contexto/estado inicial</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>When</strong> (Quando) — A ação que o usuário toma</p>
+            <p style="margin: 0.5em 0; font-size: 0.95em;"><strong>Then</strong> (Então) — O resultado esperado</p>
+          </div>
+          <div style="background: #e8f5e9; padding: 2em; border-radius: 8px; border-left: 4px solid #2ecc71; margin-bottom: 1.5em;">
+            <h4 style="color: #2ecc71; margin-top: 0;">Exemplo Prático</h4>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>US-001:</strong> Como freelancer, quero criar uma fatura para cobrar cliente</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>AC-1:</strong> Given usuário logado no sistema, When clica "Nova Fatura", Then formulário abre com cliente recente pré-preenchido</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>AC-2:</strong> Given formulário aberto, When preenche itens (serviço, valor, qty), Then total é calculado com impostos automaticamente</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;"><strong>AC-3:</strong> Given fatura preenchida, When clica "Gerar PDF", Then arquivo PDF é baixado dentro de 2 segundos</p>
+          </div>
+          <div class="callout warning">
+            <p><strong>Dica:</strong> AC bem definidos facilitam testes automatizados com ferramentas como Cypress, Selenium ou Jest.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Story Points e Planning Poker -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estimativa: Story Points</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Métricas relativas para estimar esforço de implementação, não horas.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Escala Fibonacci</h4>
+              <p style="font-size: 0.9em; margin: 0;">1, 2, 3, 5, 8, 13, 21, 40</p>
+              <ul style="font-size: 0.85em; margin: 0.5em 0 0 0;">
+                <li><strong>1-2:</strong> Muito simples</li>
+                <li><strong>3-5:</strong> Moderado</li>
+                <li><strong>8-13:</strong> Complexo</li>
+                <li><strong>21+:</strong> Quebrar em menores</li>
+              </ul>
+            </div>
+            <div class="concept-card success">
+              <h4>Planning Poker</h4>
+              <p style="font-size: 0.9em; margin: 0;">Técnica colaborativa para estimar</p>
+              <ol style="font-size: 0.85em;">
+                <li>Product Owner explica US</li>
+                <li>Equipe discute</li>
+                <li>Todos revelam estimativa</li>
+                <li>Discutem divergências</li>
+                <li>Re-estimam se necessário</li>
+              </ol>
+            </div>
+          </div>
+          <div style="background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #ff9800;">
+            <h4 style="color: #ff9800; margin-top: 0;">Exemplo de Estimativas</h4>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">
+              <strong>1 ponto:</strong> Corrigir typo, atualizar cor<br/>
+              <strong>3 pontos:</strong> Criar formulário simples, integrar endpoint existente<br/>
+              <strong>8 pontos:</strong> Implementar login OAuth, integração com Stripe<br/>
+              <strong>21 pontos:</strong> Redesenhar dashboard inteiro (quebrar em menores!)
+            </p>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Velocity:</strong> Total de pontos completados por sprint. Ajuda a prever quanto fazer nas próximas sprints.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: O que é Kanban? -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Kanban — Metodologia Contínua</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue">
+            <p style="font-size: 1.1em;">
+              <strong>Kanban</strong> é uma metodologia visual de gestão de fluxo contínuo que <strong>limita WIP</strong> (Work in Progress) e <strong>otimiza lead time</strong>.
+            </p>
+          </div>
+          <div style="margin-top: 2em; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+            <div class="concept-card success">
+              <h4>Princípios Kanban</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Visualizar fluxo</li>
+                <li>Limitar WIP</li>
+                <li>Gerenciar fluxo</li>
+                <li>Fazer políticas explícitas</li>
+                <li>Implementar feedback loops</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Kanban vs Scrum</h4>
+              <ul style="font-size: 0.85em;">
+                <li><strong>Fluxo:</strong> Contínuo vs Sprints</li>
+                <li><strong>Planejamento:</strong> Contínuo vs Sprint Planning</li>
+                <li><strong>Reuniões:</strong> Mínimas vs Cerimônias</li>
+                <li><strong>Melhor para:</strong> Suporte, manutenção vs desenvolvimento</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Nota para o Projeto</h4>
+            <p style="margin: 0; font-size: 0.9em;">Usaremos <strong>Kanban com sprints semanais</strong> — melhor equilíbrio entre estrutura e flexibilidade para projetos integrador.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Quadro Kanban -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estrutura do Quadro Kanban</h2>
+        </div>
+        <div style="padding: 1.5em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666; text-align: center;">
+            Padrão: 5 colunas principais de fluxo
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0.8em; margin-bottom: 2em;">
+            <div style="background: #e3f2fd; padding: 1.5em; border-radius: 6px; text-align: center; min-height: 150px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #1565c0;">📋 Backlog</h4>
+              <p style="font-size: 0.85em; margin: 0; color: #666;">User stories não iniciadas, priorizadas por ordem</p>
+            </div>
+            <div style="background: #fff3e0; padding: 1.5em; border-radius: 6px; text-align: center; min-height: 150px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #e65100;">📝 To Do</h4>
+              <p style="font-size: 0.85em; margin: 0; color: #666;">Selecionadas para sprint, aguardando início</p>
+            </div>
+            <div style="background: #f3e5f5; padding: 1.5em; border-radius: 6px; text-align: center; min-height: 150px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #6a1b9a;">⚙️ In Progress</h4>
+              <p style="font-size: 0.85em; margin: 0; color: #666;">Em desenvolvimento (WIP: máx 3-5)</p>
+            </div>
+            <div style="background: #e8f5e9; padding: 1.5em; border-radius: 6px; text-align: center; min-height: 150px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #2e7d32;">👀 Review</h4>
+              <p style="font-size: 0.85em; margin: 0; color: #666;">Código revisado, testes rodando, awaiting merge</p>
+            </div>
+            <div style="background: #e0f2f1; padding: 1.5em; border-radius: 6px; text-align: center; min-height: 150px;">
+              <h4 style="margin: 0 0 0.5em 0; color: #00695c;">✅ Done</h4>
+              <p style="font-size: 0.85em; margin: 0; color: #666;">Pronto para produção, testes aprovados</p>
+            </div>
+          </div>
+          <div class="concept-card blue">
+            <h4>WIP Limits — Essencial!</h4>
+            <p style="font-size: 0.9em; margin: 0;">
+              Defina limite de cards em cada coluna (ex: max 5 em "In Progress"). Impede multitarefa e foca em concluir.
+            </p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: GitHub Projects -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>GitHub Projects como Kanban</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            GitHub Projects (beta) oferece Kanban nativo integrado ao repositório. Alternativa ao Jira/Asana.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+            <div class="concept-card blue">
+              <h4>Vantagens</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Integrado com GitHub</li>
+                <li>Gratuito para públicos</li>
+                <li>Automação com workflows</li>
+                <li>Vinculado a PRs e Issues</li>
+                <li>Relatórios visuais</li>
+              </ul>
+            </div>
+            <div class="concept-card warning">
+              <h4>Setup no GitHub</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Criar Project na aba "Projects"</li>
+                <li>Escolher template "Table" ou "Board"</li>
+                <li>Criar colunas (Backlog, Todo, In Progress, Review, Done)</li>
+                <li>Ativar automação</li>
+                <li>Usar Issues/Draft como cards</li>
+              </ul>
+            </div>
+          </div>
+          <div style="background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #0066cc;">
+            <h4 style="color: #0066cc; margin-top: 0;">Fluxo de Cards no GitHub</h4>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">1. Criar Issue com template (user story)</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">2. Adicionar label "priority", "type", etc</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">3. Atribuir ao desenvolvedor</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">4. Criar branch feature/issue-123</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">5. Fazer PR linking a issue (fecha automaticamente)</p>
+            <p style="margin: 0.5em 0; font-size: 0.9em;">6. Card move automatically para Done</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Issues como User Stories -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>GitHub Issues — Template de User Story</h2>
+        </div>
+        <div style="padding: 2em;">
+          <p style="font-size: 0.95em; margin-bottom: 1.5em; color: #666;">
+            Crie template de Issue para padronizar user stories no GitHub.
+          </p>
+          <div style="background: #f9f9f9; padding: 1.5em; border-radius: 8px; border-left: 4px solid #0066cc; font-size: 0.85em; font-family: monospace; overflow-x: auto;">
+            <p style="margin: 0.3em 0;"><strong>## User Story</strong></p>
+            <p style="margin: 0.3em 0;">Como [persona], eu quero [ação], para [benefício]</p>
+            <p style="margin: 0.3em 0;"></p>
+            <p style="margin: 0.3em 0;"><strong>## Critérios de Aceitação</strong></p>
+            <p style="margin: 0.3em 0;">- [ ] AC-1: Given..., When..., Then...</p>
+            <p style="margin: 0.3em 0;">- [ ] AC-2: Given..., When..., Then...</p>
+            <p style="margin: 0.3em 0;">- [ ] AC-3: Given..., When..., Then...</p>
+            <p style="margin: 0.3em 0;"></p>
+            <p style="margin: 0.3em 0;"><strong>## Estimativa</strong></p>
+            <p style="margin: 0.3em 0;">Story Points: ? (a preencher em Planning Poker)</p>
+            <p style="margin: 0.3em 0;"></p>
+            <p style="margin: 0.3em 0;"><strong>## Labels</strong></p>
+            <p style="margin: 0.3em 0;">- priority: high | medium | low</p>
+            <p style="margin: 0.3em 0;">- type: feature | bug | refactor | docs</p>
+            <p style="margin: 0.3em 0;">- area: backend | frontend | devops | design</p>
+            <p style="margin: 0.3em 0;"></p>
+            <p style="margin: 0.3em 0;"><strong>## Tasks</strong></p>
+            <p style="margin: 0.3em 0;">- [ ] Subtarefa 1</p>
+            <p style="margin: 0.3em 0;">- [ ] Subtarefa 2</p>
+          </div>
+          <div style="margin-top: 1.5em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <p style="margin: 0; font-size: 0.9em;"><strong>Como criar template:</strong> No repositório, vá em Settings → Issue templates → New template → escolha "Feature request" e customize com o acima.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Atividade: Setup Kanban + User Stories</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="callout blue" style="margin-bottom: 1.5em;">
+            <p style="margin: 0; font-size: 0.95em;">Cada grupo tem 2 horas para configurar o board e criar user stories.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+            <div class="exercise-task-card">
+              <h4>✅ Passo 1: GitHub Project</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Criar Project no repositório</li>
+                <li>5 colunas: Backlog, To Do, In Progress, Review, Done</li>
+                <li>Definir WIP limits</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 2: Issue Template</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Criar template padrão de US</li>
+                <li>Com AC, estimativa, labels</li>
+                <li>Documentar no README</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 3: Escrever User Stories</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Mínimo 20 US baseado em requisitos</li>
+                <li>Formato: Como..., eu quero..., para...</li>
+                <li>3+ AC cada</li>
+              </ul>
+            </div>
+            <div class="exercise-task-card">
+              <h4>✅ Passo 4: Planning Poker</h4>
+              <ul style="font-size: 0.9em;">
+                <li>Estimar todas as US</li>
+                <li>Registrar story points</li>
+                <li>Calcular velocity esperada</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Entrega da Semana -->
+      <section class="delivery-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Entrega — Semana 04</h2>
+        </div>
+        <div style="padding: 2em;">
+          <div class="delivery-box">
+            <h3>📋 Entrega 4 — Backlog e Kanban Configurado</h3>
+            <ul style="font-size: 1.05em;">
+              <li><strong>GitHub Project Board</strong> com 5 colunas (Backlog, To Do, In Progress, Review, Done) e WIP limits definidos</li>
+              <li><strong>Mínimo 20 User Stories</strong> — formato padrão com critérios de aceitação (Given-When-Then)</li>
+              <li><strong>Story Points estimados</strong> — cada US com estimativa usando Planning Poker</li>
+              <li><strong>Labels padrão</strong> — priority (high/medium/low), type (feature/bug/refactor), area</li>
+              <li><strong>Issue template configurado</strong> — no repositório para futuras USs</li>
+            </ul>
+            <span class="platform">Google Classroom</span>
+            <span class="platform">GitHub Projects</span>
+            <span class="deadline">📅 Prazo: 18/03 (Terça)</span>
+          </div>
+          <div style="margin-top: 2em; background: #f0f0f0; padding: 1.5em; border-radius: 8px;">
+            <h4 style="color: #333; margin-top: 0;">Critérios de Avaliação</h4>
+            <ul style="font-size: 0.95em;">
+              <li>✓ User stories bem escritas e independentes</li>
+              <li>✓ Critérios de aceitação específicos e testáveis</li>
+              <li>✓ Estimativas realistas (validar velocity)</li>
+              <li>✓ Kanban funcional e com WIP limits</li>
+              <li>✓ Rastreabilidade de requisitos a US</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">04 – User Stories e Kanban</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Encerramento -->
+      <section class="end-slide">
+        <div style="text-align: center; padding: 4em 2em;">
+          <h2 style="font-size: 2.5em; margin-bottom: 1em;">Kanban Bem Estruturado</h2>
+          <p style="font-size: 1.3em; margin-bottom: 2em; color: #666;">
+            Torna o trabalho visível, gerenciável e entregável.
+          </p>
+          <div style="background: #f0f0f0; padding: 2em; border-radius: 8px; margin-bottom: 2em;">
+            <p style="font-size: 1.05em; margin: 0;"><strong>Próxima semana:</strong> Versionamento de Código com GitHub</p>
+          </div>
+          <p style="font-size: 0.9em; color: #999;">
+            Projeto Integrador • ADS • 5º Semestre • UNINOVE 2026
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: false,
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

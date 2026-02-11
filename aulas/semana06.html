@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 06 – Jornada do Usuário | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Slide 1: Cover -->
+      <section class="cover-slide">
+        <h1>Semana 06</h1>
+        <p>Jornada do Usuário</p>
+        <p style="font-size: 0.9em; margin-top: 2em; color: #999;">UX Research & Personas</p>
+      </section>
+
+      <!-- Slide 2: Title Slide -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>UX Research & Personas</h1>
+          <h2>Entendendo o Usuário</h2>
+          <h3>Semana 06 — 25 de Março</h3>
+        </div>
+        <div class="lesson-bar">Análise e Desenvolvimento de Sistemas • 5º Semestre • 2026.1</div>
+      </section>
+
+      <!-- Slide 3: O que é UX? -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que é UX? UI vs UX</h2>
+        </div>
+        <div class="side-by-side">
+          <div class="side">
+            <h4>User Experience (UX)</h4>
+            <ul class="styled-list">
+              <li>Experiência total do usuário</li>
+              <li>Pesquisa, estratégia, avaliação</li>
+              <li>Comportamentos e emoções</li>
+              <li>Fluxo e navegação</li>
+              <li>Satisfação e usabilidade</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>User Interface (UI)</h4>
+            <ul class="styled-list">
+              <li>Visual e interação</li>
+              <li>Cores, tipografia, botões</li>
+              <li>Layout e espaçamento</li>
+              <li>Ícones e elementos gráficos</li>
+              <li>Estilo e branding</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout success">
+          <p><strong>Resumo:</strong> UX é estratégia e pesquisa; UI é implementação visual. Ambas são interdependentes!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">3</div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Pesquisa com Usuários -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Métodos de Pesquisa com Usuários</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <h4>Entrevistas</h4>
+            <p>Conversas 1-a-1 profundas. Explore motivações, dores e objetivos. 5-8 entrevistas são suficientes para identificar padrões.</p>
+          </div>
+          <div class="concept-card success">
+            <h4>Surveys (Questionários)</h4>
+            <p>Coleta quantitativa de dados. Escale seu alcance com 50+ respondentes. Bom para validar hipóteses.</p>
+          </div>
+          <div class="concept-card info">
+            <h4>Análise Competitiva</h4>
+            <p>Estude concorrentes e soluções similares. Identifique gaps e oportunidades de diferenciação.</p>
+          </div>
+        </div>
+        <div class="callout blue">
+          <p><strong>Dica:</strong> Combine métodos qualitativos (entrevistas) e quantitativos (surveys) para insights holísticos.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">4</div>
+        </div>
+      </section>
+
+      <!-- Slide 5: O que é uma Persona -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Personas: Criando Arquétipos Realistas</h2>
+        </div>
+        <p style="margin-bottom: 1.5em;">Uma <strong>persona</strong> é uma representação semi-fictícia de um usuário ideal, baseada em dados reais coletados na pesquisa.</p>
+        <div class="concept-cards">
+          <div class="concept-card">
+            <h4>Por que criar personas?</h4>
+            <ul style="font-size: 0.9em;">
+              <li>Guia decisões de design</li>
+              <li>Alinha o time em um "usuário comum"</li>
+              <li>Evita design para "todos"</li>
+              <li>Facilita discussões de prioridade</li>
+            </ul>
+          </div>
+          <div class="concept-card">
+            <h4>Dados essenciais</h4>
+            <ul style="font-size: 0.9em;">
+              <li>Nome, idade, profissão</li>
+              <li>Objetivos e motivações</li>
+              <li>Dores e frustrações</li>
+              <li>Tecnologia e habilidades</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">5</div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Template de Persona -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Template: Como Estruturar uma Persona</h2>
+        </div>
+        <div style="font-size: 0.85em; line-height: 1.6;">
+          <div style="margin-bottom: 1em; padding: 1em; background: #f5f5f5; border-left: 4px solid #E74C3C;">
+            <p><strong>Nome:</strong> Marina Silva (escolha um nome real)</p>
+            <p><strong>Foto/Avatar:</strong> Imagem que representa a persona</p>
+            <p><strong>Idade:</strong> 34 anos | <strong>Profissão:</strong> Gerente de Marketing</p>
+            <p><strong>Bio:</strong> Trabalha em startup de e-commerce há 3 anos. Responsável por campanhas digitais. Casada, 1 filho.</p>
+          </div>
+          <div style="margin-bottom: 1em; padding: 1em; background: #f5f5f5; border-left: 4px solid #3498DB;">
+            <p><strong>Objetivos:</strong> Automatizar processos de marketing, ganhar mais tempo com família, aprender novas ferramentas.</p>
+            <p><strong>Dores:</strong> Falta de tempo, ferramentas complexas, dados fragmentados, stress com deadlines.</p>
+            <p><strong>Necessidades:</strong> Dashboard intuitivo, relatórios automáticos, integrações simples.</p>
+          </div>
+          <div style="padding: 1em; background: #f5f5f5; border-left: 4px solid #27AE60;">
+            <p><strong>Tecnologia:</strong> Usa Mac, smartphone iOS, conhecimento intermediário em ferramentas web.</p>
+            <p><strong>Comportamento:</strong> Estuda tutoriais no YouTube, segue blogs de marketing, participa de webinars.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">6</div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Mapa de Empatia -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Mapa de Empatia (Empathy Map)</h2>
+        </div>
+        <p style="margin-bottom: 1.5em; font-size: 0.95em;">Ferramenta para aprofundar o entendimento emocional e comportamental da persona. Divida em 6 quadrantes:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8em; font-size: 0.8em;">
+          <div style="padding: 0.8em; background: #E8F4F8; border-left: 3px solid #3498DB;">
+            <strong>Pensa</strong><br>Quais preocupações, objetivos e desejos possui?
+          </div>
+          <div style="padding: 0.8em; background: #F4E8F8; border-left: 3px solid #9B59B6;">
+            <strong>Sente</strong><br>Quais emoções e medos tem?
+          </div>
+          <div style="padding: 0.8em; background: #E8F8F4; border-left: 3px solid #1ABC9C;">
+            <strong>Fala</strong><br>O que diz? Qual tom usa?
+          </div>
+          <div style="padding: 0.8em; background: #F8F4E8; border-left: 3px solid #F39C12;">
+            <strong>Faz</strong><br>Quais ações toma? Como se comporta?
+          </div>
+          <div style="padding: 0.8em; background: #F8E8E8; border-left: 3px solid #E74C3C;">
+            <strong>Ouça</strong><br>O que os outros dizem sobre ela?
+          </div>
+          <div style="padding: 0.8em; background: #E8F8E8; border-left: 3px solid #27AE60;">
+            <strong>Dor &amp; Ganho</strong><br>Frustrações vs aspirações
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">7</div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Customer Journey Map -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Customer Journey Map: As 4 Etapas</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>1️⃣ Descoberta</h4>
+            <p>Usuário descobre o problema. Busca soluções online, lê reviews, conversa com amigos. <strong>Touchpoints:</strong> Google, redes sociais, indicações.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>2️⃣ Consideração</h4>
+            <p>Avalia alternativas. Visita websites, lê tutoriais, testa versões gratuitas. <strong>Touchpoints:</strong> Website, email, demos.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>3️⃣ Uso (Onboarding)</h4>
+            <p>Começa a usar o produto. Precisa aprender, resolver dúvidas, integrar com outros sistemas. <strong>Touchpoints:</strong> App, suporte, help center.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>4️⃣ Retenção</h4>
+            <p>Usuário retorna regularmente. Busca advanced features, comunidade, renovação de plano. <strong>Touchpoints:</strong> Dashboard, notificações, comunidade.</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">8</div>
+        </div>
+      </section>
+
+      <!-- Slide 9: Touchpoints e Pain Points -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Touchpoints vs Pain Points</h2>
+        </div>
+        <div class="side-by-side">
+          <div class="side">
+            <h4>Touchpoints 🎯</h4>
+            <p>Momentos em que o usuário interage com seu produto/marca:</p>
+            <ul class="styled-list">
+              <li>Anúncio no Google</li>
+              <li>Email de marketing</li>
+              <li>Website landing page</li>
+              <li>App mobile</li>
+              <li>Atendimento ao cliente</li>
+              <li>Comunidade online</li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Pain Points 😤</h4>
+            <p>Frustrações e problemas que o usuário enfrenta:</p>
+            <ul class="styled-list">
+              <li>Onboarding confuso</li>
+              <li>Formulários longos</li>
+              <li>Lentidão na resposta</li>
+              <li>Falta de suporte</li>
+              <li>Preço fora do orçamento</li>
+              <li>Integração difícil</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout success">
+          <p><strong>Objetivo:</strong> Mapear todos os touchpoints e identificar os pain points principais. Depois, priorize solucioná-los!</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">9</div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Visualizando a Jornada -->
+      <section class="content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Journey Map Completo</h2>
+        </div>
+        <div style="font-size: 0.8em; line-height: 1.8;">
+          <p><strong>Persona: Marina Silva (Gerente de Marketing)</strong></p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 1em;">
+            <tr style="background: #34495E; color: white;">
+              <th style="padding: 0.5em; text-align: left;">Etapa</th>
+              <th style="padding: 0.5em; text-align: left;">O que faz</th>
+              <th style="padding: 0.5em; text-align: left;">Touchpoints</th>
+              <th style="padding: 0.5em; text-align: left;">Pain Points</th>
+            </tr>
+            <tr style="background: #ECF0F1;">
+              <td style="padding: 0.5em;"><strong>Descoberta</strong></td>
+              <td style="padding: 0.5em;">Busca "marketing automation"</td>
+              <td style="padding: 0.5em;">Google, Capterra</td>
+              <td style="padding: 0.5em;">Muitas opções, difícil comparar</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.5em;"><strong>Consideração</strong></td>
+              <td style="padding: 0.5em;">Avalia 3 plataformas, testa trial</td>
+              <td style="padding: 0.5em;">Website, email, demo</td>
+              <td style="padding: 0.5em;">Trial curto, não integra com Shopify</td>
+            </tr>
+            <tr style="background: #ECF0F1;">
+              <td style="padding: 0.5em;"><strong>Uso</strong></td>
+              <td style="padding: 0.5em;">Setup da conta, cria primeiro campaign</td>
+              <td style="padding: 0.5em;">App, help center, support chat</td>
+              <td style="padding: 0.5em;">Interface confusa, falta documentação</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.5em;"><strong>Retenção</strong></td>
+              <td style="padding: 0.5em;">Usa diariamente, convida time</td>
+              <td style="padding: 0.5em;">Dashboard, email, webinars</td>
+              <td style="padding: 0.5em;">Relatórios pouco customizáveis</td>
+            </tr>
+          </table>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">10</div>
+        </div>
+      </section>
+
+      <!-- Slide 11: Exercício Prático -->
+      <section class="exercise-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício: Criar Personas e Jornada</h2>
+        </div>
+        <div class="exercise-container">
+          <div class="exercise-steps">
+            <div class="step">
+              <span class="step-number">1</span>
+              <h4>Pesquisa (30 min)</h4>
+              <p>Conduza 3-5 entrevistas com usuários potenciais ou atuais. Prepare roteiro, registre áudio/notas.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">2</span>
+              <h4>Síntese (20 min)</h4>
+              <p>Identifique padrões nas entrevistas. Quais são os objetivos e dores comuns? Quantas personas diferentes identificou?</p>
+            </div>
+            <div class="step">
+              <span class="step-number">3</span>
+              <h4>Criação de Personas (30 min)</h4>
+              <p>Crie 2-3 personas realistas com todos os elementos: nome, age, objetivos, dores, tecnologia, bio.</p>
+            </div>
+            <div class="step">
+              <span class="step-number">4</span>
+              <h4>Journey Mapping (30 min)</h4>
+              <p>Para a persona principal, mapeie as 4 etapas com touchpoints e pain points específicos.</p>
+            </div>
+          </div>
+          <p style="margin-top: 1.5em; font-size: 0.9em;"><strong>Entrega:</strong> Documento PDF com personas + journey map. Use template no Google Drive da disciplina.</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">11</div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz: Jornada do Usuário</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>1. Qual é a diferença principal entre UI e UX?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">UI é a pesquisa e estratégia; UX é o design visual</li>
+              <li data-correct="true">UX é a experiência total; UI é a implementação visual</li>
+              <li data-correct="false">São sinônimos, podem ser usados indistintamente</li>
+              <li data-correct="false">UX é apenas para websites; UI é para apps</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> UX é mais amplo (pesquisa, estratégia, emoção), enquanto UI é focado nos elementos visuais e interativos.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>2. Quantas entrevistas são geralmente suficientes para identificar padrões em UX Research?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">20-30 entrevistas</li>
+              <li data-correct="true">5-8 entrevistas</li>
+              <li data-correct="false">Apenas 1-2 entrevistas</li>
+              <li data-correct="false">100+ entrevistas para ser confiável</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Pesquisa qualitativa sugere que 5-8 entrevistas revelam a maioria dos padrões. Mais é melhor para validação, mas há diminishing returns.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>3. Qual NÃO é um elemento essencial em uma persona?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="false">Nome e idade</li>
+              <li data-correct="false">Objetivos e dores</li>
+              <li data-correct="true">Cor favorita e comida preferida</li>
+              <li data-correct="false">Profissão e nível de tecnologia</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> Embora detalhes pessoais façam a persona ser mais realista, dados como cor favorita não impactam decisões de design. Foque em dados relevantes.</p>
+            </div>
+          </div>
+
+          <div class="quiz-question">
+            <p><strong>4. Qual é a primeira etapa de uma Customer Journey Map?</strong></p>
+            <ul class="quiz-options">
+              <li data-correct="true">Descoberta</li>
+              <li data-correct="false">Consideração</li>
+              <li data-correct="false">Uso</li>
+              <li data-correct="false">Retenção</li>
+            </ul>
+            <div class="quiz-feedback" style="display: none;">
+              <p><strong>✓ Correto!</strong> O usuário primeiro descobre que tem um problema e busca soluções. Depois move para consideração, uso e retenção.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar">06 – Jornada do Usuário</div>
+          <div class="footer-page">12</div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Encerramento -->
+      <section class="end-slide">
+        <h1>Semana 06 Concluída</h1>
+        <p>Você aprendeu sobre pesquisa com usuários, personas e customer journey maps.</p>
+        <p style="margin-top: 2em; font-size: 0.9em; color: #999;">Próxima semana: Wireframes e Prototipação em Baixa Fidelidade</p>
+        <p style="margin-top: 3em; font-size: 0.8em; color: #666;">© 2026 UNINOVE • Projeto Integrador • ADS 5º Semestre</p>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>

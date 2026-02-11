@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 15 – Padrões de Projeto (GoF) | UNINOVE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/uninove-theme.css">
+  <link rel="stylesheet" href="../assets/css/uninove-print.css">
+  <script>if(/print-pdf/gi.test(window.location.search)){var link=document.createElement('link');rel='stylesheet';href='https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';document.head.appendChild(link);}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .code-box { background: #2d2d2d; color: #f8f8f2; padding: 1.5rem; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.7em; overflow-x: auto; margin: 1rem 0; line-height: 1.4; }
+    .pattern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .pattern-card { border: 2px solid #0288d1; border-radius: 8px; padding: 1.5rem; }
+    .pattern-card.creational { border-color: #0288d1; }
+    .pattern-card.structural { border-color: #7b1fa2; }
+    .pattern-card.behavioral { border-color: #f57c00; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Cover -->
+      <section class="cover-slide">
+        <h1>UNINOVE</h1>
+        <h2>Projeto Integrador</h2>
+        <div class="cover-decoration"></div>
+      </section>
+
+      <!-- SLIDE 2: Title -->
+      <section class="title-slide">
+        <div class="top-bar"></div>
+        <div class="geo-top-right"></div>
+        <div class="geo-bottom-left"></div>
+        <div class="title-card">
+          <h1>Projeto Integrador</h1>
+          <h2>Análise e Desenvolvimento de Sistemas</h2>
+          <h3>Prof. José Romualdo</h3>
+        </div>
+        <div class="lesson-bar">SEMANA 15 – Padrões de Projeto (GoF)</div>
+      </section>
+
+      <!-- SLIDE 3: O que são Design Patterns -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>O que são Design Patterns?</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Definição:</strong> Soluções reutilizáveis para problemas comuns em design de software</li>
+            <li><strong>Origem:</strong> Gang of Four (GoF) - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides (1994)</li>
+            <li><strong>23 Padrões clássicos:</strong> Divididos em 3 categorias</li>
+            <li><strong>Vantagem:</strong> Código mais limpo, testável, manutenível e escalável</li>
+            <li><strong>Comunicação:</strong> Linguagem comum entre desenvolvedores</li>
+          </ul>
+        </div>
+        <div class="callout info" style="margin-top: 2rem;">
+          <strong>Objetivo:</strong> Entender QUANDO usar cada padrão, não apenas decorar nomes
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Categorias de Padrões -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>3 Categorias GoF</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>Criacionais (5)</strong><br/>
+            <small>Como criar objetos?</small>
+          </div>
+          <div class="concept-card" style="border: 2px solid #7b1fa2; background: #f3e5f5;">
+            <strong style="color: #7b1fa2;">Estruturais (7)</strong><br/>
+            <small>Como organizar classes/objetos?</small>
+          </div>
+          <div class="concept-card warning">
+            <strong>Comportamentais (11)</strong><br/>
+            <small>Como fazer objetos se comunicarem?</small>
+          </div>
+        </div>
+        <div style="margin-top: 2rem; font-size: 0.9em; padding: 1.5rem; background: #f5f5f5; border-radius: 8px;">
+          <p><strong>Total: 23 padrões fundamentais</strong></p>
+          <p style="font-size: 0.85em; margin-top: 0.5rem;">Nota: Existem padrões modernos além dos GoF (SOLID, Microservices patterns, etc.)</p>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Padrões Criacionais -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Criacionais: Criação de Objetos</h2>
+        </div>
+        <div class="pattern-grid">
+          <div class="pattern-card creational">
+            <strong style="color: #0288d1;">Singleton</strong><br/>
+            <small>Um único objeto global. Ex: Logger, Database connection</small>
+          </div>
+          <div class="pattern-card creational">
+            <strong style="color: #0288d1;">Factory Method</strong><br/>
+            <small>Interface para criar objetos. Delega a criação.</small>
+          </div>
+          <div class="pattern-card creational">
+            <strong style="color: #0288d1;">Abstract Factory</strong><br/>
+            <small>Criar famílias de objetos relacionados</small>
+          </div>
+          <div class="pattern-card creational">
+            <strong style="color: #0288d1;">Builder</strong><br/>
+            <small>Construção passo a passo. Objetos complexos.</small>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85em;"><strong>Prototype:</strong> Clonar objetos existentes ao invés de criar novos</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Exemplo Singleton -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Singleton</h2>
+        </div>
+        <div class="code-box">
+// TypeScript
+class Logger {
+  private static instance: Logger;
+
+  private constructor() {}
+
+  static getInstance(): Logger {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
+  }
+
+  log(message: string): void {
+    console.log(`[LOG] ${message}`);
+  }
+}
+
+// Uso
+const logger = Logger.getInstance();
+logger.log("Aplicação iniciada");
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Benefício:</strong> Garante uma única instância. Útil para recursos compartilhados (database, config).</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Padrões Estruturais -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Estruturais: Composição de Classes</h2>
+        </div>
+        <div class="pattern-grid">
+          <div class="pattern-card structural">
+            <strong style="color: #7b1fa2;">Adapter</strong><br/>
+            <small>Transformar interface incompatível</small>
+          </div>
+          <div class="pattern-card structural">
+            <strong style="color: #7b1fa2;">Facade</strong><br/>
+            <small>Interface simples para subsistema complexo</small>
+          </div>
+          <div class="pattern-card structural">
+            <strong style="color: #7b1fa2;">Decorator</strong><br/>
+            <small>Adicionar comportamento dinamicamente</small>
+          </div>
+          <div class="pattern-card structural">
+            <strong style="color: #7b1fa2;">Proxy</strong><br/>
+            <small>Representante/substituto de outro objeto</small>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85em;"><strong>Outros:</strong> Bridge, Composite, Flyweight</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Exemplo Facade -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Facade</h2>
+        </div>
+        <div class="code-box">
+// Subsistema complexo com múltiplas classes
+class Database { connect() {} }
+class Logger { log() {} }
+class Cache { set() {} }
+
+// Facade - interface simples
+class ApplicationFacade {
+  private db = new Database();
+  private logger = new Logger();
+  private cache = new Cache();
+
+  startApplication() {
+    this.db.connect();
+    this.logger.log("DB connected");
+    this.cache.set("app_started", true);
+  }
+}
+
+// Cliente só precisa conhecer a Facade
+const app = new ApplicationFacade();
+app.startApplication();
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Benefício:</strong> Encapsula complexidade, facilita manutenção.</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Padrões Comportamentais -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Comportamentais: Comunicação entre Objetos</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.85em;">
+            <li><strong>Strategy:</strong> Encapsular algoritmos intercambiáveis</li>
+            <li><strong>Observer:</strong> Notificar múltiplos objetos sobre mudanças</li>
+            <li><strong>Command:</strong> Encapsular solicitação como objeto</li>
+            <li><strong>Template Method:</strong> Definir esqueleto de algoritmo em classe base</li>
+            <li><strong>State:</strong> Mudar comportamento quando estado muda</li>
+            <li><strong>Iterator:</strong> Acessar elementos de coleção sequencialmente</li>
+          </ul>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85em;"><strong>Outros (5):</strong> Chain of Responsibility, Interpreter, Mediator, Memento, Visitor</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Exemplo Strategy -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exemplo: Strategy Pattern</h2>
+        </div>
+        <div class="code-box">
+// Interface para estratégias
+interface PaymentStrategy {
+  pay(amount: number): void;
+}
+
+// Implementações concretas
+class CreditCardPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Pago ${amount} com Cartão Crédito`);
+  }
+}
+
+class PixPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Pago ${amount} via Pix`);
+  }
+}
+
+// Contexto usa a estratégia
+class ShoppingCart {
+  constructor(private strategy: PaymentStrategy) {}
+
+  checkout(amount: number) {
+    this.strategy.pay(amount);
+  }
+}
+
+// Uso
+const cart = new ShoppingCart(new PixPayment());
+cart.checkout(100);
+        </div>
+        <p style="font-size: 0.85em; margin-top: 1rem;"><strong>Benefício:</strong> Algoritmo pode ser mudado em runtime sem alterar cliente.</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Quando NÃO usar Padrões -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quando NÃO Usar Padrões</h2>
+        </div>
+        <div class="styled-list">
+          <ul style="font-size: 0.9em;">
+            <li><strong>Over-Engineering:</strong> Usar padrão complexo para problema simples</li>
+            <li><strong>Anti-Pattern:</strong> God Object (classe gigante), Spaghetti Code</li>
+            <li><strong>Premature Optimization:</strong> Implementar padrão antes de ter requisito</li>
+            <li><strong>Falta de Contexto:</strong> Aplicar padrão porque está "na moda"</li>
+          </ul>
+        </div>
+        <div class="callout warning" style="margin-top: 2rem;">
+          <strong>Regra de Ouro:</strong> Use padrões quando eles resolvem um problema REAL, não quando "parece legal"
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Quiz -->
+      <section class="quiz-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Quiz – Design Patterns</h2>
+        </div>
+        <div class="quiz-container">
+          <div class="quiz-question">
+            <p><strong>Qual padrão é mais apropriado quando você precisa adicionar funcionalidades a um objeto em runtime sem alterar sua estrutura?</strong></p>
+          </div>
+          <div class="quiz-options">
+            <ul>
+              <li data-correct="false"><span class="option-letter">A)</span> Singleton</li>
+              <li data-correct="true"><span class="option-letter">B)</span> Decorator</li>
+              <li data-correct="false"><span class="option-letter">C)</span> Factory Method</li>
+              <li data-correct="false"><span class="option-letter">D)</span> Strategy</li>
+            </ul>
+          </div>
+          <div class="quiz-feedback" data-correct-msg="Correto! Decorator permite adicionar comportamentos dinamicamente sem modificar o objeto original." data-incorrect-msg="Incorreto. Pense em qual padrão permite 'envolver' um objeto com novas funcionalidades."></div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Exercício Prático -->
+      <section class="exercise-slide content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Exercício: Padrões no Seu Projeto</h2>
+        </div>
+        <div class="exercise-container">
+          <h3>Tarefa: Identificar Padrões do Projeto</h3>
+          <p>Analise o projeto integrador e identifique quais padrões GoF serão utilizados.</p>
+          <div class="exercise-steps">
+            <ol style="font-size: 0.9em;">
+              <li><strong>Mapeie 3-5 padrões:</strong> Que padrões faz sentido usar na arquitetura?</li>
+              <li><strong>Justifique cada um:</strong> Por que este padrão resolve um problema real do projeto?</li>
+              <li><strong>Exemplifique:</strong> Onde na arquitetura (Controller, Service, Repository) será usado?</li>
+              <li><strong>Evite over-engineering:</strong> Só use se houver benefício comprovado</li>
+              <li><strong>Documento:</strong> Descreva no README do projeto</li>
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: Padrões Recomendados para SaaS -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Padrões Comuns em SaaS</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+          <div class="callout blue">
+            <strong>Repository Pattern</strong><br/>
+            <small>Abstração de acesso a dados</small>
+          </div>
+          <div class="callout success">
+            <strong>Dependency Injection</strong><br/>
+            <small>Desacoplamento de dependências</small>
+          </div>
+          <div class="callout info">
+            <strong>Observer Pattern</strong><br/>
+            <small>Eventos, notificações</small>
+          </div>
+          <div class="callout warning">
+            <strong>Factory Pattern</strong><br/>
+            <small>Criação de entidades</small>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9em;"><strong>Bonus:</strong> SOLID principles (não é padrão GoF, mas é essencial para código limpo)</p>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 15: Resumo Final -->
+      <section class="content-slide">
+        <div class="top-bar"></div>
+        <div class="slide-title-area">
+          <div class="accent-bar"></div>
+          <h2>Resumo: Design Patterns GoF</h2>
+        </div>
+        <div class="concept-cards">
+          <div class="concept-card blue">
+            <strong>23 Padrões</strong><br/>Criacionais, Estruturais, Comportamentais
+          </div>
+          <div class="concept-card success">
+            <strong>Reutilizabilidade</strong><br/>Soluções comprovadas
+          </div>
+          <div class="concept-card warning">
+            <strong>Use com Sabedoria</strong><br/>Evite over-engineering
+          </div>
+        </div>
+        <div class="callout success" style="margin-top: 2rem;">
+          <strong>Final do semestre!</strong> Parabéns pela conclusão de Projeto Integrador. Você aprendeu C4, Modelagem de Dados e Design Patterns — pilares da arquitetura de software.
+        </div>
+        <div class="slide-footer">
+          <div class="footer-bar"></div>
+          <div class="footer-page">15 – Semana 15</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 16: End Slide -->
+      <section class="end-slide">
+        <div style="text-align: center; padding: 4em 2em;">
+          <h2 style="font-size: 2.5em; margin-bottom: 1em;">Fim do Projeto Integrador</h2>
+          <p style="font-size: 1.3em; margin-bottom: 2em; color: #666;">Parabéns a todos os grupos!</p>
+          <div style="border-top: 2px solid #ddd; padding-top: 2rem; width: 80%; margin: 0 auto;">
+            <p style="font-size: 1em;">Prof. José Romualdo da Costa Filho</p>
+            <p style="font-size: 0.9em; color: #666;">UNINOVE - Análise e Desenvolvimento de Sistemas</p>
+            <p style="font-size: 0.85em; color: #999; margin-top: 1.5rem;">© 2026 - Todos os direitos reservados</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="../assets/js/quiz.js"></script>
+  <script src="../assets/js/print.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, slideNumber: false, width: 1280, height: 720, margin: 0,
+      minScale: 0.2, maxScale: 2.0, center: false, pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false, transition: 'slide', transitionSpeed: 'default',
+      plugins: [RevealHighlight]
+    });
+  </script>
+</body>
+</html>
